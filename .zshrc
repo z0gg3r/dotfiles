@@ -9,7 +9,7 @@ setopt histignorealldups sharehistory
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey-v
 
-source $HOME/.bash_aliases
+source $HOME/.aliases
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
