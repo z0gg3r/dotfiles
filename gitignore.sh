@@ -5,4 +5,5 @@ do
 	gi=$gi"$1,"
 	shift
 done
+gi="${gi::-1}"
 curl -sL "$gi"
