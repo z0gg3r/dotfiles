@@ -6,7 +6,7 @@ prompt adam1
 
 setopt histignorealldups sharehistory
 
-bindkey-v
+bindkey -v
 
 source $HOME/.aliases
 
