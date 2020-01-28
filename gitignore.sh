@@ -1,9 +1,9 @@
 #! /bin/sh
 gi="https://www.gitignore.io/api/"
-while (( $# > 0 ))
+gi=$gi"$1"
+while [ $# -ge 1 ]
 do
-	gi=$gi"$1,"
 	shift
+	gi=$gi",$1"
 done
-gi="${gi::-1}"
 curl -sL "$gi"
