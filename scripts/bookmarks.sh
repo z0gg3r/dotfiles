@@ -1,0 +1,37 @@
+#! /bin/sh
+
+DB_PATH="/home/zocki/.config/pmb"
+
+die()
+{
+	if [ -z "$1" ]
+	then
+		notify-send "Could not get selection/url. Aborting!"
+	else
+		notify-send "$1"
+	fi
+	exit
+}
+db=$(/bin/ls $DB_PATH/*.db | replace "$DB_PATH/" ""  | rofi -dmenu)
+if [ -z "$db" ]
+then
+	die
+fi
+
+PMB="pmb -f "$DB_PATH/$db""
+
+chosen=$($PMB -p field=name | rofi -dmenu)
+if [ -z "$chosen" ] 
+then
+	die
+fi
+
+url=$($PMB -s name="$chosen",field=url)
+
+if [ -z "$chosen" ]
+then
+	die
+fi
+
+xdotool type --delay 0 "$url"
+xdotool key KP_Enter

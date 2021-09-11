@@ -1,0 +1,6 @@
+export PATH="$(/usr/bin/cat /home/zocki/.config/env/path)"
+export PERL5LIB="$(/usr/bin/cat /home/zocki/.config/env/perl5lib)"
+export EDITOR="vim"
+export VISUAL="vim"
+export MANDWIDTH="vim"
+export GPG_TTY=$(tty)

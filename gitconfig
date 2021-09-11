@@ -1,0 +1,15 @@
+[user]
+	name = z0gg3r
+	email = z0gg3r@users.no-reply.github.com
+
+[core]
+	editor = vim
+
+[pull]
+	rebase = false
+
+[init]
+	defaultBranch = main
+
+[advice]
+	addIgnoredFile = false

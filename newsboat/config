@@ -1,0 +1,3 @@
+browser "/home/zocki/.config/newsboat/surf.sh"
+macro p set browser "mpv %u" ; show-urls ; open-in-browser ; set browser "surf %u"
+player "mpv"
