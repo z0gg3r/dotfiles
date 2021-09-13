@@ -12,53 +12,57 @@ update() {
 	then
 		if ! [ -e "$2" ]
 		then
-			echo -e "$ERROR_COLOUR_START $2 does not exist $COLOUR_END"
+			echo "$ERROR_COLOUR_START $2 does not exist $COLOUR_END"
 		elif ! [ -e "$1" ]
 		then
-			echo -e "$CHANGE_COLOUR_START Creating $1 $COLOUR_END"
+			echo "$CHANGE_COLOUR_START Creating $1 $COLOUR_END"
 			cp "$2" "$1"
 		elif diff "$1" "$2" > /dev/null
 		then
-			echo -e "$UPTODATE_COLOUR_START $1 is up-to-date $COLOUR_END"
+			echo "$UPTODATE_COLOUR_START $1 is up-to-date $COLOUR_END"
 		else
-			echo -e "$CHANGE_COLOUR_START Updating $1 $COLOUR_END"
+			echo "$CHANGE_COLOUR_START Updating $1 $COLOUR_END"
 			cp "$2" "$1"
 		fi
 	elif ! [ -e "$HOME/.$1" ]
 	then
-		echo -e "$ERROR_COLOUR_START $1 does not exist in $HOME $COLOUR_END"
+		echo "$ERROR_COLOUR_START $1 does not exist in $HOME $COLOUR_END"
 	elif ! [ -e "$1" ]
 	then
-		echo -e "$CHANGE_COLOUR_START Creating $1 $COLOUR_END"
+		echo "$CHANGE_COLOUR_START Creating $1 $COLOUR_END"
 		cp "$HOME/.$1" "$1"
 	elif  diff "$1" "$HOME/.$1" > /dev/null
 	then
-		echo -e "$UPTODATE_COLOUR_START $1 is up-to-date $COLOUR_END"
+		echo "$UPTODATE_COLOUR_START $1 is up-to-date $COLOUR_END"
 	else
-		echo -e "$CHANGE_COLOUR_START Updating $1 $COLOUR_END"
+		echo "$CHANGE_COLOUR_START Updating $1 $COLOUR_END"
 	       	cp "$HOME/.$1" "$1"
 	fi
 }
 
 dir_update() {
 	mkdir -p "$1"
-	echo -e "$INFO_COLOUR_START Checking $1... $COLOUR_END"
+	echo "$INFO_COLOUR_START Checking $1... $COLOUR_END"
 	for file in $(/usr/bin/ls "$HOME"/.config/"$1")
 	do
-		if [[ "$2" = *"$file"*  ]]
+		case $2 in
+			*$file*) ignore="yes" ;;
+		esac
+		if ! [ -z "$ignore" ]
 		then
-			echo -e "$IGNORE_COLOUR_START $file will be ignored. $COLOUR_END"
+			echo "$IGNORE_COLOUR_START $file will be ignored. $COLOUR_END"
 		elif ! [ -e "$1/$file" ]
 		then
-			echo -e "$CHANGE_COLOUR_START Creating $1/$file $COLOUR_END"
+			echo "$CHANGE_COLOUR_START Creating $1/$file $COLOUR_END"
 			cp "$HOME/.config/$1/$file" "$1/$file"
 		elif diff "$1" "$HOME/.config/$1/$file" > /dev/null
 		then
-			echo -e "$UPTODATE_COLOUR_START $file is up-to-date $COLOUR_END"
+			echo "$UPTODATE_COLOUR_START $file is up-to-date $COLOUR_END"
 		else
-			echo -e "$CHANGE_COLOUR_START Updating $1/$file $COLOUR_END"
+			echo "$CHANGE_COLOUR_START Updating $1/$file $COLOUR_END"
 			cp "$HOME/.config/$1/$file" "$1/$file"
 		fi
+		ignore=""
 	done
 }
 
