@@ -1,8 +1,8 @@
 syntax enable
-filetype plugin on
+filetype plugin indent on
 
 " Set Options
-set nocompatible
+set autoindent
 set path+=**
 set wildmenu
 set number
