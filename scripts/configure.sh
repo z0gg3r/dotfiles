@@ -16,4 +16,6 @@ cd "/home/zocki/programs/$chosen" || exit
 
 ./configure $config
 
+echo "Configure options were: $config"
+
 cd "$pwd" || exit
