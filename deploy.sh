@@ -23,7 +23,7 @@ deploy_dir()
 		echo "$RED $2 does not exist. $END"
 	else
 		echo "$GREEN Moving contents of $1 to $2 $END"
-		for file in "$1"
+		for file in $1/*
 		do
 			deploy "$file" "$2"
 		done
