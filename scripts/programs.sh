@@ -18,7 +18,7 @@ git_pull()
 		echo "$(git remote get-url origin)"
 		git pull
 	else
-		echo -e "$ERROR $(pwd) is not a git repo. $END"
+		echo "$ERROR $(pwd) is not a git repo. $END"
 	fi
 }
 
@@ -28,9 +28,9 @@ cd "$PROG_DIR" || die
 for dir in *
 do
 	cd "$dir" || die
-	echo -e "$ENTER Entering $dir $END"
+	echo "$ENTER Entering $dir $END"
 	git_pull
-	echo -e "$LEAVE Leaving $dir $END"
+	echo "$LEAVE Leaving $dir $END"
 	cd ..
 done
 
