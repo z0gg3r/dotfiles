@@ -1,7 +1,7 @@
 # All non-zsh exports go in there!
-source /home/zocki/.config/env/exports
+source $HOME/.config/env/exports
 export ZSH=/usr/share/oh-my-zsh/
-# source /home/zocki/.config/scripts/tmux.sh
+# source $HOME/.config/scripts/tmux.sh
 
 ZSH_THEME="wezm"
 
@@ -66,14 +66,14 @@ remove_file()
 # Removing useless files
 remove_files()
 {
-	remove_file /home/zocki/.lesshst
-	remove_file /home/zocki/.calc_history
-	remove_file /home/zocki/.wget-hsts
-	remove_file /home/zocki/.xsession-errors.old
-	remove_file /home/zocki/.sqlite_history
+	remove_file $HOME/.lesshst
+	remove_file $HOME/.calc_history
+	remove_file $HOME/.wget-hsts
+	remove_file $HOME/.xsession-errors.old
+	remove_file $HOME/.sqlite_history
 }
 
-source /home/zocki/.config/env/aliases
+source $HOME/.config/env/aliases
 
 autoload -Uz compinit
 compinit
