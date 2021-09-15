@@ -1,45 +1,45 @@
-https://git.code.sf.net/p/abook/git
-https://github.com/cppfw/agg
-https://github.com/pdewacht/brlaser
-https://git.causal.agency/catgirl
-https://github.com/kieselsteini/cgo
-https://github.com/universal-ctags/ctags
-https://github.com/bmc/daemonize
-https://git.kernel.org/pub/scm/utils/dash/dash.git
-https://github.com/Duncaen/OpenDoas
-https://github.com/netblue30/firejail
-https://github.com/jhawthorn/fzy
-https://github.com/BafS/hn-top
-https://gitlab.com/thelinuxguy9/htim
-https://github.com/LukeEmmet/html2gmi
-https://github.com/msteveb/jimtcl
-git://git.codemadness.org/json2tsv
-https://github.com/skyjake/lagrange
-git://git.codemadness.org/lel
-https://github.com/jhawthorn/meh/
-https://github.com/lukesmithxyz/mutt-wizard
-https://github.com/raboof/nethogs
-https://github.com/newsboat/newsboat
-https://github.com/jarun/nnn
-https://github.com/bartobri/no-more-secrets
-https://github.com/neoncortex/poor-man-s-bookmark
-https://git.causal.agency/pounce
-https://github.com/Xfennec/progress
-https://github.com/rakitzis/rc
-https://github.com/z0gg3r/rnum
-https://github.com/mgudemann/sct
-https://github.com/sivel/speedtest-cli
-https://git.suckless.org/st
-git://git.codemadness.org/stagit/
-https://git.rawtext.club/sloum/stagit-gemini
-git://git.codemadness.org/stagit-gopher
-git://git.suckless.org/sites
-https://git.suckless.org/surf
-https://repo.or.cz/tinycc.git
-https://github.com/tcltk/tcl
-https://gitlab.com/zockerfreunde03/tempconv
-https://github.com/tcltk/tk
-https://github.com/xorg62/tty-clock
-https://github.com/vlang/v
-https://github.com/n-t-roff/heirloom-ex-vi
-https://github.com/schicho/vwc
+https://git.code.sf.net/p/abook/git abook-git
+https://github.com/cppfw/agg agg
+https://github.com/pdewacht/brlaser brlaser
+https://git.causal.agency/catgirl catgirl
+https://github.com/kieselsteini/cgo cgo
+https://github.com/universal-ctags/ctags ctags
+https://github.com/bmc/daemonize daemonize
+https://git.kernel.org/pub/scm/utils/dash/dash.git dash
+https://github.com/Duncaen/OpenDoas doas
+https://github.com/netblue30/firejail firejail
+https://github.com/jhawthorn/fzy fzy
+https://github.com/BafS/hn-top hn-top
+https://gitlab.com/thelinuxguy9/htim htim
+https://github.com/LukeEmmet/html2gmi html2gmi
+https://github.com/msteveb/jimtcl jimtcl
+git://git.codemadness.org/json2tsv json2tsv
+https://github.com/skyjake/lagrange lagrange
+git://git.codemadness.org/lel lel
+https://github.com/jhawthorn/meh meh
+https://github.com/lukesmithxyz/mutt-wizard muttwizard
+https://github.com/raboof/nethogs nethogs
+https://github.com/newsboat/newsboat newsboat
+https://github.com/jarun/nnn nnn
+https://github.com/bartobri/no-more-secrets no-more-secrets
+https://github.com/neoncortex/poor-man-s-bookmark pmb
+https://git.causal.agency/pounce pounce
+https://github.com/Xfennec/progress progress
+https://github.com/rakitzis/rc rc
+https://github.com/z0gg3r/rnum rnum
+https://github.com/mgudemann/sct sct
+https://github.com/sivel/speedtest-cli speedtest
+https://git.suckless.org/st st
+git://git.codemadness.org/stagit stagit
+https://git.rawtext.club/sloum/stagit-gemini stagit-gemini
+git://git.codemadness.org/stagit-gopher stagit-gopher
+git://git.suckless.org/sites suckless_website
+https://git.suckless.org/surf surf
+https://repo.or.cz/tinycc.git tcc
+https://github.com/tcltk/tcl tcl
+https://gitlab.com/zockerfreunde03/tempconv tempconv
+https://github.com/tcltk/tk tk
+https://github.com/xorg62/tty-clock tty-clock
+https://github.com/vlang/v v
+https://github.com/n-t-roff/heirloom-ex-vi vi
+https://github.com/schicho/vwc vwc
