@@ -8,7 +8,7 @@ END="\033[0m"
 die()
 {
 	echo "Could not enter a directory!"
-	exit
+	exit 1
 }
 
 git_pull()

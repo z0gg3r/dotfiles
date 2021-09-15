@@ -10,7 +10,7 @@ die()
 	else
 		notify-send "$1"
 	fi
-	exit
+	exit 1
 }
 db=$(/bin/ls $DB_PATH/*.db | replace "$DB_PATH/" ""  | rofi -dmenu)
 if [ -z "$db" ]

@@ -6,7 +6,7 @@ die()
 {
 	notify-send "Nothing selected, Aborting."
 	rm "$TMP_FILE"
-	exit
+	exit 1
 }
 
 abook --convert --infile "$PERS_FILE" --outfile "$TMP_FILE" --outformat csv

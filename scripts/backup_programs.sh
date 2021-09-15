@@ -5,7 +5,7 @@ BAK="$HOME/.program_repos"
 die()
 {
 	echo "Cannot enter $1"
-	exit
+	exit 1
 }
 
 update()

@@ -3,7 +3,7 @@
 if [ -z "$1" ]
 then
 	echo "No URL specified!"
-	exit
+	exit 1
 fi
 
 uri="$1"
