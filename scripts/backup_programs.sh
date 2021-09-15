@@ -4,7 +4,7 @@ BAK="$HOME/.program_repos"
 
 die()
 {
-	echo "$1"
+	echo "Cannot enter $1"
 	exit
 }
 
@@ -12,11 +12,11 @@ update()
 {
 	rm "$BAK"
 	cwd=$(pwd)
-	cd "$PROG_DIR" || die "Cannot enter $PROG_DIR"
+	cd "$PROG_DIR" || die "$PROG_DIR"
 	for dir in *
 	do
 		echo "Entering $dir"
-		cd "$dir" || die "Cannot enter $dir"
+		cd "$dir" || die "$dir"
 		if [ -e ".git/" ]
 		then
 			remote="$(git remote get-url origin)"
@@ -24,14 +24,14 @@ update()
 		fi
 		cd ..
 	done
-	cd "$cwd" || die "Cannot enter $cwd"
+	cd "$cwd" || die "$cwd"
 }
 
 deploy()
 {
 	cwd=$(pwd)
 	uris=$(cat "$BAK")
-	cd "$PROG_DIR" || die "Cannot enter $PROG_DIR"
+	cd "$PROG_DIR" || die "$PROG_DIR"
 	for uri in $uris
 	do
 		dir=$(cut -d " " -f2 "$uri")
@@ -40,6 +40,7 @@ deploy()
 			git clone "$uri"
 		fi
 	done
+	cd "$cwd" || die "$cwd"
 }
 
 if [ -z "$1" ]
