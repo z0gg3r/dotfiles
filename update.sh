@@ -73,6 +73,7 @@ update zshrc
 update gitconfig
 update tmux.conf
 update wallpapermap
+update program_repos
 
 if [ -e "$HOME/.config/scripts" ]
 then
