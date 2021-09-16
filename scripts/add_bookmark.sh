@@ -24,7 +24,7 @@ fi
 
 if [ -z "$db" ]
 then
-	db="/home/zocki/.config/pmb/bookmark.db"
+	db="/home/zocki/.config/pmb/bookmarks.db"
 else
 	db="/home/zocki/.config/pmb/$db.db"
 fi
