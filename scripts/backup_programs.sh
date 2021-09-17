@@ -15,10 +15,10 @@ update()
 	cd "$PROG_DIR" || die "$PROG_DIR"
 	for dir in *
 	do
-		echo "Entering $dir"
 		cd "$dir" || die "$dir"
 		if [ -e ".git/" ]
 		then
+			echo "Entering $dir..."
 			remote="$(git remote get-url origin)"
 			echo "${remote%/} $dir" >> "$BAK"
 		fi
