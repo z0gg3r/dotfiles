@@ -17,7 +17,7 @@ update()
 {
 	if [ -z "$2" ] && [ -e "$HOME/.$1" ]
 	then
-		if _diff "$1" "$HOME/.$1"
+		if ! _diff "$1" "$HOME/.$1"
 		then
 			echo "$CHANGE Updating $1! $END"
 			cp "$HOME/.$1" "$1"
@@ -25,6 +25,7 @@ update()
 			echo "$UPTODATE $1 is up-to-date! $END"
 		fi
 	elif ! [ -z "$2" ]
+	then
 		mkdir "$1"
 		echo "$CHANGE Updating $1... $END"
 		if [ -z "$3" ]
@@ -47,8 +48,10 @@ update()
 				fi
 			done
 		fi
-	then
 	else
 		echo "$ERROR Cannot update $1 $END"
 	fi
 }
+
+
+update program_repos
