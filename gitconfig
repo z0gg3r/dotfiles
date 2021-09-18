@@ -1,6 +1,7 @@
 [user]
 	name = zocker
 	email = zocker@10zen.eu
+	signingkey = C6732898
 
 [core]
 	editor = vim
