@@ -14,3 +14,7 @@
 
 [advice]
 	addIgnoredFile = false
+[format]
+	pretty = format:%h %G? %Cblue%ai%Creset %Cgreen%aN%Creset <%Cgreen%aE%Creset> %s
+[commit]
+	gpgSign = true
