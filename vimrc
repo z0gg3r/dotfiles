@@ -86,17 +86,23 @@ if !exists('g:tagbar_type_rust')
                 \ }
 endif
 
-" YCM Blocklist
-let g:ycm_filetype_blacklist = {
-	\ 'tagbar': 1,
-	\ 'notes': 1,
-	\ 'markdown': 1,
-	\ 'netrw': 1,
-	\ 'unite': 1,
-	\ 'text': 1,
-	\ 'vimwiki': 1,
-	\ 'pandoc': 1,
-	\ 'infolog': 1,
-	\ 'leaderf': 1,
-	\ 'mail': 1
-	\}
+" YCM Allowlist
+let g:ycm_filetype_whitelist = {
+	\ '*.c': 1,
+	\ '*.h': 1,
+	\ '*.rs': 1,
+	\ '*.py': 1,
+	\ '*.cpp': 1,
+	\ '*.java': 1,
+	\ '*.tcl': 1,
+	\ '*.d': 1,
+	\ '*.sh': 1,
+	\ '*.el': 1,
+	\ '*.css': 1,
+	\ '*.html': 1,
+	\ '*.js': 1,
+	\ '*.php': 1,
+	\ '*.vim': 1,
+	\ '*.ts': 1,
+	\ '*.scss': 1
+	\ }
