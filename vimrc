@@ -12,12 +12,10 @@ set history=1024
 set nomodeline
 set tabstop=8
 set shiftwidth=8
-colo elflord
 
 call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'reedes/vim-pencil'
 	Plug 'vim-airline/vim-airline'
-"	Plug 'preservim/tagbar'
 	Plug 'majutsushi/tagbar'
 	Plug 'xolox/vim-misc'
 	Plug 'xolox/vim-easytags'
@@ -25,7 +23,15 @@ call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'ollykel/v-vim'
 	Plug 'junegunn/goyo.vim'
 	Plug 'rust-lang/rust.vim'
+	Plug 'haystackandroid/strawberry'
+	Plug 'sainnhe/sonokai'
+	Plug 'joshdick/onedark.vim'
+	Plug 'brettbar/siena.vim'
+	Plug 'scrooloose/syntastic'
+	Plug 'valloric/youcompleteme'
 call plug#end()
+
+colorscheme sonokai
 
 augroup pencil
   autocmd!
@@ -79,3 +85,18 @@ if !exists('g:tagbar_type_rust')
                 \ ]
                 \ }
 endif
+
+" YCM Blocklist
+let g:ycm_filetype_blacklist = {
+	\ 'tagbar': 1,
+	\ 'notes': 1,
+	\ 'markdown': 1,
+	\ 'netrw': 1,
+	\ 'unite': 1,
+	\ 'text': 1,
+	\ 'vimwiki': 1,
+	\ 'pandoc': 1,
+	\ 'infolog': 1,
+	\ 'leaderf': 1,
+	\ 'mail': 1
+	\}
