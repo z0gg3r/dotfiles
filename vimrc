@@ -29,6 +29,7 @@ call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'brettbar/siena.vim'
 	Plug 'scrooloose/syntastic'
 	Plug 'valloric/youcompleteme'
+	Plug 'dpelle/vim-languagetool'
 call plug#end()
 
 colorscheme sonokai
@@ -60,15 +61,28 @@ let g:tagbar_wrap = 1
 
 let g:goyo_width = 82
 
+let g:spell_on=0
+let g:languagetool_jar='$HOME/Downloads/langtool/LanguageTool-5.4/languagetool-commandline.jar'
+let g:languagetool_disable_rules='DASH_RULE,UNIT_SPACE'
+" Spellchecker
+function! Toggle_spell()
+	if !g:spell_on
+		let g:spell_on=1
+		:LanguageToolCheck
+	else
+		let g:spell_on=0
+		:LanguageToolClear
+	endif
+endfunction
+
 " Nmaps
 nmap <F5> :PlugUpgrade<CR>:PlugUpdate<CR>
 nmap <F4> :TagbarToggle<CR>
-nmap <F6> :Goyo<CR>
+nmap <F8> :Goyo<CR>
 nmap <F10> :RustFmt<CR>
-nmap <F7> :call pencil#init({'wrap': 'hard'})<CR>
-nmap <F8> :call deadkeys#ToggleDeadKeys()<CR>
-
-" Tagbar customs
+nmap <F6> :call pencil#init({'wrap': 'hard'})<CR>
+nmap <F7> :call deadkeys#ToggleDeadKeys()<CR>
+nmap <F9> :call Toggle_spell()<CR>
 
 if !exists('g:tagbar_type_rust')
     let g:tagbar_type_rust = {
