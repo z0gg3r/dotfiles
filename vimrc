@@ -96,7 +96,7 @@ let g:ycm_filetype_whitelist = {
 	\ 'tcl': 1,
 	\ 'd': 1,
 	\ 'sh': 1,
-	\ 'vlang': 1
+	\ 'vlang': 1,
 	\ 'css': 1,
 	\ 'sql': 1,
 	\ 'html': 1,
