@@ -4,8 +4,8 @@ https://taz.de/!p4608;rss/
 https://www.heise.de/rss/heise-atom.xml
 https://pinknews.co.uk/feed
 https://www.volksverpetzer.de/feed
-https://www.jungewelt.de/feeds/newsticker.rss
-https://www.jungewelt.de/feeds/wochenendbeilage.xml
+https://www.jungewelt.de/feeds/newsticker.rss "~ Junge Welt"
+https://www.jungewelt.de/feeds/wochenendbeilage.xml "~ Junge Welt (Wochenendsbeilage)"
 https://gnulinux.ch/rss.xml
 https://www.kuketz-blog.de/feed/
 https://www.linuxfoundation.org/feed/
