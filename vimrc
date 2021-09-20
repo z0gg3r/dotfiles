@@ -88,21 +88,22 @@ endif
 
 " YCM Allowlist
 let g:ycm_filetype_whitelist = {
-	\ '*.c': 1,
-	\ '*.h': 1,
-	\ '*.rs': 1,
-	\ '*.py': 1,
-	\ '*.cpp': 1,
-	\ '*.java': 1,
-	\ '*.tcl': 1,
-	\ '*.d': 1,
-	\ '*.sh': 1,
-	\ '*.el': 1,
-	\ '*.css': 1,
-	\ '*.html': 1,
-	\ '*.js': 1,
-	\ '*.php': 1,
-	\ '*.vim': 1,
-	\ '*.ts': 1,
-	\ '*.scss': 1
+	\ 'c': 1,
+	\ 'rust': 1,
+	\ 'python': 1,
+	\ 'cpp': 1,
+	\ 'java': 1,
+	\ 'tcl': 1,
+	\ 'd': 1,
+	\ 'sh': 1,
+	\ 'vlang': 1
+	\ 'css': 1,
+	\ 'sql': 1,
+	\ 'html': 1,
+	\ 'lisp': 1,
+	\ 'javascript': 1,
+	\ 'php': 1,
+	\ 'vim': 1,
+	\ 'typescript': 1,
+	\ 'scss': 1
 	\ }
