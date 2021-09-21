@@ -1,4 +1,4 @@
-alias updates="pacman -Qu"
+alias updates="doas pacman -Syu"
 alias keep_wallpaper="touch /home/zocki/.wallpaper_change"
 alias rls="ls -Ar"
 alias nnn="nnn -H"
