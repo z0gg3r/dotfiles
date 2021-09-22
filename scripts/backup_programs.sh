@@ -1,5 +1,10 @@
 #! /bin/sh
-PROG_DIR="$HOME/programs"
+if [ -z "$PROGRAMS" ]
+then
+	PROG_DIR="$HOME/programs"
+else
+	PROG_DIR="$PROGRAMS"
+fi
 BAK="$HOME/.program_repos"
 
 die()
@@ -34,7 +39,7 @@ deploy()
 	cd "$PROG_DIR" || die "$PROG_DIR"
 	for uri in $uris
 	do
-		dir=$(cut -d " " -f2 "$uri")
+		dir=$(echo "$uri" | cut -d " " -f2)
 		if ! [ -e "$dir" ]
 		then
 			git clone "$uri"
@@ -53,4 +58,5 @@ case $1 in
 	"up" ) update ;;
 	"deploy" ) deploy ;;
 	"dep" ) deploy ;;
+	*) update ;;
 esac
