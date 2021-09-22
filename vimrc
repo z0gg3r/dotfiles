@@ -27,7 +27,8 @@ call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'sainnhe/sonokai'
 	Plug 'joshdick/onedark.vim'
 	Plug 'brettbar/siena.vim'
-	Plug 'scrooloose/syntastic'
+	"Plug 'scrooloose/syntastic'
+	Plug 'w0rp/ale'
 	Plug 'valloric/youcompleteme'
 call plug#end()
 
