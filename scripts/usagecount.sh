@@ -4,9 +4,9 @@ usage()
 {
 	if ! [ -z "$1" ]
 	then
-		echo "$(grep "$prog" < /home/zocki/.zsh_history | cut -d ';' -f2 | grep -c -E "^$prog")"
+		echo "$(grep -a "$prog" < /home/zocki/.zsh_history | cut -d ';' -f2 | grep -a -c -E "^$prog")"
 	else
-		echo "$(grep "doas" < /home/zocki/.zsh_history | cut -d ';' -f2 | grep -c -E "^doas")"
+		echo "$(grep -a "doas" < /home/zocki/.zsh_history | cut -d ';' -f2 | grep -a -c -E "^doas")"
 	fi
 }
 
