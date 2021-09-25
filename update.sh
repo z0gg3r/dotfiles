@@ -54,13 +54,13 @@ dir_update() {
 		elif ! [ -e "$1/$file" ]
 		then
 			echo "$CHANGE_COLOUR_START Creating $1/$file $COLOUR_END"
-			cp "$HOME/.config/$1/$file" "$1/$file"
+			cp -r "$HOME/.config/$1/$file" "$1/$file"
 		elif diff "$1" "$HOME/.config/$1/$file" > /dev/null
 		then
 			echo "$UPTODATE_COLOUR_START $file is up-to-date $COLOUR_END"
 		else
 			echo "$CHANGE_COLOUR_START Updating $1/$file $COLOUR_END"
-			cp "$HOME/.config/$1/$file" "$1/$file"
+			cp -r "$HOME/.config/$1/$file" "$1/$file"
 		fi
 		ignore=""
 	done

@@ -32,7 +32,7 @@ update()
 		then
 			for file in $2
 			do
-				cp "$file" "$1"
+				cp -r "$file" "$1"
 			done
 		else
 			for file in $2
@@ -42,10 +42,11 @@ update()
 				esac
 				if [ -z "$ignore" ]
 				then
-					cp "$file" "$1"
+					cp -r "$file" "$1"
 				else
 					echo "$IGNORE Ignoring $file! $END"
 				fi
+				ignore=""
 			done
 		fi
 	else
