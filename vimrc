@@ -27,9 +27,7 @@ call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'sainnhe/sonokai'
 	Plug 'joshdick/onedark.vim'
 	Plug 'brettbar/siena.vim'
-	"Plug 'scrooloose/syntastic'
 	Plug 'w0rp/ale'
-	Plug 'valloric/youcompleteme'
 call plug#end()
 
 colorscheme sonokai
@@ -83,25 +81,3 @@ if !exists('g:tagbar_type_rust')
                 \ ]
                 \ }
 endif
-
-" YCM Allowlist
-let g:ycm_filetype_whitelist = {
-	\ 'c': 1,
-	\ 'rust': 1,
-	\ 'python': 1,
-	\ 'cpp': 1,
-	\ 'java': 1,
-	\ 'tcl': 1,
-	\ 'd': 1,
-	\ 'sh': 1,
-	\ 'vlang': 1,
-	\ 'css': 1,
-	\ 'sql': 1,
-	\ 'html': 1,
-	\ 'lisp': 1,
-	\ 'javascript': 1,
-	\ 'php': 1,
-	\ 'vim': 1,
-	\ 'typescript': 1,
-	\ 'scss': 1
-	\ }
