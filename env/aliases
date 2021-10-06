@@ -1,4 +1,5 @@
 alias updates="doas pacman -Syu"
+alias surf="surf -u '$SURF_USERAGENT'"
 alias keep_wallpaper="touch /home/zocki/.wallpaper_change"
 alias rls="ls -Ar"
 alias cls="clear; ls"

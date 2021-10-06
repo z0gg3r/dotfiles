@@ -4,4 +4,4 @@ firejail \
 	--hosts-file="/home/zocki/.config/adblocklist" \
 	--private \
 	--trace \
-	surf -s -g -m -n "$1"
+	surf -u "$SURF_USERAGENT" -s -g -m -n "$1"
