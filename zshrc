@@ -55,6 +55,20 @@ ex ()
   fi
 }
 
+ff()
+{
+	if [ -f "$1" ]
+	then
+		case "$1" in
+			*.png) png2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
+			*.jpg) jpg2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
+			*.ff) lel "$1" ;;
+			*) echo "Can't convert that format." ''
+		esac
+	fi
+	rm -f /tmp/image.ff
+}
+
 remove_file()
 {
 	if [ -e "$1" ]
