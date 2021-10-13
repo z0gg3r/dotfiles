@@ -2,7 +2,7 @@ export PATH="$(/usr/bin/cat /home/zocki/.config/env/path)"
 export PERL5LIB="$(/usr/bin/cat /home/zocki/.config/env/perl5lib)"
 export EDITOR="vim"
 export VISUAL="vim"
-export MANDWIDTH="80"
+export MANWIDTH="80"
 export GPG_TTY=$(tty)
 export SURF_USERAGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
 export CFLAGS="-Wall -std=c99"
