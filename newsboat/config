@@ -4,3 +4,5 @@ player "mpv"
 auto-reload "yes"
 reload-threads 10
 prepopulate-query-feeds "yes"
+confirm-mark-all-feeds-read "no"
+confirm-mark-feed-read "no"
