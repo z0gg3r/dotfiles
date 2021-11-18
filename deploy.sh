@@ -42,3 +42,4 @@ deploy_dir scripts $HOME/.config/scripts
 deploy_dir env $HOME/.config/env
 deploy_dir configures $HOME/.config/configures
 deploy_dir newsboat $HOME/.config/newsboat
+deploy_dir sakura $HOME/.config/sakura

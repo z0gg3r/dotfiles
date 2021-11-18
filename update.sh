@@ -94,3 +94,8 @@ if [ -e "$HOME/.config/newsboat" ]
 then
 	dir_update newsboat cache.db
 fi
+
+if [ -e "$HOME/.config/sakura" ]
+then
+	dir_update sakura
+fi
