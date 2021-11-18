@@ -1,1 +1,2 @@
 --enable-man --disable-tcl
+CFLAGS="-D_BSD_SOURCE $CFLAGS"

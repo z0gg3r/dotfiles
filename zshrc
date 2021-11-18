@@ -69,6 +69,11 @@ ff()
 	rm -f /tmp/image.ff
 }
 
+bookmark_extract()
+{
+	echo "hq a attr href > dest < source"
+}
+
 remove_file()
 {
 	if [ -e "$1" ]
