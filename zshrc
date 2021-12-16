@@ -1,7 +1,6 @@
 # All non-zsh exports go in there!
 source $HOME/.config/env/exports
 export ZSH=/usr/share/oh-my-zsh/
-# source $HOME/.config/scripts/tmux.sh
 
 ZSH_THEME="wezm"
 
