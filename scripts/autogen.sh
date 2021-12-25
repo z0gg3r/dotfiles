@@ -2,6 +2,10 @@
 remove_auto()
 {
 	echo "Remove Autotools stuff"
+	echo "rm -f config.h.in Makefile.in"
+	echo "rm -f aclocal.m4 configure config.log config.status"
+	echo "rm -rf autom4te*.cache"
+	echo "rm -rf build-aux"
 	rm -f config.h.in Makefile.in
 	rm -f aclocal.m4 configure config.log config.status
 	rm -rf autom4te*.cache
@@ -11,8 +15,10 @@ remove_auto()
 add_auto()
 {
 	echo "Reconfigure Autotools"
+	echo "mkdir build-aux"
+	echo "autoreconf -vi"
 	mkdir build-aux
-	autoreconf -i
+	autoreconf -vi
 }
 
 help()
