@@ -12,6 +12,7 @@ https://github.com/bmc/daemonize daemonize
 https://git.kernel.org/pub/scm/utils/dash/dash.git dash
 https://github.com/Duncaen/OpenDoas doas
 https://git.suckless.org/farbfeld farbfeld
+https://github.com/silentbicycle/ff ff
 https://github.com/netblue30/firejail firejail
 https://github.com/jhawthorn/fzy fzy
 https://github.com/BafS/hn-top hn-top
@@ -24,6 +25,7 @@ https://github.com/klatexformula/klatexformula klatexformula
 git://git.codemadness.org/lel lel
 https://github.com/jhawthorn/meh meh
 https://github.com/lukesmithxyz/mutt-wizard muttwizard
+https://github.com/vigna/ne ne
 https://github.com/raboof/nethogs nethogs
 https://github.com/newsboat/newsboat newsboat
 https://github.com/jarun/nnn nnn
