@@ -1,3 +1,4 @@
+alias valgrind="valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes"
 alias is_defined_h="cat /home/zocki/.config/env/is_defined"
 alias betty="/home/zocki/programs/betty/main.rb"
 alias sdp="spd-say -w -r 25"
