@@ -37,7 +37,9 @@ https://git.causal.agency/pounce pounce
 https://github.com/Xfennec/progress progress
 https://github.com/rakitzis/rc rc
 https://github.com/z0gg3r/rnum rnum
+https://github.com/rr-debugger/rr rr
 https://github.com/mgudemann/sct sct
+https://git.suckless.org/slock slock
 https://github.com/pasky/speedread speedread
 https://github.com/sivel/speedtest-cli speedtest
 https://git.suckless.org/st st
@@ -57,3 +59,4 @@ https://github.com/schicho/vwc vwc
 https://github.com/weechat/weechat weechat
 https://github.com/poljar/weechat-matrix weechat-matrix
 https://github.com/bryanherger/xdrawchem xdrawchem
+git://git.suckless.org/xssstate xssstate
