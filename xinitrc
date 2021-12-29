@@ -24,15 +24,15 @@ export GTK_IM_MODULE="uim"
 export QT_IM_MODULE="uim"
 export XMODIFIERS=@im=uim
 start uim-xim
+start uim-toolbar-gtk3-systray
 
 xset s 0
 
-wm="awesome"
-
 case "$1" in
-	"dwm") wm="dwm" ;;
+	"dwm") exec dwm ;;
 	"gnome") XDG_SESSION_TYPE=x11 GDK_BACKEND=x11 exec gnome-session ;;
-	*) wm="awesome" ;;
+	"xfce") exec startxfce4 ;;
+	"bspwm") exec bswpm ;;
+	"kde") DESKTOP_SESSION=plasma exec startplasma-x11 ;;
+	*) exec awesome ;;
 esac
-
-exec $wm
