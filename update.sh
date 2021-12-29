@@ -74,6 +74,8 @@ update gitconfig
 update tmux.conf
 update wallpapermap
 update program_repos
+update xinitrc
+update xserverrc
 
 if [ -e "$HOME/.config/scripts" ]
 then
