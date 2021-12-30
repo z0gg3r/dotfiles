@@ -1,4 +1,3 @@
-https://github.com/robiot/XClicker XClicker
 https://git.code.sf.net/p/abook/git abook-git
 https://github.com/ggreer/the_silver_searcher ag
 https://github.com/onetrueawk/awk bawk
@@ -23,6 +22,7 @@ https://github.com/msteveb/jimtcl jimtcl
 git://git.codemadness.org/json2tsv json2tsv
 https://github.com/klatexformula/klatexformula klatexformula
 git://git.codemadness.org/lel lel
+https://github.com/yusiwen/libptytty libptytty
 https://github.com/jhawthorn/meh meh
 https://github.com/lukesmithxyz/mutt-wizard muttwizard
 https://github.com/vigna/ne ne
@@ -58,5 +58,6 @@ https://github.com/n-t-roff/heirloom-ex-vi vi
 https://github.com/schicho/vwc vwc
 https://github.com/weechat/weechat weechat
 https://github.com/poljar/weechat-matrix weechat-matrix
+https://github.com/robiot/XClicker xclicker
 https://github.com/bryanherger/xdrawchem xdrawchem
 git://git.suckless.org/xssstate xssstate
