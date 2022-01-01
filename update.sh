@@ -1,103 +1,120 @@
 #! /bin/sh
+UPTODATE="\033[32;48m"
+CHANGE="\033[33;38m"
+ERROR="\033[31;48m"
+INFO="\033[35;48m"
+IGNORE="\033[34;48m"
+END="\033[0m"
 
-UPTODATE_COLOUR_START="\033[32;48m"
-CHANGE_COLOUR_START="\033[33;48m"
-ERROR_COLOUR_START="\033[31;48m"
-INFO_COLOUR_START="\033[30;47m"
-IGNORE_COLOUR_START="\033[34;48m"
-COLOUR_END="\033[0m"
+echo "$INFO Assuming echo does not need -e for colour output! $END"
 
-update() {
-	if ! [ -z "$2"  ]
-	then
-		if ! [ -e "$2" ]
-		then
-			echo "$ERROR_COLOUR_START $2 does not exist $COLOUR_END"
-		elif ! [ -e "$1" ]
-		then
-			echo "$CHANGE_COLOUR_START Creating $1 $COLOUR_END"
-			cp "$2" "$1"
-		elif diff "$1" "$2" > /dev/null
-		then
-			echo "$UPTODATE_COLOUR_START $1 is up-to-date $COLOUR_END"
-		else
-			echo "$CHANGE_COLOUR_START Updating $1 $COLOUR_END"
-			cp "$2" "$1"
-		fi
-	elif ! [ -e "$HOME/.$1" ]
-	then
-		echo "$ERROR_COLOUR_START $1 does not exist in $HOME $COLOUR_END"
-	elif ! [ -e "$1" ]
-	then
-		echo "$CHANGE_COLOUR_START Creating $1 $COLOUR_END"
-		cp "$HOME/.$1" "$1"
-	elif  diff "$1" "$HOME/.$1" > /dev/null
-	then
-		echo "$UPTODATE_COLOUR_START $1 is up-to-date $COLOUR_END"
-	else
-		echo "$CHANGE_COLOUR_START Updating $1 $COLOUR_END"
-	       	cp "$HOME/.$1" "$1"
-	fi
+die()
+{
+	echo "$ERROR $1 $END"
+	exit 1
 }
 
-dir_update() {
-	mkdir -p "$1"
-	echo "$INFO_COLOUR_START Checking $1... $COLOUR_END"
-	for file in $(/usr/bin/ls "$HOME"/.config/"$1")
+_diff()
+{
+	diff "$1" "$2" > /dev/null
+}
+
+# Args
+# $1 = Path to dir
+# $2 = Files to ignore
+update_dir()
+{
+	dir_path=$1
+	count=$(echo "$dir_path" | sed -e 's/\(.\)/\1\n/g' | grep -c "/")
+	count=$(echo "$count 1 +pq" | dc)
+	dir=$(echo "$dir_path" | cut -d/ -f$count)
+	ignore_list=$2
+	if ! [ -e "$dir_path" ]
+	then
+		die "$dir_path does not exist!"
+	fi
+	echo "$INFO Updating $dir_path... $END"
+	if ! [ -e "$dir" ]
+	then
+		mkdir "$dir"
+	fi
+	for file in $($(which ls) "$dir_path")
 	do
-		case $2 in
+		case $ignore_list in
 			*$file*) ignore="yes" ;;
 		esac
-		if ! [ -z "$ignore" ]
+		if [ -z "$ignore" ]
 		then
-			echo "$IGNORE_COLOUR_START $file will be ignored. $COLOUR_END"
-		elif ! [ -e "$1/$file" ]
-		then
-			echo "$CHANGE_COLOUR_START Creating $1/$file $COLOUR_END"
-			cp -r "$HOME/.config/$1/$file" "$1/$file"
-		elif diff "$1" "$HOME/.config/$1/$file" > /dev/null
-		then
-			echo "$UPTODATE_COLOUR_START $file is up-to-date $COLOUR_END"
+			update_file "$dir_path/$file" "$dir/$file"
 		else
-			echo "$CHANGE_COLOUR_START Updating $1/$file $COLOUR_END"
-			cp -r "$HOME/.config/$1/$file" "$1/$file"
+			echo "$IGNORE $dir/$file will be ignored!$END"
 		fi
 		ignore=""
 	done
 }
 
+# Args 
+# $1 = Path to file
+# $2 = Path in repo
+update_file()
+{
+	if [ -z "$1" ]; then die "You have to give at least one argument"; fi
+	file_path="$1"
+	file_name="$2"
+	if [ -z "$file_name" ]
+	then
+		count=$(echo "$file_path" | sed -e 's/\(.\)/\1\n/g' | grep -c "/")
+		count=$(echo "$count 1 +pq" | dc)
+		file_name=$(echo "$file_path" | cut -d/ -f$count)
+	fi
 
-echo "Using $HOME as home"
-update vimrc
-update zshrc
-update gitconfig
-update tmux.conf
-update wallpapermap
-update program_repos
-update xinitrc
-update xserverrc
+	count=$(echo "$file_name" | sed -e 's/\(.\)/\1\n/g' | grep -c "/")
+	count=$(echo "$count 1 +pq" | dc)
+	tmp=$(echo "$file_name" | replace "$(echo "$file_name" | cut -d/ -f$count)" "")
+	if ! [ -e "$tmp" ] && [ -n "$tmp" ]
+	then
+		mkdir -p "$tmp"
+	fi
 
-if [ -e "$HOME/.config/scripts" ]
-then
-	dir_update scripts
-fi
+	if [ -e "$file_name" ] && [ -e "$file_path" ]
+	then
+		if ! _diff "$file_path" "$file_name"
+		then
+			echo "$CHANGE Updating $file_name! $END"
+			cp "$file_path" "$file_name"
+		else
+			echo "$UPTODATE $file_name is up-to-date! $END"
+		fi
+	elif ! [ -e "$file_name" ] && [ -e "$file_path" ]
+	then
+		echo "$CHANGE Creating $file_name! $END"
+		cp "$file_path" "$file_name"
+	elif [ ! -e "$file_path" ]
+	then
+		die "$file_path does not exist!"
+	fi
+}
 
-if [ -e "$HOME/.config/env" ]
-then
-	dir_update env
-fi
+update()
+{
+	if [ "$(file "$1" | cut -d ":" -f2)" = " directory" ]
+	then
+		update_dir "$1" "$2"
+	else
+		update_file "$1" "$2"
+	fi
+}
 
-if [ -e "$HOME/.config/configures" ]
-then
-	dir_update configures
-fi
-
-if [ -e "$HOME/.config/newsboat" ]
-then
-	dir_update newsboat cache.db
-fi
-
-if [ -e "$HOME/.config/sakura" ]
-then
-	dir_update sakura
-fi
+update "/home/zocki/.vimrc" "vimrc"
+update "/home/zocki/.zshrc" "zshrc"
+update "/home/zocki/.gitconfig" "gitconfig"
+update "/home/zocki/.tmux.conf" "tmux.conf"
+update "/home/zocki/.wallpapermap" "wallpapermap"
+update "/home/zocki/.program_repos" "program_repos"
+update "/home/zocki/.xinitrc" "xinitrc"
+update "/home/zocki/.xserverrc" "xserverrc"
+update "/home/zocki/.config/scripts"
+update "/home/zocki/.config/env"
+update "/home/zocki/.config/configures"
+update "/home/zocki/.config/newsboat" "cache.db"
+update "/home/zocki/.config/sakura"
