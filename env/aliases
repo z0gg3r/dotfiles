@@ -1,4 +1,3 @@
-alias less="less -X --mouse"
 alias weechat="LD_PRELOAD=/home/zocki/.local/lib/libwcwidth.so weechat"
 alias valgrind="valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes"
 alias is_defined_h="cat /home/zocki/.config/env/is_defined"
