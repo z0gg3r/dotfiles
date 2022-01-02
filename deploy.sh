@@ -37,6 +37,10 @@ deploy vimrc
 deploy wallpapermap
 deploy gitconfig
 deploy tmux.conf
+deploy codemap "$HOME/.config/codemap"
+deploy emojimap "$HOME/.config/emojimap"
+deploy xinitrc
+deploy xserverrc
 
 deploy_dir scripts $HOME/.config/scripts
 deploy_dir env $HOME/.config/env
