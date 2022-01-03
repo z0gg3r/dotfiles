@@ -19,6 +19,7 @@ alias sct_cycle="sct_off && sct_on"
 alias wallpaperlog="less -N --mouse" $HOME/.config/.wallpaperlog
 alias search="pacman -Ss"
 alias gpl="cp /usr/share/licenses/common/GPL3/license.txt LICENSE"
+alias lrs="hunspell -d de_DE"
 alias spell="hunspell -d en_GB-large"
 alias calc="calc -p"
 alias aliases="cat $HOME/.config/env/aliases | cut -c 6- | less"
