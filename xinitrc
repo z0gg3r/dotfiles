@@ -9,7 +9,7 @@ start()
 	daemonize -u "zocki" "$(which "$1")"
 }
 
-xset s 0
+xset s off
 
 # Nvidia
 start nvidia-settings --load-config-only
