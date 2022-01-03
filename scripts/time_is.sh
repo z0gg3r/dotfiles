@@ -6,4 +6,4 @@ then
 	exit 1
 fi
 
-/home/zocki/.config/newsboat/surf.sh "$URI_BASE/$1"
+curl -sL "$URI_BASE/$1" | hq time text
