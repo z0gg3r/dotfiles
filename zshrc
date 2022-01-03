@@ -25,7 +25,6 @@ unalias ls
 unalias la
 unalias ll
 unalias l
-# unalias l.
 
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
@@ -86,7 +85,6 @@ remove_file()
 # Removing useless files
 remove_files()
 {
-	remove_file $HOME/.lesshst
 	remove_file $HOME/.calc_history
 	remove_file $HOME/.wget-hsts
 	remove_file $HOME/.xsession-errors.old
