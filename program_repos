@@ -4,6 +4,7 @@ https://github.com/onetrueawk/awk bawk
 https://github.com/pickhardt/betty betty
 https://gitlab.com/zockerfreunde03/blocklisten.git blocklisten
 https://github.com/pdewacht/brlaser brlaser
+https://github.com/caffeine-ng/caffeine-ng caffeine-ng
 https://git.causal.agency/catgirl catgirl
 https://github.com/kieselsteini/cgo cgo
 https://github.com/universal-ctags/ctags ctags
@@ -29,11 +30,13 @@ https://github.com/raboof/nethogs nethogs
 https://github.com/newsboat/newsboat newsboat
 https://github.com/jarun/nnn nnn
 https://github.com/bartobri/no-more-secrets no-more-secrets
+https://github.com/nsxiv/nsxiv nsxiv
 https://gitlab.matrix.org/matrix-org/olm.git olm
 https://github.com/PintaProject/Pinta pinta
 https://github.com/neoncortex/poor-man-s-bookmark pmb
 https://git.causal.agency/pounce pounce
 https://github.com/Xfennec/progress progress
+https://github.com/bellard/quickjs quickjs
 https://github.com/rakitzis/rc rc
 https://github.com/z0gg3r/rnum rnum
 https://github.com/rr-debugger/rr rr
@@ -57,6 +60,7 @@ https://github.com/n-t-roff/heirloom-ex-vi vi
 https://github.com/schicho/vwc vwc
 https://github.com/weechat/weechat weechat
 https://github.com/poljar/weechat-matrix weechat-matrix
+https://github.com/poljar/weechat-matrix-rs weechat-matrix-rs
 https://github.com/robiot/XClicker xclicker
 https://github.com/bryanherger/xdrawchem xdrawchem
 git://git.suckless.org/xssstate xssstate
