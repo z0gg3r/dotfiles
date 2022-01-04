@@ -15,7 +15,7 @@ die()
 db=$(/bin/ls $DB_PATH/*.db | replace "$DB_PATH/" ""  | rofi -dmenu)
 if [ -z "$db" ]
 then
-	die
+	die "No db was chosen"
 fi
 
 PMB="pmb -f "$DB_PATH/$db""
@@ -23,14 +23,14 @@ PMB="pmb -f "$DB_PATH/$db""
 chosen=$($PMB -p field=name | rofi -dmenu)
 if [ -z "$chosen" ] 
 then
-	die
+	die "No bookmark was chosen"
 fi
 
 url=$($PMB -s name="$chosen",field=url)
 
-if [ -z "$chosen" ]
+if [ -z "$url" ]
 then
-	die
+	die "No url could be queried"
 fi
 
 xdotool type --delay 0 "$url"
