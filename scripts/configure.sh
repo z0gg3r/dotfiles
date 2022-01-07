@@ -2,7 +2,7 @@
 
 pwd=$(pwd)
 
-chosen=$(/bin/ls /home/zocki/.config/configures | rofi -dmenu)
+chosen=$(/bin/ls /home/zocki/.config/configures | fzy)
 
 if [ -z "$chosen" ]
 then
