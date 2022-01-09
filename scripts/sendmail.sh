@@ -1,7 +1,7 @@
 #! /bin/sh
 MAIL_DIR="/home/zocki/.local/share/sendmail"
 READ="read"
-UNREAD="new"
+UNREAD="unread"
 
 die()
 {
@@ -43,7 +43,7 @@ read_mail()
 	then
 		less "$MAIL_DIR/$READ/$1"
 	else
-		die "$1 does not exist."
+		echo "$1 does not exist"
 	fi
 }
 
@@ -88,9 +88,77 @@ remove_unread_mail()
 	done
 }
 
+read_menu()
+{
+	mail_count
+	choice=$(printf "%b\n%b\nclose" "$READ" "$UNREAD" | fzy )
+	if [ -z "$choice" ]
+	then
+		die "Aborted selection."
+	fi
+	if [ "$choice" = "close" ]
+	then
+		echo "Closing sendmail.sh!"
+		exit
+	fi
+	
+	tmp_file="$MAIL_DIR/$choice/close"
+	touch "$tmp_file"
+
+	choice=$(ls "$MAIL_DIR"/"$choice" | fzy)
+	if [ -z "$choice" ]
+	then
+		die "Aborted mail selection."
+	fi
+	if [ "$choice" = "close" ]
+	then
+		echo "Exiting mail selection."
+		rm "$tmp_file"
+		exit
+	fi
+	rm "$tmp_file"
+	read_mail "$choice"
+	mail_count
+}
+
+read_wrapper()
+{
+	if [ -z "$1" ]
+	then
+		read_menu
+	else
+		read_mail "$1"
+		shift
+		while [ $# -ge 1 ]
+		do
+			read_mail "$1"
+			shift
+		done
+	fi
+}
+
 usage()
 {
-	echo "sendmail [status | mark-all-read | mark-read | list-unread | list-read | read | remove-read | remove-unread]"
+	printf "sendmail "
+	printf "["
+	printf "status"
+	printf " | "
+	printf "mark-all-read"
+	printf " | "
+	printf "mark-read"
+	printf " | "
+	printf "list-unread"
+	printf " | "
+	printf "list-read"
+	printf " | "
+	printf "read"
+	printf " | "
+	printf "read-menu"
+	printf " | "
+	printf "remove-read"
+	printf " | "
+	printf "remove-unread"
+	printf "]\n"
 }
 
 case $1 in
@@ -101,8 +169,10 @@ case $1 in
 	"list-unread") list_unread ;;
 	"list-read") list_read ;;
 	"mark-read") mark_read "$2" ;;
-	"read") read_mail "$2" ;;
+	"read") shift && read_wrapper "$@" ;;
+	"read-menu") read_menu ;;
 	"remove-read") shift && remove_read_mail "$@" ;;
 	"remove-unread") shift && remove_unread_mail "$@" ;;
-	*) add_mail ;;
+	"add") add_mail ;;
+	*) usage ;;
 esac
