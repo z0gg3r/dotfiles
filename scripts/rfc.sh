@@ -6,5 +6,5 @@ curl -sL "$BASE/rfc$1.txt" | sed 's///' |  while read -r line
 do
 	pad -m "center" -s "$line" >> "$TMP.new"
 done
-mv "$TMP.new" "$TMP"
+uniq "$TMP.new" "$TMP"
 less -sNJL "$TMP" && rm "$TMP"
