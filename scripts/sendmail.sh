@@ -88,7 +88,14 @@ remove_unread_mail()
 	done
 }
 
+usage()
+{
+	echo "sendmail [status | mark-all-read | mark-read | list-unread | list-read | read | remove-read | remove-unread]"
+}
+
 case $1 in
+	"help") usage ;;
+	"usage") usage ;;
 	"status") mail_count ;;
 	"mark-all-read") mark_all_read ;;
 	"list-unread") list_unread ;;
