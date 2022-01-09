@@ -21,16 +21,17 @@ mail_count()
 	count_read="$(/usr/bin/ls "$MAIL_DIR/$READ" | wc -l)"
 	count_unread="$(/usr/bin/ls "$MAIL_DIR/$UNREAD" | wc -l)"
 	combined=$(echo "$count_read + $count_unread" | calc -p)
-	echo "Mail: $combined"
-	echo "Mail (read): $count_read"
-	echo "Mail (unread): $count_unread"
+	echo "$combined ($count_read read / $count_unread unread)"
 }
 
 add_mail()
 {
 	date=$(date +%Y-%m-%d)
-	time=$(date +%H:%M:%S)
-	echo "$@" > "$MAIL_DIR/$UNREAD/$date-$time.mail"
+	time=$(date +%H%M%S)
+	while read -r mail_in
+	do
+		echo "$mail_in" >> "$MAIL_DIR/$UNREAD/$date-$time.mail"
+	done
 }
 
 read_mail()
@@ -94,7 +95,7 @@ case $1 in
 	"list-read") list_read ;;
 	"mark-read") mark_read "$2" ;;
 	"read") read_mail "$2" ;;
-	"remove-read") remove_read_mail "$@" ;;
-	"remove-unread") remove_unread_mail "$@" ;;
-	*) add_mail "$@" ;;
+	"remove-read") shift && remove_read_mail "$@" ;;
+	"remove-unread") shift && remove_unread_mail "$@" ;;
+	*) add_mail ;;
 esac
