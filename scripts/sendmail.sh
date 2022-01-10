@@ -88,6 +88,52 @@ remove_unread_mail()
 	done
 }
 
+remove_menu()
+{
+	mail_count
+	choice=$(printf "%b\n%b\nclose" "$READ" "$UNREAD" | fzy)
+	if [ -z "$choice" ]
+	then
+		die "Aborted selection."
+	fi
+	if [ "$choice" = "close" ]
+	then
+		echo "Closing selection."
+		exit
+	fi
+
+	tmp_file="$MAIL_DIR/$choice/close"
+	tmp="$choice"
+	touch "$tmp_file"
+
+	choice=$(ls "$MAIL_DIR/$choice" | fzy)
+	if [ -z "$choice" ]
+	then
+		rm "$tmp_file"
+		die "Aborted selection."
+	fi
+	if [ "$choice" = "close" ]
+	then
+		rm "$tmp_file"
+		echo "Closing selection"
+		exit
+	fi
+
+	rm "$tmp_file" "$MAIL_DIR/$tmp/$choice" 
+	mail_count
+	choice=$(printf "continue\nclose" | fzy)
+	if [ -z "$choice" ]
+	then
+		die "Aborted selection."
+	fi
+	if [ "$choice" = "close" ]
+	then
+		echo "Closing selection"
+		exit
+	fi
+	remove_menu
+}
+
 read_menu()
 {
 	mail_count
@@ -155,10 +201,13 @@ usage()
 	printf " | "
 	printf "read-menu"
 	printf " | "
+	printf "remove"
+	printf " | "
 	printf "remove-read"
 	printf " | "
 	printf "remove-unread"
 	printf "]\n"
+	echo "read-menu and remove launch a CLI-menu. read launches a CLI-menu if no arguments are given"
 }
 
 case $1 in
@@ -171,6 +220,7 @@ case $1 in
 	"mark-read") mark_read "$2" ;;
 	"read") shift && read_wrapper "$@" ;;
 	"read-menu") read_menu ;;
+	"remove") remove_menu ;;
 	"remove-read") shift && remove_read_mail "$@" ;;
 	"remove-unread") shift && remove_unread_mail "$@" ;;
 	"add") add_mail ;;
