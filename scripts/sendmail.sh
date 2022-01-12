@@ -3,6 +3,9 @@ MAIL_DIR="/home/zocki/.local/share/sendmail"
 READ="read"
 UNREAD="unread"
 
+MENU_EXIT_FORCE="Menu selection has been aborted. Exiting."
+MENU_EXIT="Closing sendmail."
+
 die()
 {
 	echo "$1"
@@ -94,11 +97,11 @@ remove_menu()
 	choice=$(printf "%b\n%b\nclose" "$READ" "$UNREAD" | fzy)
 	if [ -z "$choice" ]
 	then
-		die "Aborted selection."
+		die "$MENU_EXIT_FORCE"
 	fi
 	if [ "$choice" = "close" ]
 	then
-		echo "Closing selection."
+		echo "$MENU_EXIT"
 		exit
 	fi
 
@@ -110,12 +113,12 @@ remove_menu()
 	if [ -z "$choice" ]
 	then
 		rm "$tmp_file"
-		die "Aborted selection."
+		die "$MENU_EXIT_FORCE"
 	fi
 	if [ "$choice" = "close" ]
 	then
 		rm "$tmp_file"
-		echo "Closing selection"
+		echo "$MENU_EXIT"
 		exit
 	fi
 
@@ -124,11 +127,11 @@ remove_menu()
 	choice=$(printf "continue\nclose" | fzy)
 	if [ -z "$choice" ]
 	then
-		die "Aborted selection."
+		die "$MENU_EXIT_FORCE"
 	fi
 	if [ "$choice" = "close" ]
 	then
-		echo "Closing selection"
+		echo "$MENU_EXIT"
 		exit
 	fi
 	remove_menu
@@ -140,11 +143,11 @@ read_menu()
 	choice=$(printf "%b\n%b\nclose" "$READ" "$UNREAD" | fzy )
 	if [ -z "$choice" ]
 	then
-		die "Aborted selection."
+		die "$MENU_EXIT_FORCE"
 	fi
 	if [ "$choice" = "close" ]
 	then
-		echo "Closing sendmail.sh!"
+		echo "$MENU_EXIT"
 		exit
 	fi
 	
@@ -154,11 +157,12 @@ read_menu()
 	choice=$(ls "$MAIL_DIR"/"$choice" | fzy)
 	if [ -z "$choice" ]
 	then
-		die "Aborted mail selection."
+		rm "$tmp_file"
+		die "$MENU_EXIT_FORCE"
 	fi
 	if [ "$choice" = "close" ]
 	then
-		echo "Exiting mail selection."
+		echo "$MENU_EXIT"
 		rm "$tmp_file"
 		exit
 	fi
