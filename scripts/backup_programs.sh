@@ -35,14 +35,13 @@ update()
 deploy()
 {
 	cwd=$(pwd)
-	uris=$(cat "$BAK")
 	cd "$PROG_DIR" || die "$PROG_DIR"
-	for uri in $uris
+	cat "$BAK" | while read -r line
 	do
-		dir=$(echo "$uri" | cut -d " " -f2)
-		if ! [ -e "$dir" ]
+		rep=$(echo "$line" | cut -d ' ' -f2)
+		if ! [ -e "$rep" ]
 		then
-			git clone "$uri"
+			git clone "$line"
 		fi
 	done
 	cd "$cwd" || die "$cwd"
