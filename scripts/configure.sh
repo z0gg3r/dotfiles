@@ -10,7 +10,7 @@ then
 	exit
 fi
 
-config=$(lecho -l 1 < "/home/zocki/.config/configures/$chosen")
+config=$(cat "/home/zocki/.config/configures/$chosen")
 
 cd "/home/zocki/programs/$chosen" || exit
 
