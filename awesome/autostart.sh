@@ -21,7 +21,6 @@ function start {
 run nm-applet
 run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 run numlockx on
-run volumeicon
 
 # If we have set the wallpaper_change lock we do not call
 # wallpaper.sh and instead remvoe it. If we have not set it
