@@ -23,6 +23,5 @@ start uim-xim
 case "$1" in
 	"gnome") XDG_SESSION_TYPE=x11 GDK_BACKEND=x11 exec gnome-session ;;
 	"xfce") DESKTOP_SESSION=xfce exec startxfce4 ;;
-	"kde") DESKTOP_SESSION=plasma exec startplasma-x11 ;;
 	*) exec awesome ;;
 esac
