@@ -24,7 +24,7 @@ then
 fi
 echo "sizeof $1"
 
-if [ "$(file "$1" | cut -d ":" -f2)" = " directory" ]
+if [ -d "$1" ]
 then
 	size_of_dir "$1"
 else
@@ -35,7 +35,7 @@ shift
 while [ "$#" -ge 1 ]
 do
 	echo "sizeof $1"
-	if [ "$(file "$1" | cut -d ":" -f2)" = " directory" ]
+	if [ -d "$1" ]
 	then
 		size_of_dir "$1"
 	else

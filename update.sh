@@ -61,7 +61,7 @@ update_dir()
 		case $ignore_list in
 			*$file*) ignore="yes" ;;
 		esac
-		if [ -z "$ignore" ] && [ "$(file "$dir_path/$file" | cut -d ":" -f2)" = " directory" ]
+		if [ -z "$ignore" ] && [ -d "$dir/$file" ]
 		then
 			echo "$IGNORE $dir/$file is a directory and will be ignored!$END"
 		elif [ -z "$ignore" ]
@@ -118,7 +118,7 @@ update_file()
 
 update()
 {
-	if [ "$(file "$1" | cut -d ":" -f2)" = " directory" ]
+	if [ -d "$1" ]
 	then
 		update_dir "$1" "$2"
 	else
