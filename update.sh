@@ -61,7 +61,10 @@ update_dir()
 		case $ignore_list in
 			*$file*) ignore="yes" ;;
 		esac
-		if [ -z "$ignore" ]
+		if [ -z "$ignore" ] && [ "$(file "$dir_path/$file" | cut -d ":" -f2)" = " directory" ]
+		then
+			echo "$IGNORE $dir/$file is a directory and will be ignored!$END"
+		elif [ -z "$ignore" ]
 		then
 			update_file "$dir_path/$file" "$dir/$file"
 		else
@@ -123,6 +126,30 @@ update()
 	fi
 }
 
+combine()
+{
+	target="$1"
+	if ! [ -e "$target" ]
+	then
+		echo "$ERROR $target does not exist! $END"
+		return
+	fi
+	shift
+	while [ "$#" -ge 1 ]
+	do
+		if ! [ -e "$1" ]
+		then
+			echo "$ERROR $1 does not exist! $END"
+			return
+		else
+			rm -rf "${target:?}/$1"
+			echo "$INFO Combining $1 into $target! $END"
+			mv -uf "$1" "$target"
+		fi
+		shift
+	done
+}
+
 update "/home/zocki/.vimrc" "vimrc"
 update "/home/zocki/.zshrc" "zshrc"
 update "/home/zocki/.gitconfig" "gitconfig"
@@ -143,3 +170,9 @@ update "/home/zocki/.config/env"
 update "/home/zocki/.config/configures"
 update "/home/zocki/.config/newsboat" "cache.db"
 update "/home/zocki/.config/sakura"
+update "/home/zocki/.config/awesome/themes/powerarrow" "wallpaper.jpg"
+update "/home/zocki/.config/awesome/themes/powerarrow/icons"
+update "/home/zocki/.config/awesome/themes/powerarrow/icons/titlebar"
+combine "icons" "titlebar"
+combine "powerarrow" "icons"
+combine "awesome" "powerarrow"
