@@ -6,7 +6,9 @@
 
 start()
 {
-	daemonize -u "zocki" "$(which "$1")"
+	prog="$1"
+	shift
+	daemonize -u "$USER" "$(which "$prog")" "$@"
 }
 
 xset s off
