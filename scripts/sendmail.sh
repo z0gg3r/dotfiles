@@ -187,6 +187,14 @@ read_wrapper()
 	fi
 }
 
+list_all()
+{
+	printf "read:\n"
+	list_read
+	printf "unread:\n"
+	list_unread
+}
+
 usage()
 {
 	printf "sendmail "
@@ -196,6 +204,8 @@ usage()
 	printf "mark-all-read"
 	printf " | "
 	printf "mark-read"
+	printf " | "
+	printf "list"
 	printf " | "
 	printf "list-unread"
 	printf " | "
@@ -219,6 +229,7 @@ case $1 in
 	"usage") usage ;;
 	"status") mail_count ;;
 	"mark-all-read") mark_all_read ;;
+	"list") list_all ;;
 	"list-unread") list_unread ;;
 	"list-read") list_read ;;
 	"mark-read") mark_read "$2" ;;
