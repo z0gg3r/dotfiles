@@ -1,7 +1,6 @@
 alias 4teri="ssh -i $HOME/.ssh/id_vserver astolfo@4teri.de"
 alias aliases="cat $HOME/.config/env/aliases | cut -c 6- | less"
 alias astyle="astyle -t8 -xV -xt -xg -H -k3 -W3 -xb -n -z2"
-alias betty="/home/zocki/programs/betty/main.rb"
 alias cal="cal -ymw"
 alias calc="calc -p"
 alias clea="clear"
