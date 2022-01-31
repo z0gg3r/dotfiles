@@ -97,7 +97,4 @@ autoload -Uz compinit
 compinit
 
 clear && neofetch
-if [ $(which sendmail) ]
-then
-	sendmail status
-fi
+sendmail status
