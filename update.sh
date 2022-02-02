@@ -40,12 +40,17 @@ _diff()
 # Args
 # $1 = Path to dir
 # $2 = Files to ignore
+# $3 = Custom location
 update_dir()
 {
 	dir_path=$1
 	count=$(echo "$dir_path" | sed -e 's/\(.\)/\1\n/g' | grep -c "/")
 	count=$(echo "$count 1 +pq" | dc)
 	dir=$(echo "$dir_path" | cut -d/ -f$count)
+	if [ -n "$3" ]
+	then
+		dir="$3"
+	fi
 	ignore_list=$2
 	if ! [ -e "$dir_path" ]
 	then
@@ -61,7 +66,7 @@ update_dir()
 		case $ignore_list in
 			*$file*) ignore="yes" ;;
 		esac
-		if [ -z "$ignore" ] && [ -d "$dir/$file" ]
+		if [ -z "$ignore" ] && [ -d "$dir_path/$file" ]
 		then
 			echo "$IGNORE $dir/$file is a directory and will be ignored!$END"
 		elif [ -z "$ignore" ]
@@ -120,34 +125,10 @@ update()
 {
 	if [ -d "$1" ]
 	then
-		update_dir "$1" "$2"
+		update_dir "$1" "$2" "$3"
 	else
 		update_file "$1" "$2"
 	fi
-}
-
-combine()
-{
-	target="$1"
-	if ! [ -e "$target" ]
-	then
-		echo "$ERROR $target does not exist! $END"
-		return
-	fi
-	shift
-	while [ "$#" -ge 1 ]
-	do
-		if ! [ -e "$1" ]
-		then
-			echo "$ERROR $1 does not exist! $END"
-			return
-		else
-			rm -rf "${target:?}/$1"
-			echo "$INFO Combining $1 into $target! $END"
-			mv -uf "$1" "$target"
-		fi
-		shift
-	done
 }
 
 update "/home/zocki/.vimrc" "vimrc"
@@ -170,9 +151,6 @@ update "/home/zocki/.config/env"
 update "/home/zocki/.config/configures"
 update "/home/zocki/.config/newsboat" "cache.db"
 update "/home/zocki/.config/sakura"
-update "/home/zocki/.config/awesome/themes/powerarrow" "wallpaper.jpg"
-update "/home/zocki/.config/awesome/themes/powerarrow/icons"
-update "/home/zocki/.config/awesome/themes/powerarrow/icons/titlebar"
-combine "icons" "titlebar"
-combine "powerarrow" "icons"
-combine "awesome" "powerarrow"
+update "/home/zocki/.config/awesome/themes/powerarrow" "wallpaper.jpg" "awesome/powerarrow"
+update "/home/zocki/.config/awesome/themes/powerarrow/icons" "" "awesome/powerarrow/icons"
+update "/home/zocki/.config/awesome/themes/powerarrow/icons/titlebar" "" "awesome/powerarrow/icons/titlebar"
