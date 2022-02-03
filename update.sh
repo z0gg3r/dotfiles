@@ -1,11 +1,6 @@
 #! /bin/sh
 . ./updater.sh
 
-if [ -n "$BASH_VERSION" ]
-then
-	echo "Please note that colour support only exists for POSIX sh, i.e. dash"
-fi
-
 # Syntax if target is a file:
 # update [FILE] ([NAME])
 
