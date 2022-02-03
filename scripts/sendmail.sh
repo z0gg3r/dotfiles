@@ -105,24 +105,20 @@ remove_menu()
 		exit
 	fi
 
-	tmp_file="$MAIL_DIR/$choice/close"
 	tmp="$choice"
-	touch "$tmp_file"
 
-	choice=$(ls "$MAIL_DIR/$choice" | fzy)
+	choice=$(printf "%b\nclose" "$(ls "$MAIL_DIR/$choice")" | fzy)
 	if [ -z "$choice" ]
 	then
-		rm "$tmp_file"
 		die "$MENU_EXIT_FORCE"
 	fi
 	if [ "$choice" = "close" ]
 	then
-		rm "$tmp_file"
 		echo "$MENU_EXIT"
 		exit
 	fi
 
-	rm "$tmp_file" "$MAIL_DIR/$tmp/$choice" 
+	rm "$MAIL_DIR/$tmp/$choice" 
 	mail_count
 	choice=$(printf "continue\nclose" | fzy)
 	if [ -z "$choice" ]
@@ -151,22 +147,16 @@ read_menu()
 		exit
 	fi
 	
-	tmp_file="$MAIL_DIR/$choice/close"
-	touch "$tmp_file"
-
-	choice=$(ls "$MAIL_DIR"/"$choice" | fzy)
+	choice=$(printf "%b\nclose" "$(ls "$MAIL_DIR"/"$choice")" | fzy)
 	if [ -z "$choice" ]
 	then
-		rm "$tmp_file"
 		die "$MENU_EXIT_FORCE"
 	fi
 	if [ "$choice" = "close" ]
 	then
 		echo "$MENU_EXIT"
-		rm "$tmp_file"
 		exit
 	fi
-	rm "$tmp_file"
 	read_mail "$choice"
 	mail_count
 }
