@@ -5,5 +5,6 @@ if [ -z "$1" ]
 then
 	exit 1
 fi
-
+echo "Local Time: $(date +%T)"
+printf "%b: " "$1"
 curl -sL "$URI_BASE/$1" | hq time text
