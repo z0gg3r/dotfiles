@@ -11,21 +11,28 @@ git_compress()
 {
 	cd "$1" || die "cannot cd into $1"
 	before=$(du -sh ".git")
-	git repack -AdflF > /dev/null
+	git repack -AdflF 2> /dev/null
 	after=$(du -sh ".git")
 	cd "$2" || die "cannot cd into $2"
-	printf "before: %b\nafter: %b\n" "$before" "$after"
+	printf "before: %b\nafter: %b\n" "$before" "$after" | replace ".git" "$1"
 }
 
-if [ -e "$TARGET/.git" ]
+if [ -z "$TARGET" ]
+then
+	die "Please provide an Argument."
+elif [ -e "$TARGET/.git" ]
 then
 	git_compress "$TARGET" "$(pwd)"
 else
 	cwd="$(pwd)"
+	if [ -e "$cwd/$TARGET" ]
+	then
+		TARGET="$cwd/$TARGET"
+	fi
 	cd "$TARGET" || die "cannot cd into $TARGET"
 	for dir in *
 	do
-		if [ -d "$dir" ]
+		if [ -d "$dir" ] && [ -e "$dir/.git" ]
 		then
 			git_compress "$dir" "$TARGET"
 		fi

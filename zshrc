@@ -26,7 +26,7 @@ unalias la
 unalias ll
 unalias l
 
-# # ex = EXtractor for all kinds of archives
+# # ex = Extractor for all kinds of archives
 # # usage: ex <file>
 ex ()
 {
