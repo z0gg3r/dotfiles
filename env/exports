@@ -1,4 +1,4 @@
-QT_STYLE_OVERRIDE="breeze"
+export QT_STLYE_OVERRIDE="breeze-dark"
 export PATH="$(/usr/bin/cat /home/zocki/.config/env/path)"
 export EDITOR="vim"
 export VISUAL="vim"
