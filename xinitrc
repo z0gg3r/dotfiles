@@ -21,6 +21,8 @@ export GTK_IM_MODULE="uim"
 export QT_IM_MODULE="uim"
 export XMODIFIERS=@im=uim
 start uim-xim
+gnome-keyring-daemon --start
+export SSH_AUTH_SOCK
 
 case "$1" in
 	"gnome") XDG_SESSION_TYPE=x11 GDK_BACKEND=x11 exec gnome-session ;;
