@@ -7,4 +7,4 @@ then
 fi
 echo "Local Time: $(date +%T)"
 printf "%b: " "$1"
-curl -sL "$URI_BASE/$1" | hq time text
+curl -sL "$URI_BASE/$1" -A "$SURF_USERAGENT" | hq time text
