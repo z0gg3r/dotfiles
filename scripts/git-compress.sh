@@ -11,10 +11,11 @@ git_compress()
 {
 	cd "$1" || die "cannot cd into $1"
 	before=$(du -sh ".git")
+	printf "before:\t%b\n" "$before" | replace ".git" "$1"
 	git repack -AdflF 2> /dev/null
 	after=$(du -sh ".git")
 	cd "$2" || die "cannot cd into $2"
-	printf "before: %b\nafter: %b\n" "$before" "$after" | replace ".git" "$1"
+	printf "after:\t%b\n" "$after" | replace ".git" "$1"
 }
 
 if [ -z "$TARGET" ]
@@ -30,6 +31,8 @@ else
 		TARGET="$cwd/$TARGET"
 	fi
 	cd "$TARGET" || die "cannot cd into $TARGET"
+	before=$(du -sh "$TARGET")
+	printf "before:\t%b\n\n" "$before"
 	for dir in *
 	do
 		if [ -d "$dir" ] && [ -e "$dir/.git" ]
@@ -37,6 +40,8 @@ else
 			git_compress "$dir" "$TARGET"
 		fi
 	done
+	after=$(du -sh "$TARGET")
+	printf "\nafter:\t%b\n" "$after"
 	cd "$cwd" || die "cannot cd into $cwd"
 fi
 
