@@ -1,5 +1,6 @@
 # All non-zsh exports go in there!
 source $HOME/.config/env/exports
+source $HOME/.aliases
 export ZSH=/usr/share/oh-my-zsh/
 
 ZSH_THEME="wezm"
