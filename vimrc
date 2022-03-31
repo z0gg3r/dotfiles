@@ -23,22 +23,24 @@ call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'ollykel/v-vim'
 	Plug 'junegunn/goyo.vim'
 	Plug 'rust-lang/rust.vim'
-	Plug 'haystackandroid/strawberry'
-	Plug 'sainnhe/sonokai'
-	Plug 'joshdick/onedark.vim'
-	Plug 'brettbar/siena.vim'
 	Plug 'w0rp/ale'
+	Plug 'tpope/vim-commentary'
+	Plug 'liuchengxu/space-vim-dark'
 call plug#end()
 
-colorscheme sonokai
+set background=dark
+colorscheme space-vim-dark
 
 augroup pencil
   autocmd!
   autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text         call pencil#init({'wrap': 'hard'})
+  autocmd FileType text		call pencil#init({'wrap': 'hard'})
 augroup END
 
 let g:pencil#textwidth = 80
+
+set list
+set lcs=tab:᚛-᚜,lead:…
 
 " Airline config
 let g:airline_section_x = '%{PencilMode()}'
