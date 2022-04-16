@@ -1,5 +1,5 @@
 #! /bin/sh
-cache="$(cat "$HOME/.local/share/run.sh.cache" | sort -u)"
+cache="$(sort -u < "$HOME/.local/share/run.sh.cache")"
 chosen="$(echo "$cache" | rofi -dmenu)"
 
 if [ -z "$chosen" ]
@@ -11,5 +11,5 @@ if ! [ -e "$chosen" ]
 then
 	exit 1
 fi
-echo "$chosen\n$cache" > "$HOME/.local/share/run.sh.cache"
+printf "%b\n%b\n" "$chosen" "$cache" > "$HOME/.local/share/run.sh.cache"
 exec "$chosen"
