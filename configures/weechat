@@ -1,1 +1,1 @@
---enable-man --disable-tcl LT_SYS_LIBRARY_PATH="/home/zocki/.local/lib"
+--enable-man LT_SYS_LIBRARY_PATH="/home/zocki/.local/lib"
