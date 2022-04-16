@@ -40,7 +40,7 @@ augroup END
 let g:pencil#textwidth = 80
 
 set list
-set lcs=tab:᚛-᚜,lead:…
+set lcs=tab:᚛-᚜,lead:… " lead requires vim8.2+
 
 " Airline config
 let g:airline_section_x = '%{PencilMode()}'
