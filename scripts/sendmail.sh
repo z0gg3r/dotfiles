@@ -2,9 +2,27 @@
 MAIL_DIR="/home/zocki/.local/share/sendmail"
 READ="read"
 UNREAD="unread"
+NO_SAVE_MAIL=""
 
 MENU_EXIT_FORCE="Menu selection has been aborted. Exiting."
 MENU_EXIT="Closing sendmail."
+
+read_config_save()
+{
+	affirm="NO_SAVE_MAIL"
+	if [ -n "$NO_SAVE_MAIL" ]
+	then
+		echo "$affirm"
+	elif [ -n "$SENDMAILSH_NO_SAVE_MAIL" ]
+	then
+		echo "$affirm"
+	elif [ -e "$MAIL_DIR/.no_save_mail" ]
+	then
+		echo "$affirm"
+	else
+		echo ""
+	fi
+}
 
 die()
 {
@@ -52,7 +70,12 @@ read_mail()
 
 mark_read()
 {
-	mv "$MAIL_DIR/$UNREAD/$1" "$MAIL_DIR/$READ/$1"
+	if [ "$(read_config_save)" = "NO_SAVE_MAIL" ]
+	then
+		rm "$MAIL_DIR/$UNREAD/$1"
+	else
+		mv "$MAIL_DIR/$UNREAD/$1" "$MAIL_DIR/$READ/$1"
+	fi
 }
 
 mark_all_read()
