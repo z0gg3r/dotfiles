@@ -62,7 +62,9 @@ ffv()
 	then
 		case "$1" in
 			*.png) png2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
+			*.PNG) png2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
 			*.jpg) jpg2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
+			*.JPG) jpg2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
 			*.ff) lel "$1" ;;
 			*) echo "Can't convert that format." ''
 		esac
