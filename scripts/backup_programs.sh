@@ -39,9 +39,10 @@ deploy()
 	cat "$BAK" | while read -r line
 	do
 		rep=$(echo "$line" | cut -d ' ' -f2)
+		repo=$(echo "$line" | cut -d ' ' -f1)
 		if ! [ -e "$rep" ]
 		then
-			git clone "$line"
+			git clone "$repo" "$rep"
 		fi
 	done
 	cd "$cwd" || die "$cwd"
