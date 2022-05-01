@@ -43,7 +43,6 @@ set list
 set lcs=tab:᚛-᚜,lead:… " lead requires vim8.2+
 
 " Airline config
-let g:airline_section_x = '%{PencilMode()}'
 let g:airline_section_b = '%{strftime("%c")} | %{FugitiveStatusline()}'
 let g:airline_section_y = 'BN: %{bufnr("%")}'
 let g:airline#extensions#tabline#enabled = 1
