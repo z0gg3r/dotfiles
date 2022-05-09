@@ -1,6 +1,6 @@
 #! /bin/sh
 
-DB_PATH="/home/zocki/.config/pmb"
+DB_PATH="$HOME/.config/pmb"
 
 die()
 {

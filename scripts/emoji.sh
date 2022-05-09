@@ -1,6 +1,6 @@
 #! /bin/sh
 
-chosen="$(cut -d ';' -f1 /home/zocki/.config/emojimap | rofi -dmenu | sed "s/ .*//")"
+chosen="$(cut -d ';' -f1 $HOME/.config/emojimap | rofi -dmenu | sed "s/ .*//")"
 
 [ -z "$chosen" ] && exit
 

@@ -1,5 +1,5 @@
 #! /bin/sh
-PROG_DIR="/home/zocki/programs"
+PROG_DIR="$HOME/programs"
 ENTER="\033[34;48m"
 LEAVE="\033[33;48m"
 ERROR="\033[31;48m"

@@ -2,7 +2,7 @@
 
 pwd=$(pwd)
 
-chosen=$(/bin/ls /home/zocki/.config/configures | fzy)
+chosen=$(/bin/ls $HOME/.config/configures | fzy)
 
 if [ -z "$chosen" ]
 then
@@ -10,9 +10,9 @@ then
 	exit
 fi
 
-config=$(cat "/home/zocki/.config/configures/$chosen")
+config=$(cat "$HOME/.config/configures/$chosen")
 
-cd "/home/zocki/programs/$chosen" || exit
+cd "$HOME/programs/$chosen" || exit
 
 ./configure $config
 

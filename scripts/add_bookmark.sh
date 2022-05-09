@@ -24,9 +24,9 @@ fi
 
 if [ -z "$db" ]
 then
-	db="/home/zocki/.config/pmb/bookmarks.db"
+	db="$HOME/.config/pmb/bookmarks.db"
 else
-	db="/home/zocki/.config/pmb/$db.db"
+	db="$HOME/.config/pmb/$db.db"
 fi
 
 if [ -z "$title" ] || [ -z "$url" ]

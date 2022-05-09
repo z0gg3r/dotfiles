@@ -1,5 +1,5 @@
 #! /bin/sh
-MAIL_DIR="/home/zocki/.local/share/sendmail"
+MAIL_DIR="$HOME/.local/share/sendmail"
 READ="read"
 UNREAD="unread"
 NO_SAVE_MAIL=""
