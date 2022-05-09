@@ -8,7 +8,7 @@ start()
 {
 	prog="$1"
 	shift
-	daemonize -u "$USER" "$(which "$prog")" "$@"
+	daemonize "$(which "$prog")" "$@"
 }
 
 # Boilerplate
