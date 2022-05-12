@@ -1,6 +1,15 @@
 # All non-zsh exports go in there!
+
+safe_source ()
+{
+	if [ -e "$1" ]
+	then
+		source "$1"
+	fi
+}
+
 source $HOME/.config/env/exports
-source $HOME/.aliases
+safe_source $HOME/.aliases
 export ZSH=/usr/share/oh-my-zsh/
 
 ZSH_THEME="wezm"
@@ -11,8 +20,8 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+safe_source $ZSH/oh-my-zsh.sh
+safe_source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 setopt GLOB_DOTS
 setopt COMPLETE_ALIASES
