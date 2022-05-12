@@ -10,4 +10,4 @@ firejail \
 	--nou2f \
 	--novideo \
 	--private-cache \
-	surf -u "$SURF_USERAGENT" -s -g -m -n "$1"
+	surf-viewer -u "$SURF_USERAGENT" -s -g -m -n "$1"
