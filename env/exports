@@ -9,4 +9,4 @@ export LESSOPEN="/home/zocki/.config/scripts/lessopen.sh %s"
 export LESSCLOSE="/home/zocki/.config/scripts/lessclose.sh %s %s"
 export GPG_TTY=$(tty)
 export SURF_USERAGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
-export CFLAGS="-Wall -Wextra -std=c99 -D_DEFAULT_SOURCE"
+export CFLAGS="-Wall -Wextra -std=c99 -D_DEFAULT_SOURCE -pipe -march=native"
