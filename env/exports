@@ -1,4 +1,5 @@
 export QT_STLYE_OVERRIDE="breeze-dark"
+export DEBUGINFOD_URLS="https://debuginfod.elfutils.org/"
 export PATH="$(/usr/bin/cat /home/zocki/.config/env/path)"
 export EDITOR="vim"
 export VISUAL="vim"
@@ -9,4 +10,4 @@ export LESSOPEN="/home/zocki/.config/scripts/lessopen.sh %s"
 export LESSCLOSE="/home/zocki/.config/scripts/lessclose.sh %s %s"
 export GPG_TTY=$(tty)
 export SURF_USERAGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
-export CFLAGS="-Wall -Wextra -std=c99 -D_DEFAULT_SOURCE -pipe -march=native"
+export CFLAGS="-Wall -Wextra -std=c99 -pipe -march=native -O2 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fcf-protection -fpie -fPIC -D_DEFAULT_SOURCE"
