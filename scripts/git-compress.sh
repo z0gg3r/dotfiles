@@ -7,33 +7,51 @@ die()
 	exit 1
 }
 
+colour_format()
+{
+	if [ 1 -eq "$(echo "$1 > 0" | bc)" ]
+	then
+		echo "\033[31;48m$1\033[0m"
+	elif [ 1 -eq "$(echo "$1 < 0" | bc)" ]
+	then
+		echo "\033[32;48m$1\033[0m"
+	else
+		echo "\033[35;48m$1\033[0m"
+	fi
+}
+
 size_format()
 {
+	choice="dir"
 	if [ -z "$2" ]
 	then
+		choice="single"
 		num="$1"
 	else
 		num="$(echo "$1" | cut -d "$(printf "\t")" -f1)"
 		dir="$(echo "$1" | cut -d "$(printf "\t")" -f2)"
 	fi
-	unit="K"
+	unit=""
 
-	num=$(echo "$num / 1024" | calc -p)
-
-	if [ -z "$dir" ]
+	if [ "$choice" = "single" ]
 	then
-		printf "%.2f%b" "$num" "$unit"
+		num=$(printf "%b" "$num")
+		echo "$(colour_format "$num")$unit"
 	else
-		printf "%.2f%b\t%b" "$num" "$unit" "$dir"
+		printf "%b%b\t%b" "$num" "$unit" "$dir"
 	fi
 }
 
 size_diff()
 {
+	if [ -e "/tmp/diff" ]
+	then
+		printf "+" >> /tmp/diff
+	fi
 	before="$(echo "$1" | cut -d "$(printf "\t")" -f1)"
 	after="$(echo "$2" | cut -d "$(printf "\t")" -f1)"
 	diff=$(echo "$after - $before" | calc -p)
-	diff=$(echo "$diff / 1024" | calc -p)
+	printf "%b" "$diff" >> "/tmp/diff"
 	printf "%b\n" "$(size_format "$diff")"
 
 }
@@ -47,7 +65,7 @@ git_compress()
 	after=$(du -s ".git")
 	cd "$2" || die "cannot cd into $2"
 	printf "after:\t%b\n" "$(size_format "$after" ".")" | replace ".git" "$1"
-	printf "diff:\t%b\n" "$(size_diff "$before" "$after")"
+	echo "diff:$(printf "\t")$(size_diff "$before" "$after")"
 }
 
 if [ -z "$TARGET" ]
@@ -74,7 +92,10 @@ else
 	done
 	after=$(du -s "$TARGET")
 	printf "\nafter:\t%b\n" "$(size_format "$after" ".")"
-	printf "diff:\t%b\n" "$(size_diff "$before" "$after")"
+	#echo "diff:$(printf "\t")$(size_diff "$before" "$after")"
+	printf "\n" >> /tmp/diff
+	echo "diff:$(printf "\t")$(colour_format "$(cat /tmp/diff | calc -p)")"
+	rm "/tmp/diff"
 	cd "$cwd" || die "cannot cd into $cwd"
 fi
 
