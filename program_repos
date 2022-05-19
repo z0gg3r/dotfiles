@@ -48,7 +48,7 @@ git://c9x.me/qbe.git qbe
 https://github.com/bellard/quickjs quickjs
 https://github.com/rakitzis/rc rc
 https://github.com/mgudemann/sct sct
-https://git.suckless.org/slock slock
+https://github.com/bakkeby/slock-flexipatch slock
 https://github.com/Gottox/smu smu
 https://github.com/pasky/speedread speedread
 https://github.com/sivel/speedtest-cli speedtest
