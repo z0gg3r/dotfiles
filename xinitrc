@@ -70,5 +70,6 @@ case "$1" in
 	"xfce") DESKTOP_SESSION=xfce exec startxfce4 ;;
 	"kde") DESKTOP_SESSION=plasma exec startplasma-x11 ;;
 	"plasma") DESKTOP_SESSION=plasma exec startplasma-x11 ;;
+	"bspwm") exec bspwm ;;
 	*) exec awesome ;;
 esac
