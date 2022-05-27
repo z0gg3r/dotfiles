@@ -14,6 +14,12 @@ prog="$1"
 
 count=$(usage "$prog")
 echo "Usage of $prog is $count time(s)."
+
+if [ -z "$1" ]
+then
+	exit
+fi
+
 shift
 while [ "$#" -ge 1 ]
 do
