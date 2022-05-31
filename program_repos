@@ -7,6 +7,7 @@ https://aur.archlinux.org/brscan4.git brscan4
 https://github.com/caffeine-ng/caffeine-ng caffeine-ng
 https://git.causal.agency/catgirl catgirl
 https://github.com/kieselsteini/cgo cgo
+https://github.com/AlDanial/cloc cloc
 https://github.com/abishekvashok/cmatrix cmatrix
 https://github.com/wfxr/csview csview
 https://github.com/universal-ctags/ctags ctags
@@ -36,6 +37,7 @@ https://github.com/newsboat/newsboat newsboat
 https://github.com/bartobri/no-more-secrets nms
 https://github.com/jarun/nnn nnn
 https://github.com/nsxiv/nsxiv nsxiv
+https://github.com/olive-editor/olive olive
 https://gitlab.matrix.org/matrix-org/olm.git olm
 https://aur.archlinux.org/osu-lazer-bin.git osu-lazer-bin
 https://aur.archlinux.org/osu-mime.git osu-mime
@@ -62,7 +64,6 @@ https://github.com/muennich/sxiv sxiv
 https://git.suckless.org/tabbed tabbed
 https://repo.or.cz/tinycc.git tcc
 https://github.com/xorg62/tty-clock tty-clock
-https://github.com/alexhallam/tv tv
 https://github.com/aureliojargas/txt2regex txt2regex
 https://github.com/uim/uim uim
 https://github.com/vlang/v v
