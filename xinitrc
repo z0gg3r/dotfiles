@@ -70,6 +70,6 @@ case "$1" in
 	"xfce") DESKTOP_SESSION=xfce exec startxfce4 ;;
 	"kde") DESKTOP_SESSION=plasma exec startplasma-x11 ;;
 	"plasma") DESKTOP_SESSION=plasma exec startplasma-x11 ;;
-	"bspwm") exec bspwm ;;
-	*) exec awesome ;;
+	"awesome") exec awesome ;;
+	*) exec bspwm -c /home/zocki/.config/bspwm/bspwmrc ;;
 esac
