@@ -10,6 +10,7 @@ daemonize "$(which  numlockx)" on
 pgrep uim-toolbar > /dev/null || daemonize "$(which uim-toolbar-gtk3-systray)"
 pgrep flameshot > /dev/bull || daemonize "$(which flameshot)"
 pgrep caffeine > /dev/null || daemonize "$(which caffeine)"
+pgrep dunst > /dev/null || daemonize "$(which dunst)"
 
 # If we have set the wallpaper_change lock we do not call
 # wallpaper.sh and instead remvoe it. If we have not set it
