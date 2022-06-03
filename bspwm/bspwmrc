@@ -17,6 +17,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Screenkey manage=off
+bspc rule -a Surf:surf-viewer state=tiled
 
 dash "$HOME/.config/bspwm/autostart.sh" > /dev/null 2> /dev/null &
 dash "$HOME/.config/polybar/launch.sh" > /dev/null 2> /dev/null & 
