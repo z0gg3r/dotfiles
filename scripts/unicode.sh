@@ -1,7 +1,6 @@
 #! /bin/sh
 
-# chosen="$(cut -d ';' -f1 /$HOME/.config/codemap | rofi -dmenu | sed "s/ .*//")"
-chosen="$(cut -d ';' -f1 $HOME/.config/codemap | rofi -dmenu)"
+chosen="$(rofi -dmenu < "$HOME/.config/codemap" | cut -d ';' -f1)"
 
 [ -z "$chosen" ] && exit
 
