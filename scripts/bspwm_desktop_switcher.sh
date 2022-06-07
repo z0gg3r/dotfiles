@@ -1,6 +1,6 @@
 #! /bin/sh
 
-MONITORS="$(bspc query -M | while read -r line; do printf "$line,"; done)"
+MONITORS="$(bspc query -M | while read -r line; do printf "%b," "$line"; done)"
 
 LEFT="$(echo $MONITORS | cut -d, -f1)"
 MID="$(echo $MONITORS | cut -d, -f2)"
