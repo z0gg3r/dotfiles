@@ -32,6 +32,9 @@ super + Escape
 super + shift + Escape
 	dash "$HOME/.config/polybar/launch.sh" > /dev/null 2> /dev/null & 
 
+super + r
+	dash /home/zocki/.config/scripts/run.sh
+
 XF86AudioRaiseVolume
 	pamixer -i 1
 
