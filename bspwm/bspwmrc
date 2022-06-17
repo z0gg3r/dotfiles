@@ -17,7 +17,9 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Screenkey manage=off
-bspc rule -a Surf:surf-viewer state=tiled
+bspc rule -a Surf state=tiled
+bspc rule -a Zathura:org.pwmt.zathura state=tiled
+bspc rule -a Xsane:xsane state=pseudo_tiled
 
 dash "$HOME/.config/bspwm/autostart.sh" > /dev/null 2> /dev/null &
 dash "$HOME/.config/polybar/launch.sh" > /dev/null 2> /dev/null & 
