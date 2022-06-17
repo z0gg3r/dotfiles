@@ -26,6 +26,7 @@ call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'w0rp/ale'
 	Plug 'tpope/vim-commentary'
 	Plug 'liuchengxu/space-vim-dark'
+	Plug 'ervandew/supertab'
 call plug#end()
 
 set background=dark
