@@ -14,13 +14,10 @@ https://github.com/universal-ctags/ctags ctags
 https://github.com/bmc/daemonize daemonize
 https://git.kernel.org/pub/scm/utils/dash/dash.git dash
 https://github.com/Duncaen/OpenDoas doas
-https://github.com/bakkeby/dwm-flexipatch dwm-flexipatch
 https://git.suckless.org/farbfeld farbfeld
 https://github.com/silentbicycle/ff ff
 https://github.com/netblue30/firejail firejail
 https://github.com/jhawthorn/fzy fzy
-https://git.sr.ht/~sircmpwn/hare hare
-https://git.sr.ht/~sircmpwn/harec harec
 https://github.com/BafS/hn-top hn-top
 https://gitlab.com/thelinuxguy9/htim htim
 https://github.com/LukeEmmet/html2gmi html2gmi
@@ -45,8 +42,8 @@ https://github.com/jwilk/pdf2djvu pdf2djvu
 https://github.com/neoncortex/poor-man-s-bookmark pmb
 https://git.causal.agency/pounce pounce
 https://github.com/rr-/pq-cli pq-cli
+https://github.com/profanity-im/profanity profanity
 https://github.com/Xfennec/progress progress
-git://c9x.me/qbe.git qbe
 https://github.com/bellard/quickjs quickjs
 https://github.com/rakitzis/rc rc
 https://github.com/mgudemann/sct sct
@@ -67,7 +64,7 @@ https://github.com/xorg62/tty-clock tty-clock
 https://github.com/aureliojargas/txt2regex txt2regex
 https://github.com/uim/uim uim
 https://github.com/vlang/v v
-https://github.com/n-t-roff/heirloom-ex-vi vi
+https://github.com/aligrudi/neatvi vi
 https://github.com/schicho/vwc vwc
 https://github.com/z0gg3r/wcwidth wcwidth
 https://github.com/weechat/weechat weechat
