@@ -1,6 +1,6 @@
 #! /bin/sh
 
-chosen="$(rofi -dmenu < "$HOME/.config/codemap" | cut -d ';' -f1)"
+chosen="$(rofi -normalize-match -matching fuzzy -dmenu < "$HOME/.config/codemap" | cut -d ';' -f1)"
 
 [ -z "$chosen" ] && exit
 
