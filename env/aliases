@@ -32,6 +32,7 @@ alias makefile="cp /home/zocki/.config/Makefile ."
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 alias mirror="doas reflector -f 30 -l 30 --number 20 --protocol https,rsync --country Germany --verbose --save /etc/pacman.d/mirrorlist"
 alias mutt="neomutt"
+alias news="newsboat"
 alias nnn="nnn -Hdi"
 alias onekod="daemonize $(which oneko)"
 alias probe="doas -E hw-probe -all -upload"
