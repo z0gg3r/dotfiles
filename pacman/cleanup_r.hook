@@ -1,9 +1,0 @@
-[Trigger]
-Operation = Remove
-Type = Package
-Target = *
-
-[Action]
-Description = Remove any chached version of removed package
-When = PostTransaction
-Exec = /usr/bin/paccache -rvvvuk0
