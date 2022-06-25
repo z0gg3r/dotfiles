@@ -2,7 +2,7 @@
 date=$(date +%Y-%m-%d)
 time=$(date +%H:%M:%S)
 dir="$HOME/wallpapers"
-lim="$(/usr/bin/ls $dir | grep -c png)"
+lim="$(/bin/ls $dir | grep -c png)"
 num="$(rnum -r "$lim")"
 rep="$(echo "$num + 1" | calc -p)"
 wallpaper="$num.png"
