@@ -5,4 +5,3 @@ auto-reload "yes"
 reload-threads 16
 prepopulate-query-feeds "yes"
 confirm-mark-all-feeds-read "no"
-confirm-mark-feed-read "no"
