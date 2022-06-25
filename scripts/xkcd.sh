@@ -1,6 +1,7 @@
 #! /bin/sh
 START="https://xkcd.com"
 END="info.0.json"
+IMAGE_VIEWER="sxiv"
 
 if [ -z "$1" ]
 then
@@ -10,4 +11,4 @@ else
 fi
 
 curl -s "$URI" | jq ".img" | xargs wget -q -O /tmp/xkcd.png
-nsxiv /tmp/xkcd.png && rm /tmp/xkcd.png
+$IMAGE_VIEWER /tmp/xkcd.png && rm /tmp/xkcd.png
