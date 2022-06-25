@@ -61,12 +61,12 @@ let g:tagbar_wrap = 1
 
 let g:goyo_width = 82
 " Nmaps
-nmap <F4> :TagbarToggle<CR>
-nmap <F5> :PlugUpgrade<CR>:PlugUpdate<CR>
-nmap <F6> :call pencil#init({'wrap': 'hard'})<CR>
-nmap <F7> :set hlsearch!<CR>
-nmap <F8> :Goyo<CR>
-nmap <F9> :RustFmt<CR>
+nmap <F1> :set hlsearch!<CR>
+nmap <F2> :PlugUpgrade<CR>:PlugUpdate<CR>
+nmap <F3> :TagbarToggle<CR>
+nmap <F5> :Call pencil#init({'wrap': 'hard'})<CR>
+nmap <F6> :Goyo<CR>
+nmap <F7> :RustFmt<CR>
 
 if !exists('g:tagbar_type_rust')
     let g:tagbar_type_rust = {
