@@ -8,7 +8,7 @@
 pgrep /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 > /dev/null || daemonize /usr/lib/polkit-gnome/polkti-gnome-authentication-agent-1
 daemonize "$(which  numlockx)" on
 pgrep uim-toolbar > /dev/null || daemonize "$(which uim-toolbar-gtk3-systray)"
-pgrep flameshot > /dev/bull || daemonize "$(which flameshot)"
+pgrep flameshot > /dev/null || daemonize "$(which flameshot)"
 pgrep caffeine > /dev/null || daemonize "$(which caffeine)"
 pgrep dunst > /dev/null || daemonize "$(which dunst)"
 
@@ -23,4 +23,4 @@ else
 	rm /home/zocki/.wallpaper_change
 fi
 feh --bg-fill /home/zocki/.wallpaper.png &
-
+numlockx on
