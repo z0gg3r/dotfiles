@@ -1,7 +1,6 @@
-export QT_STLYE_OVERRIDE="breeze-dark"
 export DEBUGINFOD_URLS="https://debuginfod.elfutils.org/"
 export PKG_CONFIG_PATH="/usr/lib/pkgconfig"
-export PATH="$(/usr/bin/cat /home/zocki/.config/env/path)"
+export PATH="$(/bin/cat /home/zocki/.config/env/path)"
 export EDITOR="vim"
 export VISUAL="vim"
 export MANWIDTH="80"
