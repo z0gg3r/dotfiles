@@ -10,7 +10,7 @@ safe_source ()
 
 source $HOME/.config/env/exports
 safe_source $HOME/.aliases
-export ZSH=/usr/share/oh-my-zsh/
+export ZSH="$HOME/.config/oh-my-zsh"
 
 ZSH_THEME="wezm"
 
@@ -21,7 +21,7 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(git)
 
 safe_source $ZSH/oh-my-zsh.sh
-safe_source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+safe_source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
 
 setopt GLOB_DOTS
 setopt COMPLETE_ALIASES
@@ -114,4 +114,4 @@ autoload -Uz compinit
 compinit
 
 clear && neofetch
-sendmail status
+# sendmail status
