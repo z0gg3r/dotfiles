@@ -115,3 +115,5 @@ compinit
 
 clear && neofetch
 # sendmail status
+
+unset MANPATH # Don't force it
