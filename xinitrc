@@ -42,6 +42,5 @@ export GTK_IM_MODULE="uim"
 export QT_IM_MODULE="uim"
 export XMODIFIERS=@im=uim
 daemonize $(which uim-xim)
-# daemonize $(gentoo-pipewire-launcher)
 
-exec bspwm
+dbus-launch --exit-with-session bspwm
