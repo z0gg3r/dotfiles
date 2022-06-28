@@ -1,6 +1,6 @@
 #! /bin/sh
-bin="$(/usr/bin/ls /usr/bin | wc -l)"
-local_bin="$(/usr/bin/ls /usr/local/bin | wc -l)"
+bin="$(/bin/ls /usr/bin | wc -l)"
+local_bin="$(/bin/ls /usr/local/bin | wc -l)"
 
 dc_args="$bin $local_bin + pq"
 
