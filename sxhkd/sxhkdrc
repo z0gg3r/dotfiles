@@ -58,8 +58,8 @@ XF86AudioPrev
 #
 
 # quit/restart bspwm
-super + shift + {q,r}
-	bspc {quit,wm -r}
+#super + shift + {q,r}
+#	bspc {quit,wm -r}
 
 # close and kill
 super + q
