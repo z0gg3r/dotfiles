@@ -21,5 +21,5 @@ bspc rule -a Surf state=tiled
 bspc rule -a Zathura:org.pwmt.zathura state=tiled
 bspc rule -a Xsane:xsane state=pseudo_tiled
 
-dash "$HOME/.config/bspwm/autostart.sh" > /dev/null 2> /dev/null &
+dash "$HOME/.config/bspwm/autostart.sh" > /tmp/autostart_1 2> /tmp/autostart_2 &
 dash "$HOME/.config/polybar/launch.sh" > /dev/null 2> /dev/null & 
