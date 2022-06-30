@@ -20,7 +20,6 @@ call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'xolox/vim-misc'
 	Plug 'xolox/vim-easytags'
 	Plug 'tpope/vim-fugitive'
-	Plug 'ollykel/v-vim'
 	Plug 'junegunn/goyo.vim'
 	Plug 'rust-lang/rust.vim'
 	Plug 'w0rp/ale'
@@ -41,7 +40,7 @@ augroup END
 let g:pencil#textwidth = 80
 
 set list
-set lcs=tab:᚛-᚜,lead:… " lead requires vim8.2+
+set lcs=tab:>-<,lead:… " lead requires vim8.2+
 
 " Airline config
 let g:airline_section_b = '%{strftime("%c")} | %{FugitiveStatusline()}'
