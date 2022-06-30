@@ -8,4 +8,5 @@ rep="$(echo "$num + 1" | calc -p)"
 wallpaper="$num.png"
 name="$(lecho -c -f $HOME/.wallpapermap -l $rep | trim)"
 ln -sf "$dir/$wallpaper" $HOME/.wallpaper.png
-printf "[Automatic Change] %b @ %b -> %b/%b\t(%b)\n" "$date" "$time" "$dir" "$wallpaper" "$name" >> "$HOME/.config/wallpaperlog"
+wallpaperlog.sh "$rep"
+#printf "[Automatic Change] %b @ %b -> %b/%b\t(%b)\n" "$date" "$time" "$dir" "$wallpaper" "$name" >> "$HOME/.config/wallpaperlog"
