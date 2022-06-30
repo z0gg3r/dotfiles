@@ -3,7 +3,7 @@
 #
 
 super + Return
-	urxvt
+	sakura -d /home/zocki
 
 super + d
 	rofi -show run
@@ -37,6 +37,9 @@ super + shift + Escape
 
 super + r
 	dash /home/zocki/.config/scripts/run.sh
+
+supert + shift + r
+	dash /home/zocki/.config/polybar/launch.sh > /dev/null 2> /dev/null &
 
 XF86AudioRaiseVolume
 	pamixer -i 1
