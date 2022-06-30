@@ -3,7 +3,7 @@
 #
 
 super + Return
-	sakura -d /home/zocki
+	urxvt
 
 super + d
 	rofi -show run
@@ -22,6 +22,9 @@ super + shift + e
 
 super + w
 	librewolf
+
+super + shift + w
+	dash /home/zocki/.config/scripts/wallpaper_setter.sh 
 
 super + l
 	i3lock -n -t -i /home/zocki/.wallpaper.png
