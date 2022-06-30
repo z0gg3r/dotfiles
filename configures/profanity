@@ -1,1 +1,1 @@
---enable-notifications --enable-python-plugins --enable-c-plugins --enable-plugins --enable-pgp --enable-omemo --enable-omemo-qrcode --enable-otr --enable-icons-and-clipboard --enable-gdk-pixbuf --prefix=/home/zocki/.local
+--enable-notifications --enable-c-plugins --enable-plugins --enable-pgp --enable-omemo --enable-omemo-qrcode --enable-otr --enable-icons-and-clipboard --enable-gdk-pixbuf --prefix=/home/zocki/.local
