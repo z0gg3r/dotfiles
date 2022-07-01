@@ -38,7 +38,7 @@ super + shift + Escape
 super + r
 	dash /home/zocki/.config/scripts/run.sh
 
-supert + shift + r
+super + shift + r
 	dash /home/zocki/.config/polybar/launch.sh > /dev/null 2> /dev/null &
 
 XF86AudioRaiseVolume
