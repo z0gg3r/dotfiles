@@ -113,7 +113,6 @@ source $HOME/.config/env/aliases
 autoload -Uz compinit
 compinit
 
-clear && neofetch
-# sendmail status
+clear && ufetch
 
 unset MANPATH # Don't force it
