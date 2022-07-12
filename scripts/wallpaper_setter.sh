@@ -1,6 +1,6 @@
 #! /bin/sh
 
-list="$(printf "random\nkeep\n%b\nrandom\nkeep" "$(cat "$HOME"/.wallpapermap)")"
+list="$(printf "random\nkeep\n%b" "$(cat "$HOME"/.wallpapermap)")"
 choice="$(echo "$list" | rofi -dmenu | cut -d, -f1)"
 
 if [ -z "$choice" ]
