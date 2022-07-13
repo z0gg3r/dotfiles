@@ -1,5 +1,5 @@
 #! /bin/sh
-touch $HOME/.wallpaper_change
+# touch $HOME/.wallpaper_change
 date=$(date +%Y-%m-%d)
 time=$(date +%H:%M:%S)
 dir="$HOME/wallpapers"
@@ -8,4 +8,3 @@ ln -sf "$wallpaper" $HOME/.wallpaper.png
 num="$(echo "$1 + 1" | calc -p)"
 name="$(lecho -c -f $HOME/.wallpapermap -l "$num" | trim)"
 wallpaperlog.sh "$1" "manual"
-#printf "[Manual Change]\t%b @ %b -> %b\t(%b)\n" "$date" "$time" "$wallpaper" "$name" >> "$HOME/.config/wallpaperlog"
