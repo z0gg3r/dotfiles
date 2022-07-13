@@ -103,11 +103,6 @@ remove_files()
 	remove_file $HOME/.sqlite_history
 }
 
-_numfmt_()
-{
-	echo "xargs -I \"{}\" printf \"%\'3d\\n\" \"{}\""
-}
-
 source $HOME/.config/env/aliases
 
 autoload -Uz compinit
