@@ -2,7 +2,7 @@
 
 build_all()
 {
-	for file in *
+	for file in *.tex
 	do
 		ltx_build "$file"
 	done
