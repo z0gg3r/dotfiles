@@ -6,5 +6,5 @@ pgrep caffeine > /dev/null || daemonize "$(which caffeine)"
 pgrep dunst > /dev/null || daemonize "$(which dunst)"
 pgrep pipewire > /dev/null || daemonize "$(which gentoo-pipewire-launcher)"
 
-sct 6000 0.85
+sct 6000 0.7
 numlockx on
