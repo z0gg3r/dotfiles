@@ -1,5 +1,3 @@
-# All non-zsh exports go in there!
-
 safe_source ()
 {
 	if [ -e "$1" ]
@@ -9,7 +7,6 @@ safe_source ()
 }
 
 source $HOME/.config/env/exports
-safe_source $HOME/.aliases
 export ZSH="$HOME/.config/oh-my-zsh"
 
 ZSH_THEME="wezm"
@@ -18,7 +15,7 @@ CASE_SENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
-plugins=(git)
+plugins=()
 
 safe_source $ZSH/oh-my-zsh.sh
 safe_source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
@@ -103,7 +100,8 @@ remove_files()
 	remove_file $HOME/.sqlite_history
 }
 
-source $HOME/.config/env/aliases
+safe_source $HOME/.config/env/aliases
+safe_source $HOME/.aliases
 
 autoload -Uz compinit
 compinit
