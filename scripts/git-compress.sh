@@ -60,12 +60,16 @@ git_compress()
 {
 	cd "$1" || die "cannot cd into $1"
 	before=$(du -s ".git")
+	start=$(/bin/date "+%s")
 	printf "before:\t%b\n" "$(size_format "$before" ".")" | replace ".git" "$1"
 	git repack -AdflF 2> /dev/null
 	after=$(du -s ".git")
+	end=$(/bin/date "+%s")
+	time_diff=$(echo "$end - $start" | calc -p)
 	cd "$2" || die "cannot cd into $2"
 	printf "after:\t%b\n" "$(size_format "$after" ".")" | replace ".git" "$1"
 	echo "diff:$(printf "\t")$(size_diff "$before" "$after")"
+	printf "took %bs\n" "$time_diff"
 }
 
 if [ -z "$TARGET" ]
