@@ -1,6 +1,6 @@
 #! /bin/sh
 
-start="$(/bin/date '+%s')"
+id=$(timer.sh start)
 
 if ! [ "$1" = "update" ]
 then
@@ -9,8 +9,4 @@ else
 	doas emerge -autND @world
 fi
 
-end="$(/bin/date '+%s')"
-
-diff=$(echo "$end - $start" | calc -p)
-
-printf "Took %bs\n" "$diff"
+timer.sh "$id"
