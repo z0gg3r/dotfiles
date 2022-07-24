@@ -41,13 +41,13 @@ then
 	for f in /etc/X11/xinit/xinitrc.d/?* 
 	do
 		[ -x "$f" ] && . "$f"
- 	done
+	done
 	unset f
 fi
 
 export GTK_IM_MODULE="uim"
 export QT_IM_MODULE="uim"
 export XMODIFIERS=@im=uim
-daemonize $(which uim-xim)
+daemonize "$(which uim-xim)"
 
 dbus-launch --exit-with-session bspwm
