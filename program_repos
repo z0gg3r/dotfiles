@@ -1,4 +1,3 @@
-https://git.code.sf.net/p/abook/git abook
 https://github.com/ggreer/the_silver_searcher ag
 https://github.com/onetrueawk/awk bawk
 https://github.com/Wilfred/bfc bfc
@@ -17,7 +16,9 @@ https://github.com/raboof/nethogs nethogs
 https://github.com/bartobri/no-more-secrets nms
 https://github.com/jarun/nnn nnn
 https://github.com/olive-editor/olive olive
+https://github.com/cdemoulins/pamixer pamixer
 https://github.com/jwilk/pdf2djvu pdf2djvu
+https://github.com/PintaProject/Pinta pinta
 https://github.com/neoncortex/poor-man-s-bookmark pmb
 https://github.com/profanity-im/profanity profanity
 https://github.com/Xfennec/progress progress
@@ -25,9 +26,6 @@ https://github.com/rakitzis/rc rc
 https://github.com/mgudemann/sct sct
 https://github.com/Gottox/smu smu
 https://git.suckless.org/st st
-git://git.codemadness.org/stagit stagit
-https://git.rawtext.club/sloum/stagit-gemini stagit-gemini
-git://git.codemadness.org/stagit-gopher stagit-gopher
 https://git.suckless.org/surf surf
 https://git.suckless.org/surf surf-viewer
 https://github.com/muennich/sxiv sxiv
