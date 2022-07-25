@@ -21,8 +21,6 @@ then
 fi
 
 case $1 in
-	"anonymous")
-		time_stamp "anontimestamp" ;;
 	"start")
 		id=$(uuidgen)
 		time_stamp "$id"
