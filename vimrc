@@ -13,6 +13,8 @@ set nomodeline
 set tabstop=8
 set shiftwidth=8
 
+set viminfofile=/dev/null
+
 call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'reedes/vim-pencil'
 	Plug 'vim-airline/vim-airline'
