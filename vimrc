@@ -69,6 +69,8 @@ nmap <F5> :Call pencil#init({'wrap': 'hard'})<CR>
 nmap <F6> :Goyo<CR>
 nmap <F7> :RustFmt<CR>
 
+let g:rust_recommended_style = 0
+
 if !exists('g:tagbar_type_rust')
     let g:tagbar_type_rust = {
                 \ 'ctagstype' : 'rust',
