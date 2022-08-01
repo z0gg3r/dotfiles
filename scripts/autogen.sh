@@ -6,10 +6,12 @@ remove_auto()
 	echo "rm -f aclocal.m4 configure config.log config.status"
 	echo "rm -rf autom4te*.cache"
 	echo "rm -rf build-aux"
+	echo "rm -rf src/.deps"
 	rm -f config.h.in Makefile.in
 	rm -f aclocal.m4 configure config.log config.status
 	rm -rf autom4te*.cache
 	rm -rf build-aux
+	rm -rf src/.deps
 }
 
 add_auto()
