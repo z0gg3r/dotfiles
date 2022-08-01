@@ -29,9 +29,9 @@ fi
 
 # start some nice programs
 
-if [ -n "`/etc/X11/chooser.sh`" ]
+if [ -n "$(/etc/X11/chooser.sh)" ]
 then
-	command="`/etc/X11/chooser.sh`"
+	command="$(/etc/X11/chooser.sh)"
 else
 	failsafe="yes"
 fi
