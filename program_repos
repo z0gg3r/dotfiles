@@ -1,6 +1,5 @@
 https://github.com/ggreer/the_silver_searcher ag
 https://github.com/onetrueawk/awk bawk
-https://github.com/Wilfred/bfc bfc
 https://github.com/caffeine-ng/caffeine-ng caffeine-ng
 https://github.com/AlDanial/cloc cloc
 https://github.com/universal-ctags/ctags ctags
@@ -13,9 +12,7 @@ https://github.com/LukeEmmet/html2gmi html2gmi
 git://git.codemadness.org/lel lel
 https://github.com/rui314/mold mold
 https://github.com/lukesmithxyz/mutt-wizard muttwizard
-https://github.com/raboof/nethogs nethogs
 https://github.com/bartobri/no-more-secrets nms
-https://github.com/jarun/nnn nnn
 https://github.com/olive-editor/olive olive
 https://github.com/cdemoulins/pamixer pamixer
 https://github.com/jwilk/pdf2djvu pdf2djvu
@@ -26,7 +23,6 @@ https://github.com/Xfennec/progress progress
 https://github.com/rakitzis/rc rc
 https://github.com/mgudemann/sct sct
 https://github.com/Gottox/smu smu
-https://git.suckless.org/st st
 https://git.suckless.org/surf surf
 https://git.suckless.org/surf surf-viewer
 https://github.com/muennich/sxiv sxiv
