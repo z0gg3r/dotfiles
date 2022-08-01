@@ -22,6 +22,8 @@ safe_source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
 
 setopt GLOB_DOTS
 setopt COMPLETE_ALIASES
+setopt CORRECTALL
+unsetopt AUTO_CD
 
 [[ $- != *i* ]] && return
 
@@ -106,6 +108,9 @@ safe_source $HOME/.aliases
 
 autoload -Uz compinit
 compinit
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+zstyle ':completion::complete:*' use-cache 1
 
 clear && ufetch
 
