@@ -1,9 +1,11 @@
 #! /bin/sh
 PROG_DIR="$HOME/programs"
-ENTER="\033[34;48m"
-LEAVE="\033[33;48m"
+BLUE="\033[34;48m"
+YELLOW="\033[33;48m"
 ERROR="\033[31;48m"
 END="\033[0m"
+
+BANNER="==============================================================================="
 
 die()
 {
@@ -27,11 +29,13 @@ cd "$PROG_DIR" || die
 
 for dir in *
 do
+	(
 	cd "$dir" || die
-	printf "%bEntering %b...%b\n" "$ENTER" "$dir" "$END"
 	git_pull
-	printf "%bLeaving %b...%b\n" "$LEAVE" "$dir" "$END"
-	cd ..
+	printf "%b%b%b\n" "$BLUE" "$BANNER" "$END"
+	printf "%b%b%b\n" "$YELLOW" "$BANNER" "$END"
+)
+	#cd ..
 done
 
 cd "$curr_dir" || die
