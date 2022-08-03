@@ -22,7 +22,6 @@ safe_source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
 
 setopt GLOB_DOTS
 setopt COMPLETE_ALIASES
-setopt CORRECTALL
 unsetopt AUTO_CD
 
 [[ $- != *i* ]] && return
@@ -50,7 +49,8 @@ ex ()
 			*.tar)       	tar xf $1    	;;
 			*.tbz2)      	tar xjf $1   	;;
 			*.tgz)       	tar xzf $1   	;;
-			*.zip)       	unzip $1     	;;
+			*.zip)       	parallel \
+			unzip -d "{.}" "{}" ::: "$1"	;;
 			*.Z)         	uncompress $1	;;
 			*.7z)        	7z x $1      	;;
 			*.deb)       	ar x $1      	;;
@@ -115,3 +115,4 @@ zstyle ':completion::complete:*' use-cache 1
 clear && ufetch
 
 unset MANPATH # Don't force it
+
