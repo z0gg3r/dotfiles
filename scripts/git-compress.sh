@@ -59,6 +59,7 @@ size_diff()
 git_compress()
 {
 	cd "$1" || die "cannot cd into $1"
+	if ! [ -e ".git" ]; then return; fi
 	before=$(du -s ".git")
 	start=$(/bin/date "+%s")
 	printf "before:\t%b\n" "$(size_format "$before" ".")" | replace ".git" "$1"
