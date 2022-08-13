@@ -55,6 +55,7 @@ alias valgrind="valgrind --leak-check=full --show-leak-kinds=all -s --track-orig
 alias wallpaperlog="less -N --mouse < $HOME/.config/wallpaperlog"
 alias wallpapermap="less --mouse $HOME/.wallpapermap"
 alias weechat="LD_PRELOAD=/home/zocki/.local/lib/libwcwidth.so weechat"
+alias wget2="wget2 --progress=bar"
 alias wmlist="/usr/bin/ls /usr/share/xsessions"
 alias wttr="wttr.sh"
 alias yay="yay --nocombinedupgrade"
