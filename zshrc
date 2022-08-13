@@ -58,6 +58,8 @@ ex ()
 			*.tar.xz)    	tar xf $1    	;;
 			*.tar.zst)   	tar xf $1    	;;
 			*.tar.lz)	tar xf $1	;;
+			*.zstd) 	zstd -d $1 	;;
+			*.zst) 		zstd -d $1 	;;
 			*)		echo "'$1' cannot be extracted via ex()" ;;
 		esac
 	else
