@@ -35,7 +35,6 @@ do
 	printf "%b%b%b\n" "$BLUE" "$BANNER" "$END"
 	printf "%b%b%b\n" "$YELLOW" "$BANNER" "$END"
 )
-	#cd ..
 done
 
 cd "$curr_dir" || die
