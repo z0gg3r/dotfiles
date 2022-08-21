@@ -80,27 +80,43 @@ elif [ -e "$TARGET/.git" ]
 then
 	git_compress "$TARGET" "$(pwd)"
 else
-	cwd="$(pwd)"
+	cwd=$(pwd)
+
 	if [ -e "$cwd/$TARGET" ]
 	then
 		TARGET="$cwd/$TARGET"
 	fi
+
 	cd "$TARGET" || die "cannot cd into $TARGET"
-	before=$(du -s "$TARGET")
-	printf "before:\t%b\n\n" "$(size_format "$before" ".")"
+
+	before=$(du -sh "$TARGET")
+	before="$(size_format "$before" ".")"
+
+	printf "before:\t%b\n\n" "$before"
+
+	shift
+	skip="false"
+
 	for dir in *
 	do
-		if [ -d "$dir" ] && [ -e "$dir/.git" ]
+		skip="false"
+		case "$1" in
+			*$dir*) skip="true" ;;
+		esac
+
+		if [ $skip = "false" ]
 		then
-			git_compress "$dir" "$TARGET"
+			if [ -d "$dir" ] && [ -e "$dir/.git" ]
+			then
+				git_compress "$dir" "$TARGET"
+			fi
 		fi
 	done
-	after=$(du -s "$TARGET")
-	printf "\nafter:\t%b\n" "$(size_format "$after" ".")"
-	#echo "diff:$(printf "\t")$(size_diff "$before" "$after")"
+	after=$(du -sh "$TARGET")
+	after="$(size_format "$after" ".")"
+	printf "\nafter:\t%b\n" "$after"
 	printf "\n" >> /tmp/diff
 	echo "diff:$(printf "\t")$(colour_format "$(cat /tmp/diff | calc -p)")"
-	rm "/tmp/diff"
+	rm /tmp/diff
 	cd "$cwd" || die "cannot cd into $cwd"
 fi
-
