@@ -1,5 +1,5 @@
 alias aliases="cat $HOME/.config/env/aliases | cut -c 6- | less"
-alias astyle="astyle -T8 -A8"
+alias astyle="astyle -T8 -A8 -n"
 alias cal="cal -ymw"
 alias calc="calc -p"
 alias clea="clear"
