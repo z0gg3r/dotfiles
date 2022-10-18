@@ -18,7 +18,7 @@ git_pull()
 	if [ -e .git ]
 	then
 		git remote get-url origin
-		GIT_CONFIG_GLOBAL="/dev/null" git pull
+		GIT_CONFIG_GLOBAL="/dev/null" git pull --no-rebase --ff
 	else
 		printf "%b%b is not a git repo.%b\n" "$ERROR" "$(pwd)" "$END"
 	fi
