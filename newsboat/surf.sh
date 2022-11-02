@@ -9,5 +9,5 @@ firejail \
 	--nou2f \
 	--novideo \
 	--private-cache \
-	vimb -i "$1"
-#	surf-viewer -u "$SURF_USERAGENT" -s -g -n -m "$1"
+	surf-viewer -u "$SURF_USERAGENT" -s -g -n -m "$1"
+#	vimb -i "$1"
