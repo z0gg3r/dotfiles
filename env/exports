@@ -9,6 +9,7 @@ export GOPROXY="direct"
 export LESSHISTFILE="/dev/null"
 export LESSOPEN="/home/zocki/.config/scripts/lessopen.sh %s"
 export LESSCLOSE="/home/zocki/.config/scripts/lessclose.sh %s %s"
+export LDFLAGS="-Wl,-z,defs -Wl,-z,now -Wl,-z,relro"
 export GPG_TTY=$(tty)
 export SURF_USERAGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.4664.45 Safari/537.36"
 export COMMONFLAGS="-pipe -march=native -O2 -D_FORTIFY_SOURCE=2 -fstack-protector-strong -fcf-protection -fpie -fPIC"
