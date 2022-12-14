@@ -50,4 +50,7 @@ export QT_IM_MODULE="uim"
 export XMODIFIERS=@im=uim
 daemonize "$(which uim-xim)"
 
-dbus-launch --exit-with-session bspwm
+case "$1" in
+	"xfce") dbus-launch --exit-with-session startxfce4 ;;
+	*) dbus-launch --exit-with-session bspwm ;;
+esac
