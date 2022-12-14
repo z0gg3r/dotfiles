@@ -4,6 +4,8 @@ browser "/home/zocki/.config/newsboat/surf.sh"
 macro p set browser "mpv %u" ; show-urls ; open-in-browser ; set browser "surf %u"
 player "mpv"
 auto-reload "yes"
-reload-threads 16
+reload-threads 24
 prepopulate-query-feeds "yes"
 confirm-mark-all-feeds-read "no"
+confirm-mark-feed-read "no"
+confirm-exit "no"
