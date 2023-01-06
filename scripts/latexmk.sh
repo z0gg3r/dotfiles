@@ -10,7 +10,7 @@ build_all()
 
 ltx_build()
 {
-	latexmk -xelatex "$1"
+	latexmk -bibtex -gg -quiet -xelatex "$1"
 	latexmk -c
 }
 
@@ -26,5 +26,4 @@ then
 	exit 1
 fi
 
-latexmk -xelatex "$1"
-latexmk -c
+ltx_build "$1"
