@@ -51,6 +51,6 @@ export XMODIFIERS=@im=uim
 daemonize "$(which uim-xim)"
 
 case "$1" in
-	"xfce") dbus-launch --exit-with-session startxfce4 ;;
-	*) dbus-launch --exit-with-session bspwm ;;
+	"xfce") exec xfwm4 ;;
+	*) exec bspwm ;;
 esac
