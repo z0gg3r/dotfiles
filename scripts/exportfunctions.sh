@@ -5,6 +5,12 @@
 # # usage: ex <file>
 ex ()
 {
+	if [ -z "$1" ]
+	then
+		echo "usage: ex <file>"
+		return 1
+	fi
+
 	if [ -f "$1" ]
 	then
 		case "$1" in
