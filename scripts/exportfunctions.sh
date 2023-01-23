@@ -67,3 +67,13 @@ bookmark_extract()
 }
 
 export bookmark_extract
+
+tcc_bootstrap()
+{
+	./configure --cc=tcc
+	make -j24
+	doas make install
+	make clean
+}
+
+export tcc_bootstrap
