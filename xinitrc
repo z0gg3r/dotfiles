@@ -27,14 +27,7 @@ then
 	xmodmap "$usermodmap"
 fi
 
-# start some nice programs
-
-if [ -n "$(/etc/X11/chooser.sh)" ]
-then
-	command="$(/etc/X11/chooser.sh)"
-else
-	failsafe="yes"
-fi
+failsafe="yes"
 
 if [ -d /etc/X11/xinit/xinitrc.d ] 
 then
