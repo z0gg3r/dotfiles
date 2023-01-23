@@ -21,7 +21,7 @@ super + shift + e
 	dash /home/zocki/.config/scripts/emoji.sh
 
 super + w
-	librewolf
+	firefox-bin
 
 super + shift + w
 	dash /home/zocki/.config/scripts/wallpaper_setter.sh 
