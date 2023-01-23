@@ -11,6 +11,8 @@ build_all()
 ltx_build()
 {
 	latexmk -bibtex -gg -quiet -xelatex "$1"
+	parallel "bibtex {.}" ::: "$1"
+	latexmk -bibtex -gg -quiet -xelatex "$1"
 	latexmk -c
 }
 
