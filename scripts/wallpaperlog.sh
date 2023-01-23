@@ -12,7 +12,8 @@ fi
 date="$(date +%Y-%m-%d) @ $(date +%H:%M:%S)"
 
 wallpaper="$1"
-name="$(lecho -c -f $HOME/.wallpapermap -l "$wallpaper" | trim)"
+wallpaper2="$(echo "$1 1 +pq" | dc)"
+name="$(lecho -c -f $HOME/.wallpapermap -l "$wallpaper2" | trim)"
 wallpaper="$(pad -s "$wallpaper" -c "0" -l 5 -m left)"
 
 printf "%b %b -> %b.png\t(%b)\n" "$mode" "$date" "$wallpaper" "$name" >> $WALLPAPERLOG
