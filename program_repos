@@ -1,16 +1,19 @@
 https://github.com/ggreer/the_silver_searcher ag
 https://github.com/onetrueawk/awk bawk
 https://github.com/Wilfred/bfc bfc
+https://github.com/google/bloaty bloaty
 https://github.com/caffeine-ng/caffeine-ng caffeine-ng
 https://gitlab.com/jallbrit/cbonsai cbonsai
 https://github.com/AlDanial/cloc cloc
 https://github.com/universal-ctags/ctags ctags
 https://github.com/Duncaen/OpenDoas doas
+https://github.com/eradman/entr entr
 https://git.suckless.org/farbfeld farbfeld
 https://github.com/silentbicycle/ff ff
 https://github.com/netblue30/firejail firejail
 https://github.com/jhawthorn/fzy fzy
 git://git.codemadness.org/lel lel
+https://git.suckless.org/libgrapheme libgrapheme
 https://github.com/rui314/mold mold
 https://github.com/lukesmithxyz/mutt-wizard muttwizard
 https://github.com/bartobri/no-more-secrets nms
@@ -19,7 +22,6 @@ https://github.com/olive-editor/olive olive
 https://github.com/cdemoulins/pamixer pamixer
 https://github.com/jwilk/pdf2djvu pdf2djvu
 https://github.com/PintaProject/Pinta pinta
-https://github.com/neoncortex/poor-man-s-bookmark pmb
 https://github.com/profanity-im/profanity profanity
 https://github.com/Xfennec/progress progress
 https://github.com/rakitzis/rc rc
@@ -33,6 +35,8 @@ https://repo.or.cz/tinycc.git tcc
 https://github.com/xorg62/tty-clock tty-clock
 https://github.com/aureliojargas/txt2regex txt2regex
 https://github.com/aligrudi/neatvi vi
+https://github.com/fanglingsu/vimb vimb
 https://github.com/z0gg3r/wcwidth wcwidth
+https://github.com/atx/wtype wtype
 https://github.com/robiot/XClicker xclicker
 https://github.com/zen-kernel/zen-kernel zen-kernel
