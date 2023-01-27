@@ -65,7 +65,7 @@ let g:goyo_width = 82
 nmap <F2> :set hlsearch!<CR>
 nmap <F3> :PlugUpgrade<CR>:PlugUpdate<CR>
 nmap <F4> :TagbarToggle<CR>
-nmap <F5> :Call pencil#init({'wrap': 'hard'})<CR>
+nmap <F5> :call pencil#init({'wrap': 'hard'})<CR>
 nmap <F6> :Goyo<CR>
 nmap <F7> :RustFmt<CR>
 
