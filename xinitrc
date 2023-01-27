@@ -44,6 +44,6 @@ export XMODIFIERS=@im=uim
 daemonize "$(which uim-xim)"
 
 case "$1" in
-	"xfce") exec xfwm4 ;;
+	"xfce") exec startxfce4 ;;
 	*) exec bspwm ;;
 esac
