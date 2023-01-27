@@ -46,7 +46,7 @@ update_dir()
 	dir_path=$1
 	count=$(echo "$dir_path" | sed -e 's/\(.\)/\1\n/g' | grep -c "/")
 	count=$(echo "$count 1 +pq" | dc)
-	dir=$(echo "$dir_path" | cut -d/ -f$count)
+	dir=$(echo "$dir_path" | cut -d/ -f"$count")
 	if [ -n "$3" ]
 	then
 		dir="$3"
@@ -61,8 +61,10 @@ update_dir()
 	then
 		mkdir "$dir"
 	fi
-	for file in $($(which ls) "$dir_path")
+	#for file in $($(which ls) "$dir_path")
+	for prefixed_file in "$dir_path"/*
 	do
+		file="$(echo "$prefixed_file" | replace "$dir_path/" "")"
 		case $ignore_list in
 			*$file*) ignore="yes" ;;
 		esac
@@ -91,12 +93,12 @@ update_file()
 	then
 		count=$(echo "$file_path" | sed -e 's/\(.\)/\1\n/g' | grep -c "/")
 		count=$(echo "$count 1 +pq" | dc)
-		file_name=$(echo "$file_path" | cut -d/ -f$count)
+		file_name=$(echo "$file_path" | cut -d/ -f"$count")
 	fi
 
 	count=$(echo "$file_name" | sed -e 's/\(.\)/\1\n/g' | grep -c "/")
 	count=$(echo "$count 1 +pq" | dc)
-	tmp=$(echo "$file_name" | replace "$(echo "$file_name" | cut -d/ -f$count)" "")
+	tmp=$(echo "$file_name" | replace "$(echo "$file_name" | cut -d/ -f"$count")" "")
 	if ! [ -e "$tmp" ] && [ -n "$tmp" ]
 	then
 		mkdir -p "$tmp"
