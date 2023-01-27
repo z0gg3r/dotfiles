@@ -54,6 +54,7 @@ remove_files()
 
 safe_source $HOME/.config/env/aliases
 safe_source $HOME/.aliases
+safe_source "$HOME/.config/scripts/create_wayland_env.sh"
 
 autoload -Uz compinit
 compinit
@@ -64,4 +65,3 @@ zstyle ':completion::complete:*' use-cache 1
 clear && ufetch
 
 unset MANPATH # Don't force it
-
