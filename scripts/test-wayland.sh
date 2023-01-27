@@ -1,8 +1,8 @@
 #! /bin/sh
 
-if pgrep "sway" > /dev/null
+if pgrep "xinit" > /dev/null
 then
-	true
-else
 	false
+else
+	true
 fi
