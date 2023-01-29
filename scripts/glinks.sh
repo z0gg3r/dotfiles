@@ -3,7 +3,7 @@
 firejail \
 	--noprofile \
 	--hosts-file="$HOME/.config/adblocklist" \
-	--private="$HOME/Documents/mail_viewer" \
+	--private="/opt/firejail/mail_viewer" \
 	--nodvd \
 	--nosound \
 	--notv \
