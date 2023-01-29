@@ -14,3 +14,10 @@ start2()
 }
 
 export start2
+
+start3()
+{
+	daemonize "$(which "$1")" "$@"
+}
+
+export start3
