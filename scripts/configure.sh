@@ -18,5 +18,7 @@ cd "$HOME/programs/$chosen" || exit
 
 echo "Configure options were: $config"
 echo "CFLAGS: $CFLAGS"
+echo "LDFLAGS: $LDFLAGS"
+echo "CXXFLAGS: $CXXFLAGS"
 
 cd "$pwd" || exit
