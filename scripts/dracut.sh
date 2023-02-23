@@ -1,11 +1,13 @@
 #! /bin/sh
 
-if [ -z "$1" ]
+kver="$1"
+if [ -z "$kver" ]
 then
-	exit 1
+	cd /usr/src/linux || exit 1
+	kver=$(make -s kernelversion)
 fi
 
-echo "Kernel Version is: $1"
+echo "Kernel Version is: $kver"
 echo "Continue?"
 
 read -r answer
