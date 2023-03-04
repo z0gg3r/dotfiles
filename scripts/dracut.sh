@@ -14,5 +14,5 @@ read -r answer
 
 if [ "$answer" = "y" ]
 then
-	doas dracut --reproducible --zstd --early-microcode  --force --kver "$1"
+	doas dracut --reproducible --zstd --early-microcode  --force --kver "$kver"
 fi
