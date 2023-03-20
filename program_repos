@@ -2,6 +2,7 @@ https://github.com/ggreer/the_silver_searcher ag
 https://github.com/onetrueawk/awk bawk
 https://github.com/Wilfred/bfc bfc
 https://github.com/google/bloaty bloaty
+https://git.sr.ht/~blastwave/bw bw
 https://github.com/caffeine-ng/caffeine-ng caffeine-ng
 https://gitlab.com/jallbrit/cbonsai cbonsai
 https://github.com/AlDanial/cloc cloc
@@ -18,6 +19,7 @@ https://github.com/MFEK/glif glif
 https://github.com/mgdm/htmlq htmlq
 git://git.codemadness.org/lel lel
 https://git.suckless.org/libgrapheme libgrapheme
+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git linux
 https://github.com/jsha/minica minica
 https://github.com/rui314/mold mold
 https://github.com/lukesmithxyz/mutt-wizard muttwizard
@@ -45,4 +47,3 @@ https://github.com/fanglingsu/vimb vimb
 https://github.com/z0gg3r/wcwidth wcwidth
 https://github.com/atx/wtype wtype
 https://github.com/robiot/XClicker xclicker
-https://github.com/zen-kernel/zen-kernel zen-kernel
