@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 die()
 {
 	echo "Could not enter directory $1"

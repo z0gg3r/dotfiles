@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 BASE="$HOME/Documents"
 
 if [ -z "$1" ]

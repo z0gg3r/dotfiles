@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 date=$(date +%Y-%m-%d)
 time=$(date +%H:%M:%S)
 dir="$HOME/wallpapers"

@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 if test-wayland.sh
 then

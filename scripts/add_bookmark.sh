@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 title="$1"
 url="$2"

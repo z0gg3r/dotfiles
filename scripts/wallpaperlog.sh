@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 WALLPAPERLOG="$HOME/.config/wallpaperlog"
 

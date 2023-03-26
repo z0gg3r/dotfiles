@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 filename="$1"
 num_spaces=$(((`tput cols`-`awk 'length > m { m = length } END { print m }' "$filename"`)/2))
 spaces=""

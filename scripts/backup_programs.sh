@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 if [ -z "$PROGRAMS" ]
 then
 	PROG_DIR="$HOME/programs"

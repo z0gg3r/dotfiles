@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 usr_bin="$(/bin/ls /usr/bin | wc -l)"
 bin="$(/bin/ls /bin | wc -l)"
 local_bin="$(/bin/ls /usr/local/bin | wc -l)"

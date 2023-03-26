@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 cache="$(sort -u < "$HOME/.local/share/run.sh.cache")"
 chosen="$(echo "$cache" | rofi -dmenu)"
 

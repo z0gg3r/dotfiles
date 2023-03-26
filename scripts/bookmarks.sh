@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 DB_PATH="$HOME/.config/pmb"
 

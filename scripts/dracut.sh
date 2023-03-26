@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 kver="$1"
 if [ -z "$kver" ]

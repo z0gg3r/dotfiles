@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 remove_auto()
 {
 	echo "Remove Autotools stuff"

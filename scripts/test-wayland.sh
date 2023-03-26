@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 if pgrep "xinit" > /dev/null
 then

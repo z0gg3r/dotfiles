@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 SCRIPT_DIR="$HOME/.config/scripts"
 
 die()

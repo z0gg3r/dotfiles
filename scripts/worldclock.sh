@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 URI_BASE="https://time.is"
 
 if [ -z "$1" ]

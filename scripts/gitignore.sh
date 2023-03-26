@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 gi="https://gitignore.io/api/$1"
 
 shift

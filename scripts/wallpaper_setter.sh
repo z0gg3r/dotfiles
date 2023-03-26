@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 list="$(printf "random\nkeep\n%b" "$(cat "$HOME"/.wallpapermap)")"
 choice="$(echo "$list" | rofi -dmenu | cut -d, -f1)"

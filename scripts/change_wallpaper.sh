@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 # touch $HOME/.wallpaper_change
 date=$(date +%Y-%m-%d)
 time=$(date +%H:%M:%S)

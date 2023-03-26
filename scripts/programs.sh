@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 PROG_DIR="$HOME/programs"
 BLUE="\033[34;48m"
 YELLOW="\033[33;48m"

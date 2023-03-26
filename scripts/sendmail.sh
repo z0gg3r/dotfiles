@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 MAIL_DIR="$HOME/.local/share/sendmail"
 READ="read"
 UNREAD="unread"

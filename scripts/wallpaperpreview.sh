@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 image="/home/zocki/wallpapers/$1"
 

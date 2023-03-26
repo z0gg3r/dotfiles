@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 TMP_FILE="/tmp/abook"
 PERS_FILE="$HOME/.abook/addressbook"
 

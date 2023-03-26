@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 if [ -z "$1" ]; then exit 1; fi
 TMP=$(mktemp)
 BASE="https://rfc-editor.org/rfc"

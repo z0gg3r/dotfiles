@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 START="https://xkcd.com"
 END="info.0.json"
 IMAGE_VIEWER="sxiv"

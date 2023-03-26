@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 chosen=$(sqlite3 -csv "$HOME/.config/pmb/stores.db" "SELECT * FROM bookmark;" | fzy)
 

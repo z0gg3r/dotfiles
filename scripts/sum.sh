@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 if ! [ -e "$1" ]
 then

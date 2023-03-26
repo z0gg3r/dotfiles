@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 MONITORS="$(bspc query -M | while read -r line; do printf "%b," "$line"; done)"
 

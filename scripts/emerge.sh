@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 id=$(timer.sh start)
 

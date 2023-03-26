@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 
 # # ex = Extractor for all kinds of archives

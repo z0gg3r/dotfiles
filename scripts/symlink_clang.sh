@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 BASE_PATH="/opt/current-llvm/bin"
 

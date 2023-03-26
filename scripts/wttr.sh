@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 WTTR="https://wttr.in"
 CITY="$1"
 
