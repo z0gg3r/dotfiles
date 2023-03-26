@@ -51,7 +51,7 @@ alias tty-clock="tty-clock -cs -C 1 -f %F"
 alias update="timer.sh emerge-update; doas emerge -autUDN @world; timer.sh emerge-update"
 alias update-fc='doas fc-cache -fv'
 alias update-grub="doas grub-mkconfig -o /boot/grub/grub.cfg"
-alias updates="doas emerge -autDN @world"
+alias updates="doas emerge -autDNp @world"
 alias userlist="cut -d: -f1 /etc/passwd"
 alias uses="equery uses"
 alias valgrind="valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes"
