@@ -68,6 +68,7 @@ nmap <F4> :TagbarToggle<CR>
 nmap <F5> :call pencil#init({'wrap': 'hard'})<CR>
 nmap <F6> :Goyo<CR>
 nmap <F7> :RustFmt<CR>
+nmap <F8> :PencilOff<CR>
 
 let g:ale_c_cc_executable = 'gcc'
 let g:ale_c_cc_options = '-pipe -march=native -std=c99 -fstack-protector-strong -fcf-protection -fpie -fPIC -fno-delete-null-pointer-checks -Wall -Wextra'
