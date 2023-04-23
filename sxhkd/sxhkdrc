@@ -27,7 +27,7 @@ super + shift + w
 	dash /home/zocki/.config/scripts/wallpaper_setter.sh 
 
 super + l
-	i3lock -n -t -i /home/zocki/.wallpaper.png
+	i3lock -n -e -f -t -i /home/zocki/.wallpaper.png
 
 super + Escape
 	pkill -USR1 -x sxhkd
