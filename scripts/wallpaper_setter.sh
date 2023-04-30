@@ -1,6 +1,9 @@
 #!/bin/sh
 
-list="$(printf "random\nkeep\n%b" "$(cat "$HOME"/.wallpapermap)")"
+. $HOME/.config/scripts/wallpaper-exports.sh
+
+
+list="$(printf "random\nkeep\n%b" "$(cat "$WALLPAPERS_MAP")")"
 choice="$(echo "$list" | rofi -dmenu | cut -d, -f1)"
 
 if [ -z "$choice" ]
@@ -17,4 +20,5 @@ then
 else
 	change_wallpaper.sh "$choice"
 fi
-feh --bg-fill "$HOME/.wallpaper.png"
+
+feh --bg-fill "$WALLPAPERS_DST"
