@@ -1,0 +1,1 @@
+--with-liblua=/usr/include/lua5.4 --with-libssh2=/usr/include --with-libpcre=/usr/include --with-openssl=/usr/include/openssl
