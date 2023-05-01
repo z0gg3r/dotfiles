@@ -5,6 +5,15 @@
 super + Return
 	sakura -d /home/zocki
 
+super + KP_Enter
+	sakura -d /home/zocki
+
+shift + Print
+	flameshot full
+
+Print
+	maim -i $(xdotool getactivewindow) "$HOME/Pictures/screenshots/$(/bin/date '+%Y%m%d%H%M%S').png"
+
 super + d
 	rofi -show run
 
@@ -27,7 +36,7 @@ super + shift + w
 	dash /home/zocki/.config/scripts/wallpaper_setter.sh 
 
 super + l
-	i3lock -n -e -f -t -i /home/zocki/.wallpaper.png
+	i3lock -n -e -f -t -i /home/zocki/.config/wallpapers/wallpaper.png
 
 super + Escape
 	pkill -USR1 -x sxhkd
