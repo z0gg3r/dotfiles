@@ -1,6 +1,20 @@
 #!/bin/sh
 
-image="/home/zocki/wallpapers/$1"
+if ! command -V png2ff > /dev/null
+then
+	exit 1
+fi
+
+if ! command -V lel > /dev/null
+then
+	exit 1
+fi
+
+. "$HOME/.config/scripts/wallpaper-exports.sh"
+
+chosen="$(rofi -normalize-match -matching fuzzy -dmenu < "$WALLPAPERS_MAP")"
+
+image="$WALLPAPERS_SRC/$(echo "$chosen" | cut -d, -f1 | sed 's/ //g')"
 
 png2ff < "$image.png" > /tmp/image.ff
 
