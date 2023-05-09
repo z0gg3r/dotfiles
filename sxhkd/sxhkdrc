@@ -6,7 +6,7 @@ super + Return
 	sakura -d /home/zocki
 
 super + KP_Enter
-	sakura -d /home/zocki
+	st
 
 shift + Print
 	flameshot full
