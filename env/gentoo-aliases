@@ -1,6 +1,6 @@
 alias search="emerge --search"
-alias updates="doas emerge -autUDNp @world"
-alias update="doas emerge -autUDN @world"
+alias updates="doas emerge -autUDNp --with-bdeps=y @world"
+alias update="doas emerge -autUDN --with-bdeps=y @world"
 alias rebuild="doas emerge -atv @module-rebuild"
 alias cleanup="doas emerge -atc"
 alias uses="equery uses"
