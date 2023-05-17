@@ -2,10 +2,10 @@
 # wm independent hotkeys
 #
 
-super + Return
+super + KP_Enter
 	sakura -d /home/zocki
 
-super + KP_Enter
+super + Return
 	st
 
 shift + Print
