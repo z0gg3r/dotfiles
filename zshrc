@@ -35,26 +35,8 @@ unalias la
 unalias ll
 unalias l
 
-remove_file()
-{
-	if [ -e "$1" ]
-	then
-		rm "$1"
-	fi
-}
-
-# Removing useless files
-remove_files()
-{
-	remove_file $HOME/.calc_history
-	remove_file $HOME/.wget-hsts
-	remove_file $HOME/.xsession-errors.old
-	remove_file $HOME/.sqlite_history
-}
-
 safe_source $HOME/.config/env/aliases
 safe_source $HOME/.aliases
-# safe_source "$HOME/.config/scripts/create_wayland_env.sh"
 
 if [ -f /etc/os-release ]
 then
