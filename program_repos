@@ -2,7 +2,8 @@ https://github.com/ggreer/the_silver_searcher ag
 https://github.com/onetrueawk/awk bawk
 https://github.com/Wilfred/bfc bfc
 https://github.com/google/bloaty bloaty
-https://github.com/caffeine-ng/caffeine-ng caffeine-ng
+https://github.com/baskerville/bspwm bspwm
+https://codeberg.org/WhyNotHugo/caffeine-ng caffeine-ng
 https://gitlab.com/jallbrit/cbonsai cbonsai
 https://github.com/AlDanial/cloc cloc
 https://github.com/universal-ctags/ctags ctags
@@ -22,6 +23,7 @@ https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git linux
 https://github.com/jsha/minica minica
 https://github.com/rui314/mold mold
 https://github.com/lukesmithxyz/mutt-wizard muttwizard
+https://github.com/nmap/nmap nmap
 https://github.com/bartobri/no-more-secrets nms
 https://github.com/Syllo/nvtop nvtop
 https://github.com/olive-editor/olive olive
@@ -32,10 +34,13 @@ https://github.com/PintaProject/Pinta pinta
 https://github.com/profanity-im/profanity profanity
 https://github.com/Xfennec/progress progress
 https://github.com/rakitzis/rc rc
+https://git.suckless.org/scroll scroll
 https://github.com/mgudemann/sct sct
 https://github.com/Gottox/smu smu
+https://git.suckless.org/st st
 https://git.suckless.org/surf surf
 https://git.suckless.org/surf surf-viewer
+https://github.com/baskerville/sxhkd sxhkd
 https://github.com/muennich/sxiv sxiv
 https://git.suckless.org/tabbed tabbed
 https://repo.or.cz/tinycc.git tcc
