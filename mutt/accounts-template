@@ -1,0 +1,55 @@
+set realname = ""
+set from = ""
+set sendmail = "msmtp -a <from>"
+alias me ME
+set folder = "imaps://from@imap-sever:port"
+set header_cache = cachedir
+set message_cache_dir = cachedir
+set mbox_type = Maildir
+set imap_user = "imap-user"
+set imap_pass = "`pass entry`"
+set ssl_starttls = yes
+set ssl_force_tls = yes
+set hostname = "domain"
+
+set pgp_self_encrypt = yes
+set pgp_default_key = "KEY"
+set pgp_sign_as = "KEY"
+set crypt_autosign = "yes"
+unset crypt_autoencrypt
+set crypt_replyencrypt = "yes"
+set pgp_verify_sig = "yes"
+set pgp_strict_enc = "yes"
+
+bind index,pager gg noop
+bind index,pager g noop
+bind index,pager M noop
+bind index,pager C noop
+bind index gg first-entry
+unmailboxes *
+unalternates *
+unset signature
+
+mailboxes "=Archive" "=Drafts" "=INBOX" "=Sent Items" "=Spam" "=Trash"
+macro index,pager ga "<change-folder>=Archive<enter>" "go to archive"
+macro index,pager Ma ";<save-message>=Archive<enter>" "move mail to archive"
+macro index,pager Ca ";<copy-message>=Archive<enter>" "copy mail to archive"
+set postponed = "+Drafts"
+macro index,pager gd "<change-folder>=Drafts<enter>" "go to drafts"
+macro index,pager Md ";<save-message>=Drafts<enter>" "move mail to drafts"
+macro index,pager Cd ";<copy-message>=Drafts<enter>" "copy mail to drafts"
+macro index,pager gi "<change-folder>=INBOX<enter>" "go to inbox"
+macro index,pager Mi ";<save-message>=INBOX<enter>" "move mail to inbox"
+macro index,pager Ci ";<copy-message>=INBOX<enter>" "copy mail to inbox"
+set spoolfile = "+INBOX"
+set record = "+Sent\ Items"
+macro index,pager gs "<change-folder>=Sent\ Items<enter>" "go to sent"
+macro index,pager Ms ";<save-message>=Sent\ Items<enter>" "move mail to sent"
+macro index,pager Cs ";<copy-message>=Sent\ Items<enter>" "copy mail to sent"
+macro index,pager gS "<change-folder>=Spam<enter>" "go to spam"
+macro index,pager MS ";<save-message>=Spam<enter>" "move mail to spam"
+macro index,pager CS ";<copy-message>=Spam<enter>" "copy mail to spam"
+macro index,pager gt "<change-folder>=Trash<enter>" "go to trash"
+macro index,pager Mt ";<save-message>=Trash<enter>" "move mail to trash"
+macro index,pager Ct ";<copy-message>=Trash<enter>" "copy mail to trash"
+set trash = "+Trash"
