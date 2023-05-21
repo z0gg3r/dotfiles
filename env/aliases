@@ -30,6 +30,7 @@ alias mail="neomutt"
 alias makefile="cp $HOME/.config/Makefile ."
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 alias mutt="neomutt"
+alias mv="mv -i"
 alias news="newsboat"
 alias nnn="nnn -Hdi"
 alias onekod="daemonize $(which oneko)"
