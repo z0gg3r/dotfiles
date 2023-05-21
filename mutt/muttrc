@@ -1,0 +1,13 @@
+# mutt-wizard stuffs
+source /home/zocki/.config/mutt/mwrc
+source /home/zocki/.config/mutt/bindrc
+source /home/zocki/.config/mutt/colourrc
+# Custom stuff
+source /home/zocki/.config/mutt/settingsrc
+source /home/zocki/.config/mutt/pastel-theme
+
+source /home/zocki/.config/mutt/accounts/default
+
+source /home/zocki/.config/mutt/account-switches
+
+#macro index,pager i1 '<sync-mailbox><enter-command>source <ACCOUNT-MUTTRC><enter><change-folder>!<enter>;<check-stats>' "switch to <MAIL>"
