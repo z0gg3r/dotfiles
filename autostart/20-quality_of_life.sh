@@ -1,4 +1,4 @@
 #! /bin/sh
 
-sct 6000 0.7
+sct 4500 0.7
 numlockx on
