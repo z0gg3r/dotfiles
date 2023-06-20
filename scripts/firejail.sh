@@ -9,4 +9,3 @@ firejail \
 	--novideo \
 	--private-cache \
 	$@
-
