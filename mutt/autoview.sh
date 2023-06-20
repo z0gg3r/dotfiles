@@ -4,17 +4,28 @@ view_html()
 {
 	target="/tmp/$(uuidgen).html"
 	cp "$1" "$target"
-	chosen="$(printf "surf\nvimb\nglinks\n" | fzy)"
+	chosen="$(printf "surf\npdf\nglinks\n" | fzy)"
 	if [ -z "$chosen" ]
 	then
 		chosen="surf"
 	fi
 	case $chosen in
-		"vimb") "$HOME"/.config/scripts/firejail.sh vimb "$target" ;;
+		"pdf") tmp_pdf "$target" ;;
 		"glinks") "$HOME"/.config/scripts/glinks.sh "$target" ;;
 		*) "$HOME"/.config/newsboat/surf.sh "$target" ;;
 	esac
 	rm "$target"
+}
+
+tmp_pdf()
+{
+	target="$1"
+	tmpdir="/tmp/$(uuidgen)"
+	mkdir "$tmpdir"
+	! [ -d "$tmpdir" ] && exit
+	pandoc --quiet -i "$target" -o "$tmpdir/tmp.tex"
+	pandoc --quiet -i "$tmpdir/tmp.tex" -o "$tmpdir/tmp.pdf"
+	zathura "$tmpdir/tmp.pdf" && rm -rf "$tmpdir"
 }
 
 view_image()
