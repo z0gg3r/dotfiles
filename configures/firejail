@@ -1,1 +1,1 @@
---enable-firetunnel --enable-ids --enable-force-nonewprivs
+--enable-firetunnel --enable-ids --enable-force-nonewprivs --enable-private-lib
