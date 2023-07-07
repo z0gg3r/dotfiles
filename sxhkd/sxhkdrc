@@ -3,10 +3,10 @@
 #
 
 super + KP_Enter
-	sakura -d /home/zocki
+	st
 
 super + Return
-	st
+	urxvt
 
 shift + Print
 	flameshot full
