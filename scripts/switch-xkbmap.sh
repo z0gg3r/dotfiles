@@ -15,7 +15,7 @@ toggle_xkb_map()
 	map="$(get_xkb_map)"
 	if [ "$map" = "us" ]
 	then
-		change_xkb_map jp
+		change_xkb_map ja us
 	else
 		change_xkb_map us
 	fi
