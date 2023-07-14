@@ -51,11 +51,11 @@ URxvt.iso14755: false
 
 URxvt*font:xft:Noto\ Sans\ Mono:pixelsize=12,\
 xft:Noto\ Sans\ Mono\ CJK\ JP:pixelsize=12,\
-xft:Code2000,xft:Code2001,xft:Code2002,xft:Code20X3,\
 xft:DejaVu Sans,\
 xft:Terminus,\
 xft:Noto\ Color\ Emoji:hinting=true,\
 xft:PowerlineSymbols,\
+xft:Code2000,xft:Code2001,xft:Code2002,xft:Code20X3,\
 xft:Unifont:pixelsize=12
 
 
