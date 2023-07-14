@@ -194,7 +194,7 @@ xkb_symbols "kana" {
 	symbols[Group1]= [ Zenkaku_Hankaku, Kanji ]
     };
 
-    key <TLDE> { [ kana_RO, XF86Calculator ]	};
+    key <TLDE> { [ kana_RO, Henkan ]	};
     key <AE01> { [ kana_NU		]	};
     key <AE02> { [ kana_FU		]	};
     key <AE03> { [ kana_A, kana_a	]	};
