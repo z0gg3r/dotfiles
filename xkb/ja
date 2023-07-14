@@ -11,10 +11,10 @@ xkb_symbols "106" {
 };
 
 xkb_symbols "us" {
-    include "jp(common)"
-    name[Group1]= "Japanese";
+    include "ja(common)"
+    name[Group1]= "Japanese (US)";
 
-    key <TLDE>	{[ Zenkaku_Hankaku,  grave	]};
+    key <TLDE>	{[ grave, asciitilde, Mode_switch ]};
     key <AE01>	{[	 1,	 exclam		]};
     key <AE02>	{[	 2,	 at		]};
     key <AE03>	{[	 3,	 numbersign	]};
@@ -64,6 +64,9 @@ xkb_symbols "us" {
     key <AB08>	{[   comma,	 less		]};
     key <AB09>	{[  period,	 greater	]};
     key <AB10>	{[   slash,	 question	]};
+    key <I472>  {[ XF86Fn, XF86Fn ]};
+    
+    include "level3(ralt_switch)"
 };
 
 
@@ -191,6 +194,7 @@ xkb_symbols "kana" {
 	symbols[Group1]= [ Zenkaku_Hankaku, Kanji ]
     };
 
+    key <TLDE> { [ kana_RO, XF86Calculator ]	};
     key <AE01> { [ kana_NU		]	};
     key <AE02> { [ kana_FU		]	};
     key <AE03> { [ kana_A, kana_a	]	};
@@ -215,8 +219,9 @@ xkb_symbols "kana" {
     key <AD08> { [ kana_NI		]	};
     key <AD09> { [ kana_RA		]	};
     key <AD10> { [ kana_SE		]	};
-    key <AD11> { [ voicedsound		]	};
-    key <AD12> { [ semivoicedsound, kana_openingbracket ] };
+    key <AD11> { [ voicedsound,	kana_openingbracket ]	};
+    key <AD12> { [ semivoicedsound, kana_closingt ] };
+    key <BKSL> { [ kana_MU		]	};
 
     key <CAPS> { [ Eisu_toggle, Caps_Lock ]	};
     key <AC01> { [ kana_CHI		]	};
@@ -230,7 +235,7 @@ xkb_symbols "kana" {
     key <AC09> { [ kana_RI		]	};
     key <AC10> { [ kana_RE		]	};
     key <AC11> { [ kana_KE		]	};
-    key <AC12> { [ kana_MU, kana_closingbracket ] };
+    //key <AC12> { [ kana_MU, kana_closingbracket ] };
 
     key <AB01> { [ kana_TSU, kana_tsu	]	};
     key <AB02> { [ kana_SA		]	};
@@ -242,7 +247,7 @@ xkb_symbols "kana" {
     key <AB08> { [ kana_NE, kana_comma ]	};
     key <AB09> { [ kana_RU, kana_fullstop ]	};
     key <AB10> { [ kana_ME, kana_conjunctive ]	};
-    key <AB11> { [ kana_RO		]	};
+    //key <AB11> { [ kana_RO		]	};
 
     key <NFER> { [ Muhenkan		]	};
 
@@ -259,6 +264,7 @@ xkb_symbols "kana" {
 	type[Group1]= "PC_ALT_LEVEL2",
 	symbols[Group1]= [ Print, Execute ]
     };
+    include "level3(ralt_switch)"
 };
 
 partial alphanumeric_keys
