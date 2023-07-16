@@ -1,4 +1,5 @@
 #! /bin/sh
+exit
 
 . "$HOME/.config/autostart/00-exports.sh"
 
