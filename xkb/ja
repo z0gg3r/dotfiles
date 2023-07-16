@@ -194,20 +194,19 @@ xkb_symbols "kana" {
 	symbols[Group1]= [ Zenkaku_Hankaku, Kanji ]
     };
 
-    key <TLDE> { [ kana_RO, Henkan ]	};
-    key <AE01> { [ kana_NU		]	};
-    key <AE02> { [ kana_FU		]	};
-    key <AE03> { [ kana_A, kana_a	]	};
-    key <AE04> { [ kana_U, kana_u	]	};
-    key <AE05> { [ kana_E, kana_e	]	};
-    key <AE06> { [ kana_O, kana_o	]	};
-    key <AE07> { [ kana_YA, kana_ya	]	};
-    key <AE08> { [ kana_YU, kana_yu	]	};
-    key <AE09> { [ kana_YO, kana_yo	]	};
-    key <AE10> { [ kana_WA, kana_WO	]	};
-    key <AE11> { [ kana_HO		]	};
-    key <AE12> { [ kana_HE		]	};
-    key <AE13> { [ prolongedsound	]	};
+    key <TLDE> { [ kana_RO, Henkan 	   ]	};
+    key <AE01> { [ kana_NU		   ]	};
+    key <AE02> { [ kana_FU		   ]	};
+    key <AE03> { [ kana_A, kana_a	   ]	};
+    key <AE04> { [ kana_U, kana_u	   ]	};
+    key <AE05> { [ kana_E, kana_e	   ]	};
+    key <AE06> { [ kana_O, kana_o	   ]	};
+    key <AE07> { [ kana_YA, kana_ya	   ]	};
+    key <AE08> { [ kana_YU, kana_yu	   ]	};
+    key <AE09> { [ kana_YO, kana_yo	   ]	};
+    key <AE10> { [ kana_WA, kana_WO	   ]	};
+    key <AE11> { [ kana_HO, prolongedsound ]	};
+    key <AE12> { [ kana_HE		   ]	};
 
     key <AD01> { [ kana_TA		]	};
     key <AD02> { [ kana_TE		]	};
@@ -220,7 +219,7 @@ xkb_symbols "kana" {
     key <AD09> { [ kana_RA		]	};
     key <AD10> { [ kana_SE		]	};
     key <AD11> { [ voicedsound,	kana_openingbracket ]	};
-    key <AD12> { [ semivoicedsound, kana_closingt ] };
+    key <AD12> { [ semivoicedsound, kana_closingbracket ] };
     key <BKSL> { [ kana_MU		]	};
 
     key <CAPS> { [ Eisu_toggle, Caps_Lock ]	};
