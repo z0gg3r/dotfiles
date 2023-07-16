@@ -36,10 +36,15 @@ then
 	unset f
 fi
 
-export GTK_IM_MODULE="uim"
-export QT_IM_MODULE="uim"
-export XMODIFIERS=@im=uim
-daemonize "$(which uim-xim)"
+#export GTK_IM_MODULE="uim"
+#export QT_IM_MODULE="uim"
+#export XMODIFIERS=@im=uim
+#daemonize "$(which uim-xim)"
+# testing ibus
+export XMODIFIERS=@im=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus 
+ibus-daemon -drx
 
 case "$1" in
 	"xfce") exec startxfce4 ;;
