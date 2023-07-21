@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $HOME/.config/scripts/wallpaper-exports.sh
+. $HOME/.local/scripts/wallpaper-exports.sh
 
 
 list="$(printf "random\nkeep\n%b" "$(cat "$WALLPAPERS_MAP")")"

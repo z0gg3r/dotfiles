@@ -1,5 +1,5 @@
 #!/bin/sh
-SCRIPT_DIR="$HOME/.config/scripts"
+SCRIPT_DIR="$HOME/.local/scripts"
 
 die()
 {

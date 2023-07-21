@@ -1,7 +1,7 @@
 #!/bin/sh
 # touch $HOME/.wallpaper_change
 
-. "$HOME/.config/scripts/wallpaper-exports.sh"
+. "$HOME/.local/scripts/wallpaper-exports.sh"
 
 date=$(date +%Y-%m-%d)
 time=$(date +%H:%M:%S)

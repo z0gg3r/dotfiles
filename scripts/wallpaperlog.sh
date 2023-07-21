@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. "$HOME/.config/scripts/wallpaper-exports.sh"
+. "$HOME/.local/scripts/wallpaper-exports.sh"
 
 if [ -z "$2" ]
 then

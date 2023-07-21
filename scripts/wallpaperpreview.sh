@@ -10,7 +10,7 @@ then
 	exit 1
 fi
 
-. "$HOME/.config/scripts/wallpaper-exports.sh"
+. "$HOME/.local/scripts/wallpaper-exports.sh"
 
 chosen="$(rofi -normalize-match -matching fuzzy -dmenu < "$WALLPAPERS_MAP")"
 

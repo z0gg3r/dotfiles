@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. "$HOME/.config/scripts/wallpaper-exports.sh"
+. "$HOME/.local/scripts/wallpaper-exports.sh"
 
 wallpaper="$(readlink "$WALLPAPERS_DST" | cut -b 24- | replace ".png" "")"
 line="$(echo "$wallpaper" + 1 | calc -p)"
