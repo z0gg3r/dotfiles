@@ -1,10 +1,11 @@
 #!/bin/sh
-BASE="$HOME/Documents"
+BASE="/opt/firejail"
 
-if [ -z "$1" ]
+prog="$1"
+
+if [ -z "$prog" ]
 then
-	echo "No target specified"
-	exit 1
+	prog="$(uuidgen)"
 fi
 
 target="$BASE/$1"
@@ -15,4 +16,9 @@ then
 	exit 1
 fi
 
-cp -r "$HOME/.local/share/skel" "$target"
+rsync -ai "$HOME/.local/share/skel" "$target"
+
+printf "#!/bin/sh\n\n" > "$HOME/.local/bin/$prog"
+printf "GTK_IM_MODULE=xim firejail --private=\"%b\" --noprofile --caps.drop=all --name=\"%b\" --machine-id\n" "$target" "$prog" >> "$HOME/.local/bin/$prog"
+
+echo "Created jail-dir $target and program $prog"
