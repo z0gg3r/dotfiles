@@ -18,22 +18,22 @@ super + d
 	rofi -show run
 
 super + b
-	dash /home/zocki/.config/scripts/bookmarks.sh
+	dash /home/zocki/.local/scripts/bookmarks.sh
 
 super + c
-	dash /home/zocki/.config/scripts/unicode.sh
+	dash /home/zocki/.local/scripts/unicode.sh
 
 super + a
-	dash /home/zocki/.config/scripts/abook.sh
+	dash /home/zocki/.local/scripts/abook.sh
 
 super + shift + e
-	dash /home/zocki/.config/scripts/emoji.sh
+	dash /home/zocki/.local/scripts/emoji.sh
 
 super + w
 	firefox-bin
 
 super + shift + w
-	dash /home/zocki/.config/scripts/wallpaper_setter.sh 
+	dash /home/zocki/.local/scripts/wallpaper_setter.sh 
 
 super + l
 	i3lock -n -e -f -t -i /home/zocki/.config/wallpapers/wallpaper.png
@@ -42,10 +42,10 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 super + grave
-	dash /home/zocki/.config/scripts/switch-xkbmap.sh
+	dash /home/zocki/.local/scripts/switch-xkbmap.sh
 
 super + r
-	dash /home/zocki/.config/scripts/run.sh
+	dash /home/zocki/.local/scripts/run.sh
 
 super + shift + r
 	dash /home/zocki/.config/polybar/launch.sh > /dev/null 2> /dev/null &
@@ -98,10 +98,10 @@ super + {t,shift + t,s,f}
 
 # focus or send to the given desktop
 super + {0-9}
-	/home/zocki/.config/scripts/bspwm_desktop_switcher.sh "{0-9}"
+	/home/zocki/.local/scripts/bspwm_desktop_switcher.sh "{0-9}"
 
 super + shift + {0-9}
-	/home/zocki/.config/scripts/bspwm_desktop_mover.sh "{0-9}"
+	/home/zocki/.local/scripts/bspwm_desktop_mover.sh "{0-9}"
 
 super + o
 	bspc node -m prev --follow
