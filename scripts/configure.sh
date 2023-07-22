@@ -2,7 +2,7 @@
 
 pwd=$(pwd)
 
-chosen=$(/bin/ls $HOME/.config/configures | fzy)
+chosen=$(find "$HOME/.config/configures" | fzy)
 
 if [ -z "$chosen" ]
 then
@@ -10,9 +10,10 @@ then
 	exit
 fi
 
-config=$(cat "$HOME/.config/configures/$chosen")
+#config=$(cat "$HOME/.config/configures/$chosen")
+config="$(cat "$chosen")"
 
-cd "$HOME/programs/$chosen" || exit
+cd "$HOME/programs/$(basename "$chosen")" || exit
 
 ./configure $config
 
