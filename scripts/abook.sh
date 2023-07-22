@@ -1,6 +1,6 @@
 #!/bin/sh
 TMP_FILE="/tmp/abook"
-PERS_FILE="$HOME/.abook/addressbook"
+PERS_FILE="$HOME/.config/abook/addressbook"
 
 die()
 {
