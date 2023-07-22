@@ -7,7 +7,7 @@ safe_source ()
 }
 
 source $HOME/.config/env/exports
-source $HOME/.config/scripts/exportfunctions.sh
+source $HOME/.local/scripts/exportfunctions.sh
 export ZSH="$HOME/.config/oh-my-zsh"
 
 ZSH_THEME="wezm"
