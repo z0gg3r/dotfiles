@@ -53,6 +53,8 @@ separator = |
 separator-foreground = ${colors.disabled}
 
 font-0 = monospace;2
+font-1 = NotoSansMonoCJKJP
+font-2 = NotoEmoji:scale=10
 
 modules-left = bspwm
 modules-center = xwindow
@@ -90,6 +92,9 @@ separator = |
 separator-foreground = ${colors.disabled}
 
 font-0 = monospace;2
+font-1 = NotoSansMonoCJKJP
+font-2 = NotoEmoji:scale=10
+
 
 modules-left = bspwm
 modules-center = xwindow
