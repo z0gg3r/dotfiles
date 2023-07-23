@@ -36,11 +36,10 @@ then
 	unset f
 fi
 
-#export GTK_IM_MODULE="uim"
-#export QT_IM_MODULE="uim"
-#export XMODIFIERS=@im=uim
-#daemonize "$(which uim-xim)"
-# testing ibus
+# Fix Java Apss
+export _JAVA_AWT_WM_NONREPARENTING="1"
+
+# Set ibus as IME
 export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus 
@@ -49,4 +48,4 @@ ibus-daemon -drx
 case "$1" in
 	"xfce") exec startxfce4 ;;
 	*) exec bspwm ;;
-esac 2> /tmp/session-errors
+esac
