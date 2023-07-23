@@ -1,3 +1,5 @@
+[[ $- != *i* ]] && return
+
 safe_source ()
 {
 	if [ -e "$1" ]
@@ -24,8 +26,6 @@ safe_source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
 setopt GLOB_DOTS
 setopt COMPLETE_ALIASES
 unsetopt AUTO_CD
-
-[[ $- != *i* ]] && return
 
 export HISTCONTROL=ignoreboth:erasedups
 
