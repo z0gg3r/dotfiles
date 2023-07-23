@@ -34,6 +34,7 @@ unalias ls
 unalias la
 unalias ll
 unalias l
+unalias lsa
 
 safe_source $HOME/.config/env/aliases
 safe_source $HOME/.aliases
