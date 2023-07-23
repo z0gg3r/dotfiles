@@ -30,11 +30,7 @@ unsetopt AUTO_CD
 export HISTCONTROL=ignoreboth:erasedups
 
 # Remove rouge aliases
-unalias ls
-unalias la
-unalias ll
-unalias l
-unalias lsa
+unalias -a
 
 safe_source $HOME/.config/env/aliases
 safe_source $HOME/.aliases
