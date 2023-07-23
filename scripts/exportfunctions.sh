@@ -42,7 +42,8 @@ ex ()
 			*.lz)	  	lzip -d "$1"		;;
 			*.zstd) 	zstd -d "$1" 		;;
 			*.zst) 		zstd -d "$1" 		;;
-			*)		echo "'$1' cannot be extracted via ex()" ;;
+			*) \
+			echo "'$1' can't be extracted via ex()" ;;
 		esac
 	else
 		echo "'$' is not a valid file"
