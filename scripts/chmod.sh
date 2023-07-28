@@ -1,5 +1,5 @@
 #!/bin/sh
-for file in $HOME/.local/scripts/*.sh
+for file in "$HOME"/.local/scripts/*.sh
 do
-	chmod +x "$file"
+	chmod 755 "$file"
 done
