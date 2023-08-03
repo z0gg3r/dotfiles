@@ -33,5 +33,5 @@ then
 	die "No url could be queried"
 fi
 
-xdotool type --delay 0 "$url"
+xdotool type --delay 15 "$url"
 xdotool key KP_Enter
