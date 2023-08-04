@@ -11,7 +11,7 @@ view_html()
 	fi
 	case $chosen in
 		"pdf") tmp_pdf "$target" ;;
-		"glinks") "$HOME"/.config/scripts/glinks.sh "$target" ;;
+		"glinks") "$HOME"/.local/scripts/glinks.sh "$target" ;;
 		*) "$HOME"/.config/newsboat/surf.sh "$target" ;;
 	esac
 	rm "$target"
