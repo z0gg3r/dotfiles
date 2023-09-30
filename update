@@ -15,7 +15,7 @@
 update "$HOME/.vimrc" "vimrc"
 update "$HOME/.zshrc" "zshrc"
 update "$HOME/.config/git/config" "gitconfig"
-update "$HOME/.tmux.conf" "tmux.conf"
+update "$HOME/.config/tmux/tmux.conf" "tmux.conf"
 update "$HOME/.program_repos" "program_repos"
 update "$HOME/.xinitrc" "xinitrc"
 update "$HOME/.xserverrc" "xserverrc"
