@@ -1,5 +1,6 @@
 set abort_noattach = "ask-yes"
 set abort_noattach_regex = "\\<(anhängen|angehängt|anhang|anhänge|hängt an|anbei)\\>"
+set header_cache_backend = "bdb"
 set header_cache_compress_method = "zstd"
 set header_cache_compress_level = 15
 my_hdr Useragent: ""
