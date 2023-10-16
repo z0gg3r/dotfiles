@@ -12,13 +12,13 @@ die()
 #	fi
 	exit 1
 }
-db=$(/bin/ls "$DB_PATH"/*.db | replace "$DB_PATH/" ""  | rofi -dmenu)
-if [ -z "$db" ]
-then
-	die "No db was chosen"
-fi
-
-PMB="pmb -f "$DB_PATH/$db""
+#db=$(/bin/ls "$DB_PATH"/*.db | replace "$DB_PATH/" ""  | rofi -dmenu)
+#if [ -z "$db" ]
+#then
+#	die "No db was chosen"
+#fi
+db="bookmarks.db"
+PMB="pmb -f $DB_PATH/$db"
 
 chosen=$($PMB -p field=name | rofi -dmenu)
 if [ -z "$chosen" ] 
