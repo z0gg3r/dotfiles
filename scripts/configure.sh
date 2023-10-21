@@ -2,7 +2,7 @@
 #shellcheck disable=2086
 #shellcheck disable=2153
 
-CONFIGURE_REGISTER="$HOME/.config/configures"
+CONFIGURE_REGISTER="$HOME/.config/configure.sh"
 CONFIGURE_CONFIGS="$HOME/.local/share/configure.sh"
 
 get_opts()
