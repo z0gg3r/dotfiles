@@ -1,1 +1,1 @@
--Wl,-z,defs -Wl,-z,now -Wl,-z,relro -fuse-ld=mold
+-Wl,-z,defs -Wl,-z,now -Wl,-z,relro -Wl,-pie -fuse-ld=mold
