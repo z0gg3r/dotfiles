@@ -39,13 +39,13 @@ fi
 # Fix Java Apss
 export _JAVA_AWT_WM_NONREPARENTING="1"
 
+# Fix webkitgtk...
+export WEBKIT_DISABLE_COMPOSITING_MODE=1
+
 # Set ibus as IME
 export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus 
 ibus-daemon -drx
 
-case "$1" in
-	"xfce") exec startxfce4 ;;
-	*) exec bspwm ;;
-esac
+exec bspwm
