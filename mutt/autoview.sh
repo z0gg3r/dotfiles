@@ -12,9 +12,28 @@ view_html()
 	case $chosen in
 		"pdf") tmp_pdf "$target" ;;
 		"glinks") "$HOME"/.local/scripts/glinks.sh "$target" ;;
-		*) "$HOME"/.config/newsboat/surf.sh "$target" ;;
+		*) view_surf "$target" ;;
 	esac
 	rm "$target"
+}
+
+view_surf()
+{
+	firejail --noprofile \
+		--hosts-file="$HOME/.config/adblocklist" \
+		--private \
+		--nodvd \
+		--nosound \
+		--notv \
+		--nou2f \
+		--novideo \
+		--private-cache \
+		--disable-mnt \
+		--net=none \
+		--machine-id \
+		--caps.drop=all \
+		--name="mutt-surf-viewer" \
+		/usr/local/bin/surf-viewer -u "$SURF_USERAGENT" -s -g -n -m -t "$1"
 }
 
 tmp_pdf()
