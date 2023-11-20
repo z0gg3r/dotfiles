@@ -21,4 +21,4 @@ else
 	change_wallpaper.sh "$choice"
 fi
 
-feh --bg-fill "$WALLPAPERS_DST"
+feh --no-fehbg --bg-fill "$WALLPAPERS_DST"
