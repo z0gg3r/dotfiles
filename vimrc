@@ -27,7 +27,6 @@ call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'w0rp/ale'
 	Plug 'tpope/vim-commentary'
 	Plug 'liuchengxu/space-vim-dark'
-	Plug 'rhysd/vim-clang-format'
 call plug#end()
 
 set background=dark
@@ -73,10 +72,8 @@ let g:ale_c_cc_executable = 'gcc'
 let g:ale_c_cc_options = '-pipe -march=native -std=c99 -fstack-protector-strong -fcf-protection -fpie -fPIC -fno-delete-null-pointer-checks -Wall -Wextra -D_DEFAULT_SOURCE'
 let g:ale_virtualtext_cursor = 0
 
-let g:clang_format#detect_style_file = 1
-let g:clang_format#auto_format = 0
-let g:clang_enable#fallback_style = 0
-let g:clang_format#extra_args = "--style='file:/home/zocki/.clang-format'"
+let g:easytags_async = 1
+let g:easytags_file = '/home/zocki/.cache/vimtags'
 
 let g:rust_recommended_style = 0
 
