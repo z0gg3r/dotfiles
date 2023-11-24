@@ -17,7 +17,7 @@ then
 	die
 fi
 
-mail=$(abook --mutt-query "$chosen" | cut -f1 | rofi -dmenu)
+mail=$(abook --datafile "$PERS_FILE" --mutt-query "$chosen" | cut -f1 | rofi -dmenu)
 
 if [ -z "$mail" ]
 then
