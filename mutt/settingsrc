@@ -7,9 +7,10 @@ my_hdr Useragent: ""
 set send_charset="us-ascii:utf-8"
 unset use_domain
 set use_from = yes
+unset local_date_header
 
 ignore *
 unignore from: subject to cc date x-url list-id user-agent
 
-set debug_file = "/tmp/muttlog"
-set debug_level = 1
+# set debug_file = "/tmp/muttlog"
+# set debug_level = 1
