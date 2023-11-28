@@ -48,7 +48,7 @@ let g:pencil#textwidth = 80
 
 " Airline config
 let g:airline_experimental = 1
-let g:airline_section_b = '%{strftime("%F %R")} %{FugitiveStatusline()}'
+let g:airline_section_b = '%{strftime("%F %R")}  %{airline#extensions#branch#get_head()}'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#tabline#formatter = 'unique_tail_improved'
 let g:airline_powerline_fonts = 1
@@ -92,7 +92,7 @@ let g:airline_symbols.colnr = '༒ '
 let g:airline_symbols.readonly = 'Ⓡ '
 let g:airline_symbols.linenr = ' ㏑'
 let g:airline_symbols.maxlinenr = ' '
-let g:airline_symbols.dirty = '䷴'
+let g:airline_symbols.dirty = '⚡'
 let g:airline_theme = 'serene'
 set t_Co=256
 
