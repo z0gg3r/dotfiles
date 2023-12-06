@@ -3,7 +3,8 @@ set abort_noattach_regex = "\\<(anhängen|angehängt|anhang|anhänge|hängt an|a
 set header_cache_backend = "bdb"
 set header_cache_compress_method = "zstd"
 set header_cache_compress_level = 15
-my_hdr Useragent: ""
+set my_useragent_string="`muttuseragent.sh`"
+my_hdr Useragent: $my_useragent_string
 set send_charset="us-ascii:utf-8"
 unset use_domain
 set use_from = yes
