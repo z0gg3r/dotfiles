@@ -39,6 +39,9 @@ fi
 # Fix Java Apss
 export _JAVA_AWT_WM_NONREPARENTING="1"
 
+# Disable .NET Telmetry
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 # Fix webkitgtk...
 export WEBKIT_DISABLE_COMPOSITING_MODE=1
 
