@@ -1,6 +1,7 @@
 " General config
 syntax enable
-filetype plugin indent on
+filetype indent on
+filetype plugin on
 set encoding=utf-8
 set autoindent
 set path+=**
@@ -17,6 +18,12 @@ set list
 set lcs=tab:>-<,lead:…
 set viminfofile=NONE
 set background=dark
+
+" Force usage of hjkl
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
 
 " Plugin section (below this only plugin stuff)
 call plug#begin('/home/zocki/.vim/plugged')
