@@ -45,6 +45,9 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 # Fix webkitgtk...
 export WEBKIT_DISABLE_COMPOSITING_MODE=1
 
+# Always use LC_COLLATE=C
+export LC_COLLATE=C
+
 # Set ibus as IME
 export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
