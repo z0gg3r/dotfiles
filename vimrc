@@ -24,6 +24,10 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
 
 " Plugin section (below this only plugin stuff)
 call plug#begin('/home/zocki/.vim/plugged')
@@ -116,7 +120,7 @@ let g:goyo_width = 82
 
 " ALE config
 let g:ale_c_cc_executable = 'gcc'
-let g:ale_c_cc_options = '-pipe -march=native -std=c99 -fstack-protector-strong -fcf-protection -fpie -fPIC -fno-delete-null-pointer-checks -Wall -Wextra -D_DEFAULT_SOURCE'
+let g:ale_c_cc_options = '-std=c99 -fno-delete-null-pointer-checks -Wall -Wextra -pedantic -pedantic-errors -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600'
 let g:ale_virtualtext_cursor = 0
 
 " EasyTags config
