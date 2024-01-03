@@ -34,20 +34,7 @@ unalias -a
 
 safe_source $HOME/.config/env/aliases
 safe_source $HOME/.aliases
-
-if [ -f /etc/os-release ]
-then
-	os="$(grep ^ID /etc/os-release | cut -d= -f2)"
-else
-	os="gentoo"
-fi
-
-case $os in
-	"*arch*") safe_source $HOME/.config/env/arch-aliases ;;
-	"*artix*") safe_source $HOME/config/env/arch-aliases ;;
-	"*void*") safe_source $HOME/.config/env/void-aliases ;;
-	*) safe_source $HOME/.config/env/gentoo-aliases ;;
-esac
+safe_source $HOME/.config/env/gentoo-aliases
 
 autoload -Uz compinit
 compinit
