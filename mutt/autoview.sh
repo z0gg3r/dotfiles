@@ -4,7 +4,7 @@ view_html()
 {
 	target="/tmp/$(uuidgen).html"
 	cp "$1" "$target"
-	chosen="$(printf "surf\npdf\nglinks\n" | fzy)"
+	chosen="$(printf "surf\nw3m\npdf\nglinks\n" | fzy)"
 	if [ -z "$chosen" ]
 	then
 		chosen="surf"
@@ -12,9 +12,31 @@ view_html()
 	case $chosen in
 		"pdf") tmp_pdf "$target" ;;
 		"glinks") "$HOME"/.local/scripts/glinks.sh "$target" ;;
+		"w3m") view_w3m "$target" ;;
 		*) view_surf "$target" ;;
 	esac
 	rm "$target"
+}
+
+view_w3m()
+{
+	firejail --noprofile \
+		--hosts-file="$HOME/.config/adblocklist" \
+		--private \
+		--nodvd \
+		--nosound \
+		--notv \
+		--nou2f \
+		--novideo \
+		--private-cache \
+		--disable-mnt \
+		--net=none \
+		--caps.drop=all \
+		--name="mutt-w3m-viewer" \
+		--nonewprivs \
+		/usr/bin/w3m -no-cookie -no-graph \
+		-F -H -t 8 -ppc 32.0 -ppl 64.0 -title="mutt-w3m-viewer" \
+		"$1"
 }
 
 view_surf()
