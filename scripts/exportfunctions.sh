@@ -1,11 +1,27 @@
 #!/bin/sh
 
+unrar_ex()
+{
+	parallel "mkdir {.}" ::: "$1"
+	parallel "unrar x -op{.} {}" ::: "$1"
+}
+
+un7z()
+{
+	parallel "mkdir {.}" ::: "$1"
+	parallel "7z -o{.} x {}" ::: "$1"
+}
 
 undeb()
 {
-	parallel mkdir "{.}" ::: "$1"
-	parallel cp "{}" "{.}" ::: "$1"
+	parallel "mkdir {.}" ::: "$1"
+	parallel "cp {} {.}" ::: "$1"
 	parallel "cd {.}; ar x {}; cd .." ::: "$1"
+}
+
+unzip_ex()
+{
+	parallel unzip -d "{.}" "{}" ::: "$1"
 }
 
 # # ex = Extractor for all kinds of archives
@@ -27,17 +43,15 @@ ex ()
 			*.tar.zst)   	tar xf --zstd "$1"	;;
 			*.tar.lz)	tar xf --lzip "$1"	;;
 			*.bz2)       	bunzip2 "$1"   		;;
-			*.rar)       	unrar x "$1"   		;;
+			*.rar)       	unrar_ex "$1" 		;;
 			*.gz)        	gunzip "$1"    		;;
 			*.tar)       	tar xf "$1"    		;;
 			*.tbz2)      	tar xjf "$1"   		;;
 			*.tgz)       	tar xzf "$1"   		;;
-			*.ZIP)		parallel \
-			unzip -d "{.}" "{}" ::: "$1"		;;
-			*.zip)       	parallel \
-			unzip -d "{.}" "{}" ::: "$1"		;;
+			*.ZIP)		unzip_ex "$1"		;;
+			*.zip)		unzip_ex "$1"		;;
 			*.Z)         	uncompress "$1"		;;
-			*.7z)        	7z x "$1"      		;;
+			*.7z)		un7z "$1"		;;
 			*.deb)       	undeb "$1"      	;;
 			*.lz)	  	lzip -d "$1"		;;
 			*.zstd) 	zstd -d "$1" 		;;
