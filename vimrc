@@ -90,7 +90,7 @@ endif
 
 let g:airline_symbols.crypt = '🔒'
 let g:airline_symbols.maxlinenr = '㏑'
- let g:airline_symbols.paste = '⚶'
+let g:airline_symbols.paste = '⚶'
 let g:airline_symbols.spell = '⚸'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = '␠'
