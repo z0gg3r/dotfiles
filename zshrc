@@ -16,16 +16,13 @@ git_prompt_info()
 	if [ -e .git ]
 	then
 		branch="$(git --no-pager branch | grep '^*' | cut -d' ' -f2)"
-		printf '%b(%b) ' "%{$fg[yellow]%}" "$branch"
-	fi
-}
-
-ret_prompt_info()
-{
-	ret="$?"
-	if [ $ret -gt 0 ]
-	then
-		printf '%b[%b]' "%{$fg[red]%}" "%?"
+		dirty="$(git status --porcelain)"
+		if [ -z "$dirty" ]
+		then
+			printf '%b(%b) ' "%{$fg[yellow]%}" "$branch"
+		else
+			printf '%b(%b)%b ' "%{$fg[yellow]%}" "$branch" "⚡"
+		fi
 	fi
 }
 
