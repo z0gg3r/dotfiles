@@ -5,3 +5,5 @@ echo 'Server = https://ftp.halifax.rwth-aachen.de/archlinux/$repo/os/$arch' | te
 pacman-key --init
 pacman-key --populate
 pacman -Sy && pacman -S --noconfirm archlinux-keyring && pacman -Syu --noconfirm
+pacman -S --noconfirm vim
+systemctl enable --now sshd
