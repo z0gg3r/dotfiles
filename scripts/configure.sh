@@ -37,15 +37,20 @@ do_configure()
 
 configure()
 {
+	cflags="CFLAGS=\"$2\""
+	ldflags="LDFLAGS=\"$3\""
+	cxxflags="CXXFLAGS=\"$4\""
+	flags="$cflags $ldflags $cxxflags"
 	if [ -e './configure' ]
 	then
+		./configure $1 "$flags"
 		CFLAGS="$2" LDFLAGS="$3" CXXFLAGS="$4" ./configure $1
 		printf "Configure options were: %b\n" "$1"
 		printf "CFLAGS: %b\n" "$2"
 		printf "LDFLAGS: %b\n" "$3"
 		printf "CXXFLAGS: %b\n" "$4"
 	else
-		printf 'CFLAGS="%b" LDFLAGS="%b" CXXFLAGS="%b" ./configure %b\n' "$2" "$3" "$4" "$1"
+		printf './configure "%b %b\n' "$1" "$flags"
 	fi
 }
 
