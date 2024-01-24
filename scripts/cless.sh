@@ -7,7 +7,7 @@ fi
 
 if ! [ -e "$1" ]
 then
-	echo "$1 does not exist"
+	printf '%b does not exist\n' "$1"
 	exit 1
 fi
 
