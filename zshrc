@@ -10,20 +10,20 @@ safe_source ()
 		source "$1"
 	fi
 }
-
 git_prompt_info()
 {
-	if [ -e .git ]
-	then
-		branch="$(git --no-pager branch | grep '^*' | cut -d' ' -f2)"
-		dirty="$(git status --porcelain)"
-		if [ -z "$dirty" ]
-		then
-			printf '%b(%b) ' "%{$fg[yellow]%}" "$branch"
-		else
-			printf '%b(%b)%b ' "%{$fg[yellow]%}" "$branch" "⚡"
-		fi
-	fi
+        if [ -e .git ]
+        then
+                branch="$(git --no-pager branch | grep '^*' | cut -d' ' -f2)"
+                dirty="$(git status --porcelain)"
+                printf '%b' "%{$fg[yellow]%}"
+                printf '(%b)' "$branch"
+                if ! [ -z "$dirty" ]
+                then
+                        printf '%b' "⚡"
+                fi
+                printf ' '
+        fi
 }
 
 source $HOME/.config/env/exports
