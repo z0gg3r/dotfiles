@@ -3,13 +3,14 @@
 # Remove rouge aliases
 unalias -a
 
-safe_source ()
+_source ()
 {
 	if [ -e "$1" ]
 	then
 		source "$1"
 	fi
 }
+
 git_prompt_info()
 {
         if [ -e .git ]
@@ -50,9 +51,9 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
-safe_source $HOME/.config/env/aliases
-safe_source $HOME/.aliases
-safe_source $HOME/.config/env/gentoo-aliases
+_source $HOME/.config/env/aliases
+_source $HOME/.aliases
+_source $HOME/.config/env/gentoo-aliases
 
 autoload -U colors && colors
 
@@ -70,4 +71,4 @@ compinit
 clear && ufetch
 
 unset MANPATH # Don't force it
-safe_source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
+_source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
