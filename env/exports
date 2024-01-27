@@ -1,6 +1,7 @@
 export DEBUGINFOD_URLS="https://debuginfod.elfutils.org/"
 export DOTNET_CLI_TELEMETRY_OPTOUT="1"
 export PATH="$(/bin/cat /home/zocki/.config/env/path)"
+export HAREPATH="/usr/local/src/hare/stdlib:/usr/local/src/hare/third-party:$HOME/.local/src/hare"
 export EDITOR="vim"
 export VISUAL="vim"
 export MANWIDTH="80"
