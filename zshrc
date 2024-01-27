@@ -58,7 +58,7 @@ _source $HOME/.config/env/gentoo-aliases
 autoload -U colors && colors
 
 export PROMPT='$(git_prompt_info)%(?..%{$fg[red]%}[%?]%{$reset_color%} )%{$reset_color%}%# '
-export RPROMPT='%~'
+export RPROMPT='%{$fg[yellow]%}%/%{$reset_color%}'
 
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
