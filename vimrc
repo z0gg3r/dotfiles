@@ -44,6 +44,8 @@ call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'w0rp/ale'
 	Plug 'tpope/vim-commentary'
 	Plug 'liuchengxu/space-vim-dark'
+	Plug 'https://git.sr.ht/~sircmpwn/hare.vim'
+	Plug 'https://git.sr.ht/~torresjrjr/vim-haredoc'
 call plug#end()
 
 colorscheme space-vim-dark
