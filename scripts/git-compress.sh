@@ -5,10 +5,19 @@ _du()
 	du -sh .git | replace ".git" "$1"
 }
 
-[ -z "$1" ]  && exit
+_run()
+{
+	[ -z "$1" ]  && return
 
-! [ -d "$1" ] && exit
+	! [ -d "$1" ] && return
 
-! [ -e "$1/.git" ] && exit
+	! [ -e "$1/.git" ] && return
 
-(cd "$1" || exit; _du "$1"; /usr/bin/git repack -AdflF; _du "$1")
+	(cd "$1" || return; _du "$1"; /usr/bin/git repack -AdflF; _du "$1")
+}
+
+while [ $# -gt 1 ]
+do
+	_run "$1"
+	shift
+done
