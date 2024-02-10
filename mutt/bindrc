@@ -4,6 +4,7 @@ bind index,pager i noop
 bind index,pager g noop
 bind index \Cf noop
 bind index,pager V noop
+bind index,pager F noop
 
 bind index j next-entry
 
