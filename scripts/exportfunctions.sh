@@ -94,7 +94,7 @@ export bookmark_extract
 
 tcc_bootstrap()
 {
-	./configure --cc=tcc
+	./configure --cc=tcc --extra-cflags="$CFLAGS"
 	make -j24
 	doas make install
 	make clean
