@@ -16,6 +16,11 @@ _run()
 	(cd "$1" || return; _du "$1"; /usr/bin/git repack -AdflF; _du "$1")
 }
 
+[ $# -eq 0 ] && exit 1
+
+_run "$1"
+shift
+
 while [ $# -gt 1 ]
 do
 	_run "$1"
