@@ -13,18 +13,19 @@ _source ()
 
 git_prompt_info()
 {
-        if [ -e .git ]
-        then
-                branch="$(git --no-pager branch | grep '^*' | cut -d' ' -f2)"
-                dirty="$(git status --porcelain)"
-                printf '%b' "%{$fg[yellow]%}"
-                printf '(%b)' "$branch"
-                if ! [ -z "$dirty" ]
-                then
-                        printf '%b' "⚡"
-                fi
-                printf ' '
-        fi
+	git status --porcelain > /dev/null 2> /dev/null
+	if [ $? -eq 0 ]
+	then
+		branch="$(git --no-pager branch | grep '^*' | cut -d' ' -f2)"
+		dirty="$(git status --porcelain)"
+		printf '%b' "%{$fg[yellow]%}"
+		printf '(%b)' "$branch"
+		if ! [ -z "$dirty" ]
+		then
+			printf '%b' "⚡"
+		fi
+		printf ' '
+	fi
 }
 
 source $HOME/.config/env/exports
