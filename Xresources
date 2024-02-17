@@ -1,39 +1,60 @@
 ! special
-URxvt.background: #1E1E2E
-URxvt.foreground: #CDD6F4
-URxvt.cursorColor: #F5E0DC
+*background: #1E1E2E
+*foreground: #CDD6F4
+*cursorColor: #F5E0DC
 
 ! black
-URxvt.color0: #45475A
-URxvt.color8: #585B70
+*color0: #45475A
+*color8: #585B70
 
 ! red
-URxvt.color1: #F38BA8
-URxvt.color9: #F38BA8
+*color1: #F38BA8
+*color9: #F38BA8
 
 ! green
-URxvt.color2: #A6E3A1
-URxvt.color10: #A6E3A1
+*color2: #A6E3A1
+*color10: #A6E3A1
 
 ! yellow
-URxvt.color3: #F9E2AF
-URxvt.color11: #F9E2AF
+*color3: #F9E2AF
+*color11: #F9E2AF
 
 ! blue
-URxvt.color4: #89B4FA
-URxvt.color12: #89B4FA
+*color4: #89B4FA
+*color12: #89B4FA
 
 ! magenta
-URxvt.color5: #F5C2E7
-URxvt.color13: #F5C2E7
+*color5: #F5C2E7
+*color13: #F5C2E7
 
 ! cyan
-URxvt.color6: #94E2D5
-URxvt.color14: #94E2D5
+*color6: #94E2D5
+*color14: #94E2D5
 
 ! white
-URxvt.color7: #BAC2DE
-URxvt.color15: #A6ADC8
+*color7: #BAC2DE
+*color15: #A6ADC8
+
+XTerm*decTerminalID: vt340
+XTerm*numColorRegisters: 256
+XTerm*termName: xterm-256color
+
+XTerm*selectToClipboard: true
+
+XTerm*maxGraphicSize: 1920x1080
+Xterm*maxStringParse: 1073741824
+XTerm*disallowedWindowOps: 1,2,3,4,5,6,7,8,9,11,13,19,20,21,GetSelection,SetSelection,SetWinLines,SetXprop
+
+XTerm*faceName: Iosveka Term:pixelsize=12,\
+Noto Sans Mono CJK JP:pixelsize=12,\
+Dejavu Sans,\
+Terminus,\
+Noto Color Emoji:hinting=true,\
+PowerlineSymbols,\
+Code2000,Code2001,Code2002,Code20X3,\
+Unifont:pixelsize=12
+
+XTerm*toolBar: false
 
 !! URxvt Appearance
 URxvt.letterSpace: -1
