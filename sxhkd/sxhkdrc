@@ -3,10 +3,10 @@
 #
 
 super + KP_Enter
-	urxvt
+	st
 
 super + Return
-	st
+	xterm
 
 shift + Print
 	flameshot full
