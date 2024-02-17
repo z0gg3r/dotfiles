@@ -101,3 +101,11 @@ tcc_bootstrap()
 }
 
 export tcc_bootstrap
+
+sixel()
+{
+	[ -z "$1" ] && return
+
+	convert "$1" -resize 500x500 sixel:-
+}
+export sixel
