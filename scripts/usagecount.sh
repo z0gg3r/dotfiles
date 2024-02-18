@@ -6,25 +6,11 @@ usage()
 	then
 		grep -a "$prog" "$HISTFILE"  | cut -d ';' -f2 | grep -a -c -E "^$prog"
 	else
-		grep -a "doas" "$HISTFILE" | cut -d ';' -f2 | grep -a -c -E "^doas"
+		cut -d' ' -f1 < "$HISTFILE" | sort | uniq -c | sort -r
 	fi
 }
 
+[ -z "$1" ] && usage
+
 prog="$1"
-
-count=$(usage "$prog")
-echo "Usage of $prog is $count time(s)."
-
-if [ -z "$1" ]
-then
-	exit
-fi
-
-shift
-while [ "$#" -ge 1 ]
-do
-	prog="$1"
-	count=$(usage "$prog")
-	echo "Usage of $prog is $count time(s)."
-	shift
-done
+usage "$1"
