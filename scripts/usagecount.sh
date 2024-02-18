@@ -2,11 +2,11 @@
 
 usage()
 {
-	if ! [ -z "$1" ]
+	if [ -n "$1" ]
 	then
-		echo "$(grep -a "$prog" < $HOME/.zsh_history | cut -d ';' -f2 | grep -a -c -E "^$prog")"
+		grep -a "$prog" "$HISTFILE"  | cut -d ';' -f2 | grep -a -c -E "^$prog"
 	else
-		echo "$(grep -a "doas" < $HOME/.zsh_history | cut -d ';' -f2 | grep -a -c -E "^doas")"
+		grep -a "doas" "$HISTFILE" | cut -d ';' -f2 | grep -a -c -E "^doas"
 	fi
 }
 
