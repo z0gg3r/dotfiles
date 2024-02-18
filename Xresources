@@ -45,40 +45,11 @@ XTerm*maxGraphicSize: 1920x1080
 Xterm*maxStringParse: 1073741824
 XTerm*disallowedWindowOps: 1,2,3,4,5,6,7,8,9,11,13,19,20,21,GetSelection,SetSelection,SetWinLines,SetXprop
 
-XTerm*faceName: Iosveka Term:pixelsize=12,\
-Noto Sans Mono CJK JP:pixelsize=12,\
-Dejavu Sans,\
-Terminus,\
-Noto Color Emoji:hinting=true,\
-PowerlineSymbols,\
-Code2000,Code2001,Code2002,Code20X3,\
-Unifont:pixelsize=12
+XTerm*faceName: Iosveka Term:pixelsize=12,Unifont
+XTerm*faceSize: 12
+XTerm*limitFontsets: 255
 
 XTerm*toolBar: false
-
-!! URxvt Appearance
-URxvt.letterSpace: -1
-URxvt.lineSpace: -1
-URxvt.geometry: 92x24
-URxvt.internalBorder: 2
-URxvt.cursorBlink: false
-URxvt.cursorUnderline: false
-URxvt.saveline: 4194304
-URxvt.scrollBar: false
-URxvt.scrollBar_right: false
-URxvt.urgentOnBell: true
-URxvt.depth: 24
-URxvt.iso14755: false
-
-URxvt*font:xft:Noto\ Sans\ Mono:pixelsize=12,\
-xft:Noto\ Sans\ Mono\ CJK\ JP:pixelsize=12,\
-xft:DejaVu Sans,\
-xft:Terminus,\
-xft:Noto\ Color\ Emoji:hinting=true,\
-xft:PowerlineSymbols,\
-xft:Code2000,xft:Code2001,xft:Code2002,xft:Code20X3,\
-xft:Unifont:pixelsize=12
-
 
 Xft.dpi:        96
 Xft.antialias:  true
