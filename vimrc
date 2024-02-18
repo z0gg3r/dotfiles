@@ -49,6 +49,7 @@ call plug#begin('/home/zocki/.vim/plugged')
 call plug#end()
 
 colorscheme space-vim-dark
+highlight Visual cterm=reverse ctermbg=NONE ctermfg=white
 
 " Pencil config
 augroup pencil
