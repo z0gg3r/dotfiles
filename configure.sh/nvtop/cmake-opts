@@ -1,0 +1,1 @@
+--install-prefix "$HOME/.local" -DCMAKE_BUILD_TYPE=MinSizeRel -DAMDGPU_SUPPORT=OFF -DINTEL_SUPPORT=OFF ..
