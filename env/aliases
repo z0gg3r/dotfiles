@@ -1,56 +1,57 @@
 alias aliases="cat $HOME/.config/env/aliases | cut -c 6- | less"
-alias cal="cal -ymw"
-alias calc="calc -p"
-alias clang-check="clang-check *.c --"
+alias cal='cal -ymw'
+alias calc='calc -p'
+alias clang-check='clang-check *.c --'
 alias clang-format="clang-format --style='file:$HOME/.clang-format'"
-alias clea="clear"
-alias cls="clear; ls"
-alias cp="cp -i"
-alias date="date +%F"
-alias df="df -h"
+alias clea='clear'
+alias cls='clear; ls'
+alias cp='cp -i'
+alias date='date +%F'
+alias df='df -h'
 alias dff="df -h | head -n 1 && df | grep --color=never '% /$'"
-alias diff="git diff --no-index"
-alias dir="LC_COLLATE=C ls -AvhlFi --color=auto"
-alias du="du -sh"
-alias fix-gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-alias free="free -h"
+alias diff='git diff --no-index'
+alias dir='LC_COLLATE=C ls -AvhlFi --color=auto'
+alias du='du -sh'
+alias fix-gpg-check='gpg2 --keyserver-options auto-key-retrieve --verify'
+alias fix-gpg-retrieve='gpg2 --keyserver-options auto-key-retrieve --receive-keys'
+alias free='free -h'
 alias fsurf="$HOME/.config/newsboat/surf.sh"
-alias git-compress="/usr/bin/git repack -AdflF"
-alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-alias gpl="cp /usr/share/licenses/common/GPL3/license.txt LICENSE"
-alias hw="hwinfo --short"
-alias less-ls="LC_COLLATE=C /bin/ls --color=auto"
+alias git-compress='/usr/bin/git repack -AdflF'
+alias gpg-check='gpg2 --keyserver-options auto-key-retrieve --verify'
+alias gpg-retrieve='gpg2 --keyserver-options auto-key-retrieve --receive-keys'
+alias gpl='cp /usr/share/licenses/common/GPL3/license.txt LICENSE'
+alias hw='hwinfo --short'
+alias info='man'
+alias less-ls='LC_COLLATE=C /bin/ls --color=auto'
 alias lock="i3lock -n -t -i $HOME/.config/wallpapers/wallpaper.png"
-alias lrs="hunspell -d de_DE"
-alias ls="LC_COLLATE=C ls -AvF --color=auto"
-alias mail="neomutt"
+alias lrs='hunspell -d de_DE'
+alias ls='LC_COLLATE=C ls -AvF --color=auto'
+alias mail='neomutt'
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
-alias mutt="neomutt"
-alias mv="mv -i"
-alias news="newsboat"
-alias nmap-intense-udp="nmap -sS -sU -T4 -A -v"
-alias nmap-intense="nmap -T4 -A -v"
-alias nmap-ping="nmap -sn"
-alias nmap-quick-plus="nmap -sV -T4 -O -F --version-light"
-alias nmap-quick="nmap -T4 -F"
+alias mutt='neomutt'
+alias mv='mv -i'
+alias news='newsboat'
+alias nmap-intense-udp='nmap -sS -sU -T4 -A -v'
+alias nmap-intense='nmap -T4 -A -v'
+alias nmap-ping='nmap -sn'
+alias nmap-quick-plus='nmap -sV -T4 -O -F --version-light'
+alias nmap-quick='nmap -T4 -F'
 alias nmap-slow-comprehensive="nmap -sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script 'default or (discovery and safe)'"
-alias nmap-traceroute="nmap -sn --traceroute"
+alias nmap-traceroute='nmap -sn --traceroute'
 alias pecho="printf '%b'"
-alias play-bluray="mpv bd:// --bluray-device=/dev/sr0"
-alias probe="doas -E hw-probe -all -upload"
-alias rls="ls"
-alias sl="ls"
-alias spell="hunspell -d en_GB"
+alias play-bluray='mpv bd:// --bluray-device=/dev/sr0'
+alias probe='doas -E hw-probe -all -upload'
+alias rls='ls'
+alias sl='ls'
+alias spell='hunspell -d en_GB'
 alias tree='tree -a -I ".git" -sh --du -D --timefmt "%F"'
-alias tty-clock="tty-clock -cs -C 1 -f %F"
+alias tty-clock='tty-clock -cs -C 1 -f %F'
 alias update-fc='doas fc-cache -fv'
-alias update-grub="doas grub-mkconfig -o /boot/grub/grub.cfg"
-alias userlist="cut -d: -f1 /etc/passwd"
-alias valgrind="valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes"
+alias update-grub='doas grub-mkconfig -o /boot/grub/grub.cfg'
+alias userlist='cut -d: -f1 /etc/passwd'
+alias valgrind='valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes'
 alias wallpaperlog="less -N --mouse < $HOME/.config/wallpaperlog"
 alias wallpapermap="less --mouse $HOME/.wallpapermap"
 alias weechat="LD_PRELOAD=$HOME/.local/lib/libwcwidth.so weechat"
-alias wget2="wget2 --progress=bar"
+alias wget2='wget2 --progress=bar'
 alias zshrc="source $HOME/.zshrc"
