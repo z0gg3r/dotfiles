@@ -21,3 +21,10 @@ start3()
 }
 
 export start3
+
+_disable()
+{
+	exit
+}
+
+export _disable
