@@ -37,6 +37,16 @@ _diff()
 	diff "$1" "$2" > /dev/null
 }
 
+_basename()
+{
+	basename "$1"
+}
+
+_dirname()
+{
+	dirname "$1"
+}
+
 # Args
 # $1 = Path to dir
 # $2 = Files to ignore
@@ -44,9 +54,7 @@ _diff()
 update_dir()
 {
 	dir_path=$1
-	count=$(echo "$dir_path" | sed -e 's/\(.\)/\1\n/g' | grep -c "/")
-	count=$(echo "$count 1 +pq" | dc)
-	dir=$(echo "$dir_path" | cut -d/ -f"$count")
+	dir="$(_basename "$dir_path")"
 	if [ -n "$3" ]
 	then
 		dir="$3"
@@ -61,10 +69,11 @@ update_dir()
 	then
 		mkdir "$dir"
 	fi
-	#for file in $($(which ls) "$dir_path")
-	for prefixed_file in "$dir_path"/*
+
+	file_list="$(find "$dir_path" -mindepth 1 -maxdepth 1)"
+	printf '%b\n' "$file_list" | while read -r prefixed_file
 	do
-		file="$(echo "$prefixed_file" | replace "$dir_path/" "")"
+		file="$(_basename "$prefixed_file")"
 		case $ignore_list in
 			*$file*) ignore="yes" ;;
 		esac
@@ -91,15 +100,11 @@ update_file()
 	file_name="$2"
 	if [ -z "$file_name" ]
 	then
-		count=$(echo "$file_path" | sed -e 's/\(.\)/\1\n/g' | grep -c "/")
-		count=$(echo "$count 1 +pq" | dc)
-		file_name=$(echo "$file_path" | cut -d/ -f"$count")
+		file_name="$(_basename "$1")"
 	fi
 
-	count=$(echo "$file_name" | sed -e 's/\(.\)/\1\n/g' | grep -c "/")
-	count=$(echo "$count 1 +pq" | dc)
-	tmp=$(echo "$file_name" | replace "$(echo "$file_name" | cut -d/ -f"$count")" "")
-	if ! [ -e "$tmp" ] && [ -n "$tmp" ]
+	tmp="$(_dirname "$file_name")"
+	if ! [ -e "$tmp" ] && [ -n "$tmp" ] && [ "$tmp" != "." ]
 	then
 		mkdir -p "$tmp"
 	fi
