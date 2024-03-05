@@ -9,54 +9,27 @@ BAK="$HOME/.program_repos"
 
 die()
 {
-	echo "Cannot enter $1"
+	printf 'Cannot enter %b\n' "$1"
 	exit 1
 }
 
 update()
 {
+	list="$(find "$PROG_DIR" -mindepth 1 -type d)"
 	rm "$BAK"
-	cwd=$(pwd)
-	cd "$PROG_DIR" || die "$PROG_DIR"
-	for dir in *
+	printf '%b\n' "$list" | while read -r dir
 	do
+		(
+		_dir="$(basename "$dir")"
 		cd "$dir" || die "$dir"
 		if [ -e ".git/" ]
 		then
-			echo "Entering $dir..."
+			printf 'Entering %b...\n' "$_dir"
 			remote="$(git remote get-url origin)"
-			echo "${remote%/} $dir" >> "$BAK"
+			echo "${remote%/} $_dir" >> "$BAK"
 		fi
-		cd ..
+		)
 	done
-	cd "$cwd" || die "$cwd"
 }
 
-deploy()
-{
-	cwd=$(pwd)
-	cd "$PROG_DIR" || die "$PROG_DIR"
-	cat "$BAK" | while read -r line
-	do
-		rep=$(echo "$line" | cut -d ' ' -f2)
-		repo=$(echo "$line" | cut -d ' ' -f1)
-		if ! [ -e "$rep" ]
-		then
-			git clone "$repo" "$rep"
-		fi
-	done
-	cd "$cwd" || die "$cwd"
-}
-
-if [ -z "$1" ]
-then
-	update
-fi
-
-case $1 in
-	"update") update ;;
-	"up" ) update ;;
-	"deploy" ) deploy ;;
-	"dep" ) deploy ;;
-	*) update ;;
-esac
+update
