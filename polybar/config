@@ -98,9 +98,9 @@ font-1 = Samurai
 font-2 = NotoEmoji:scale=10
 
 
-modules-left = bspwm
-modules-center = xwindow
-modules-right = pulseaudio memory cpu date
+modules-left = bspwm xwindow
+modules-center = 
+modules-right = mpv-radio pulseaudio memory cpu date
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -157,6 +157,13 @@ pin-workspaces = true
 type = internal/xwindow
 label = %title:0:64:...%
 label-empty = ${env:MONITOR}
+
+[module/mpv-radio]
+type = custom/script
+exec = polybar-mpv-script
+exec-if = pgrep -x mpv-radio
+interval = 5
+interval-if = 120
 
 [module/filesystem]
 type = internal/fs

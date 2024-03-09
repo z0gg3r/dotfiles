@@ -1,0 +1,15 @@
+#!/bin/sh
+
+FILE="$(echo '{ "command": ["get_property", "path"] }' | socat - /tmp/mpvsocket | jq .data | sed 's|"||g')"
+
+get_artist()
+{
+	vorbiscomment -l "$FILE" | grep ARTIST | cut -d= -f2
+}
+
+get_title()
+{
+	vorbiscomment -l "$FILE" | grep TITLE | cut -d= -f2
+}
+
+printf '🎵 %b by %b' "$(get_title)" "$(get_artist)"
