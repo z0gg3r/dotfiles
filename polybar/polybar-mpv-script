@@ -12,4 +12,9 @@ get_title()
 	vorbiscomment -l "$FILE" | grep TITLE | cut -d= -f2
 }
 
-printf '🎵 %b by %b' "$(get_title)" "$(get_artist)"
+get_output()
+{
+	printf '%b by %b' "$(get_title)" "$(get_artist)"
+}
+
+get_output

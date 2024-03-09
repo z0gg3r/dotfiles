@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo '{ "command": ["get_property", "playtime-remaining"] }' | socat - /tmp/mpvsocket | jq .data | cut -d. -f1
