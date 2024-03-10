@@ -52,6 +52,7 @@ separator-foreground = ${colors.disabled}
 font-0 = monospace;2
 font-1 = Samurai
 font-2 = NotoEmoji:scale=10
+font-3 = Unifont
 
 modules-left = bspwm xwindow
 modules-center = genlop-cn
@@ -91,7 +92,7 @@ separator-foreground = ${colors.disabled}
 font-0 = monospace;2
 font-1 = Samurai
 font-2 = NotoEmoji:scale=10
-font-3 = "Noto Sans Mono CJK JP"
+font-3 = Unifont
 
 
 modules-left = bspwm xwindow
@@ -159,8 +160,8 @@ type = custom/script
 exec = polybar-mpv-script | zscroll -b '🎵 ' -l 42 -t "$(polybar-mpv-duration)"
 tail = true
 exec-if = pgrep -x mpv-radio
-interval = 5
-interval-if = 120
+interval = 2
+interval-if = 30
 ; Use Noto Sans Mono CJK JP for mpv-radio labels
 ; It's font-3, but polybar changes to a 1-based index here for some reason...
 format-font = 4
