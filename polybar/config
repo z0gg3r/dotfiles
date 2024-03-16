@@ -157,7 +157,7 @@ label-empty = ${env:MONITOR}
 
 [module/mpv-radio]
 type = custom/script
-exec = polybar-mpv-script | zscroll -b '🎵 ' -l 42 -t "$(polybar-mpv-duration)"
+exec = polybar-mpv-script | zscroll -b '🎵 ' -l 32 -t "$(polybar-mpv-duration)"
 tail = true
 exec-if = pgrep -x mpv-radio
 interval = 2
