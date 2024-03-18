@@ -15,7 +15,6 @@ https://github.com/baskerville/bspwm bspwm
 https://github.com/atx/wtype wtype
 https://git.suckless.org/surf surf-viewer
 https://github.com/curl/trurl trurl
-https://git.sr.ht/~sircmpwn/scdoc scdoc
 https://github.com/XAMPPRocky/tokei tokei
 https://github.com/nmap/nmap nmap
 https://git.sr.ht/~sircmpwn/hare hare
@@ -38,7 +37,6 @@ https://github.com/Xfennec/progress progress
 https://github.com/KosmX/jneedle jneedle
 https://git.sr.ht/~sircmpwn/rc rc
 https://github.com/baskerville/sxhkd sxhkd
-https://codeberg.org/WhyNotHugo/caffeine-ng caffeine-ng
 https://github.com/AlDanial/cloc cloc
 https://github.com/mgudemann/sct sct
 https://github.com/bloc97/Anime4K Anime4K
@@ -57,6 +55,7 @@ git://git.codemadness.org/lel lel
 https://github.com/eradman/entr entr
 https://github.com/xorg62/tty-clock tty-clock
 https://github.com/onetrueawk/awk bawk
+https://github.com/noctuid/zscroll zscroll
 https://git.suckless.org/tabbed tabbed
 https://git.sr.ht/~sircmpwn/harelang.org harelang.org
 https://github.com/rui314/chibicc chibicc
