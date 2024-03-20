@@ -28,41 +28,6 @@ git_prompt_info()
 	fi
 }
 
-prefix_vim()
-{
-	case $BUFFER in
-		'vi*') true ;;
-		*) BUFFER="vim $BUFFER" && zle end-of-line ;;
-	esac
-}
-
-prefix_man()
-{
-	case $BUFFER in
-		'man*') true ;;
-		*) BUFFER="man $BUFFER" && zle end-of-line ;;
-	esac
-}
-
-prefix_doas()
-{
-	case $BUFFER in
-		'doas*') true ;;
-		'sudo*') true ;;
-		*) BUFFER="doas $BUFFER" && zle end-of-line ;;
-	esac
-}
-
-suffix_pipe_less()
-{
-	BUFFER="$BUFFER | less"
-}
-
-suffix_pipe_tee()
-{
-	BUFFER="$BUFFER | tee"
-}
-
 source $HOME/.config/env/exports
 source $HOME/.local/scripts/exportfunctions.sh
 
@@ -84,17 +49,10 @@ autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-zle -N prefix_vim
-zle -N prefix_man
-zle -N prefix_doas
-zle -N suffix_pipe_less
-zle -N suffix_pipe_tee
 bindkey -v
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 bindkey '^[[Z' reverse-menu-complete
-bindkey '^v' prefix_vim
-bindkey '^h' prefix_man
 
 _source $HOME/.config/env/aliases
 _source $HOME/.aliases
