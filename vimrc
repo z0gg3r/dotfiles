@@ -29,6 +29,9 @@ inoremap <Down> <nop>
 inoremap <Left> <nop>
 inoremap <Right> <nop>
 
+" Fix delete
+map  x
+
 " Plugin section (below this only plugin stuff)
 call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'reedes/vim-pencil'
