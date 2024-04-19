@@ -60,4 +60,6 @@ export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus 
 ibus-daemon -drx
 
+export XDG_SESSION_TYPE=xorg
+
 exec bspwm
