@@ -50,7 +50,6 @@ XTerm*faceSize: 12
 XTerm*limitFontsets: 255
 
 XTerm*toolBar: false
-XTerm*deleteIsDEL: true
 
 Xft.dpi:        96
 Xft.antialias:  true
