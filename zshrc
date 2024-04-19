@@ -70,6 +70,7 @@ zstyle ':completion:*' cache-path "$HOME/.cache/zsh-completions"
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=34}:${(s.:.)$(dircolors | head -n 1)}")'
+
 autoload -Uz compinit
 compinit
 
