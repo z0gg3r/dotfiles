@@ -1,6 +1,7 @@
 #!/bin/sh
 TMP_FILE="/tmp/abook"
 PERS_FILE="$HOME/.config/abook/addressbook"
+. "$HOME/.local/scripts/remapper.sh"
 
 die()
 {
@@ -26,4 +27,4 @@ fi
 
 rm "$TMP_FILE"
 
-xdotool type --delay 0 "$mail"
+$DOTOOL "$mail"

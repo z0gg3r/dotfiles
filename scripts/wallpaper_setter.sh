@@ -1,7 +1,7 @@
 #!/bin/sh
 
 . $HOME/.local/scripts/wallpaper-exports.sh
-
+. "$HOME/.local/scripts/remapper.sh"
 
 list="$(printf "random\nkeep\n%b" "$(cat "$WALLPAPERS_MAP")")"
 choice="$(echo "$list" | rofi -dmenu | cut -d, -f1)"
@@ -21,4 +21,4 @@ else
 	change_wallpaper.sh "$choice"
 fi
 
-feh --no-fehbg --bg-fill "$WALLPAPERS_DST"
+$BGTOOL "$WALLPAPERS_DST"
