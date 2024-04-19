@@ -38,22 +38,23 @@ do_configure()
 	ldflags="$(get_ldflags "$1")"
 	cxxflags="$(get_cxxflags "$1")"
 
-	configure "$opts" "$cmake_opts" "$cflags" "$ldflags" "$cxxflags"
+	configure "$opts" "$cflags" "$ldflags" "$cxxflags" "$cmake_opts"
 }
 
 configure()
 {
-	cflags="CFLAGS=\"$3\""
-	ldflags="LDFLAGS=\"$4\""
-	cxxflags="CXXFLAGS=\"$5\""
+	cmake_opts="$5"
+	cflags="CFLAGS=\"$2\""
+	ldflags="LDFLAGS=\"$3\""
+	cxxflags="CXXFLAGS=\"$4"
 	flags="$cflags $ldflags $cxxflags"
-	if [ -n "$2" ]
+	if [ -n "$cmake_opts" ]
 	then
 		if [ -e "CMakeLists.txt" ]
 		then
-			cmake_configure "$2" "$3" "$4" "$5"
+			cmake_configure "$cmake_opts" "$2" "$3" "$4"
 		else
-			printf 'Opts: %b\n%b\n%b\n%b\n' "$2" "$cflags" "$ldflags" "$cxxflags"
+			printf 'Opts: %b\n%b\n%b\n%b\n' "$cmake_opts" "$cflags" "$ldflags" "$cxxflags"
 		fi
 	elif [ -e './configure' ]
 	then
