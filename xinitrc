@@ -51,6 +51,9 @@ export LIBVA_DRIVER_NAME=nvidia
 export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json
 export NVD_BACKEND=direct
 
+# Use NSS-DB
+export NSS_DEFAULT_DB_TYPE=sql
+
 # Always use LC_COLLATE=C
 export LC_COLLATE=C
 

@@ -5,6 +5,7 @@ export INFOPATH="/dev/null"
 export GOPATH="/tmp/go"
 
 # general options
+export NSS_DEFAULT_DB_TYPE=sql
 export DOTNET_CLI_TELEMETRY_OPTOUT="1"
 export GOPROXY="direct"
 export EDITOR="vim"
