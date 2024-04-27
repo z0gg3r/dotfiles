@@ -109,3 +109,9 @@ sixel()
 	convert "$1" -resize 500x500 sixel:-
 }
 export sixel
+
+set_xterm_title()
+{
+	print -Pn "\e]0;$@\a"
+}
+export set_xterm_title
