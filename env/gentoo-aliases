@@ -5,3 +5,4 @@ alias rebuild="doas emerge -atv @module-rebuild"
 alias cleanup="doas emerge -atc"
 alias uses="equery uses"
 alias last_sync_was="printf 'last\n'; cat /var/db/repos/gentoo/metadata/timestamp.chk; printf 'now\n'; /bin/date -uR"
+alias world-grep='cat /var/lib/portage/world | grep'
