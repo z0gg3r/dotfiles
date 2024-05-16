@@ -38,7 +38,7 @@ alias nmap-quick-plus='nmap -sV -T4 -O -F --version-light'
 alias nmap-quick='nmap -T4 -F'
 alias nmap-slow-comprehensive="nmap -sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script 'default or (discovery and safe)'"
 alias nmap-traceroute='nmap -sn --traceroute'
-alias pecho="printf '%b'"
+alias pecho="printf '%b\n'"
 alias play-bluray='mpv bd:// --bluray-device=/dev/sr0'
 alias probe='doas -E hw-probe -all -upload'
 alias rls='ls'
