@@ -40,10 +40,12 @@ call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'xolox/vim-easytags'
 	Plug 'tpope/vim-fugitive'
 	Plug 'junegunn/goyo.vim'
+	Plug 'junegunn/limelight.vim'
 	Plug 'rust-lang/rust.vim'
 	Plug 'w0rp/ale'
 	Plug 'tpope/vim-commentary'
 	Plug 'liuchengxu/space-vim-dark'
+	Plug 'dbmrq/vim-ditto'
 	Plug 'https://git.sr.ht/~sircmpwn/hare.vim'
 	Plug 'https://git.sr.ht/~torresjrjr/vim-haredoc'
 call plug#end()
@@ -59,6 +61,20 @@ augroup pencil
 augroup END
 
 let g:pencil#textwidth = 80
+
+nmap <leader>pt :PencilToggle<CR>	" Toggle Pencil
+
+" ditto
+nmap <leader>di :ToggleDitto<CR>	" Turn Ditto on and off
+nmap =d :DittoNext<CR>			" Jump to the next word
+nmap -d :DittoPrev<CR>			" Jump to the previous word
+nmap +d :DittoGood<CR>			" Ignore the word under the cursor
+nmap _d :DittoBad<CR>			" Stop ignoring the word under the cursor
+nmap ]d :DittoMore<CR>			" Show the next matches
+nmap [d :DittoLess<CR>			" Show the previous matches
+
+" limelight
+nmap <leader>li :Limelight!! 0.5<CR>	" Toggle Limelight
 
 " Airline config
 let g:airline_experimental = 1
@@ -120,6 +136,7 @@ let g:tagbar_wrap = 1
 
 " Goyo config
 let g:goyo_width = 82
+nmap <leader>pgo :Goyo<CR> " Toggle Goyo
 
 " ALE config
 let g:ale_c_cc_executable = 'gcc'
@@ -152,6 +169,4 @@ endif
 nmap <F2> :set hlsearch!<CR>
 nmap <F3> :PlugUpgrade<CR>:PlugUpdate<CR>
 nmap <F4> :TagbarToggle<CR>
-nmap <F5> :call pencil#init({'wrap': 'hard'})<CR>
-nmap <F6> :PencilOff<CR>
-nmap <F7> :ClangFormat<CR>
+nmap <F5> :ClangFormat<CR>
