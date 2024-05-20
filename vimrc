@@ -46,6 +46,8 @@ call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'tpope/vim-commentary'
 	Plug 'liuchengxu/space-vim-dark'
 	Plug 'dbmrq/vim-ditto'
+	Plug 'tpope/vim-abolish'
+	Plug 'lervag/vimtex'
 	Plug 'https://git.sr.ht/~sircmpwn/hare.vim'
 	Plug 'https://git.sr.ht/~torresjrjr/vim-haredoc'
 call plug#end()
@@ -65,6 +67,10 @@ let g:pencil#textwidth = 80
 nmap <leader>pt :PencilToggle<CR>	" Toggle Pencil
 
 " ditto
+let g:ditto_file = 'ignore'
+let g:ditto_dir = '/home/zocki/.cache/ditto'
+let g:ditto_hlgroups = ['dittohi']
+highlight dittohi term=reverse cterm=underline ctermfg=218 ctermbg=NONE
 nmap <leader>di :ToggleDitto<CR>	" Turn Ditto on and off
 nmap =d :DittoNext<CR>			" Jump to the next word
 nmap -d :DittoPrev<CR>			" Jump to the previous word
@@ -146,6 +152,22 @@ let g:ale_virtualtext_cursor = 0
 " EasyTags config
 let g:easytags_async = 1
 let g:easytags_file = '/home/zocki/.cache/vimtags'
+
+" vimtex
+
+function! Callback(msg)
+	if a:msg =~# 'error'
+		call
+		vimtex#compiler#callback(!vimtex#qf#inquire(b:vimtex.tex))
+	endif
+endfunction
+
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_method = 'generic'
+let g:vimtex_compiler_generic = {
+	\ 'command' : 'latexmk.sh',
+	\ 'hooks': [function('Callback')],
+	\}
 
 " Rust config
 let g:rust_recommended_style = 0
