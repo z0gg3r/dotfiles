@@ -3,6 +3,7 @@ export PATH="$(/bin/cat /home/zocki/.config/env/path)"
 export HAREPATH="/usr/local/src/hare/stdlib:/usr/local/src/hare/third-party:$HOME/.local/src/hare"
 export INFOPATH="/dev/null"
 export GOPATH="/tmp/go"
+export PROGRAMS="$HOME/programs"
 
 # general options
 export NSS_DEFAULT_DB_TYPE=sql
