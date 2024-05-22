@@ -3,6 +3,9 @@ syntax enable
 filetype indent on
 filetype plugin on
 set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set showcmd
 set autoindent
 set path+=**
 set wildmenu
@@ -28,6 +31,9 @@ inoremap <Up> <nop>
 inoremap <Down> <nop>
 inoremap <Left> <nop>
 inoremap <Right> <nop>
+
+" Move window to far left
+nmap <leader>fl <C-W>H 
 
 " Plugin section (below this only plugin stuff)
 call plug#begin('/home/zocki/.vim/plugged')
@@ -69,8 +75,8 @@ nmap <leader>pt :PencilToggle<CR>	" Toggle Pencil
 " ditto
 let g:ditto_file = 'ignore'
 let g:ditto_dir = '/home/zocki/.cache/ditto'
-let g:ditto_hlgroups = ['dittohi']
-highlight dittohi term=reverse cterm=underline ctermfg=218 ctermbg=NONE
+let g:ditto_hlgroups = ['dittohlgroup']
+highlight dittohlgroup term=reverse cterm=underline ctermfg=218 ctermbg=NONE
 nmap <leader>di :ToggleDitto<CR>	" Turn Ditto on and off
 nmap =d :DittoNext<CR>			" Jump to the next word
 nmap -d :DittoPrev<CR>			" Jump to the previous word
@@ -114,7 +120,6 @@ if !exists('g:airline_symbols')
 endif
 
 let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.maxlinenr = '㏑'
 let g:airline_symbols.paste = '⚶'
 let g:airline_symbols.spell = '⚸'
 let g:airline_symbols.notexists = '∄'
@@ -139,6 +144,10 @@ let g:tagbar_width = max([25, winwidth(0) / 5])
 let g:tagbar_show_data_type = 1
 let g:tagbar_autoshowtag = 1
 let g:tagbar_wrap = 1
+let g:tagbar_sort = 0
+let g:tagbar_show_tag_linenumbers = 2 " Line numbers to the left of the tag
+let g:tagbar_autopreview = 1
+let g:tagbar_wrap = 1 " Wrap with linebreak
 
 " Goyo config
 let g:goyo_width = 82
