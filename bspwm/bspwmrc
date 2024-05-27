@@ -9,11 +9,11 @@ bspc monitor DVI-D-0 -d "一" "二" "三" "四" "五" "六" "七" "八" "九" "�
 bspc monitor HDMI-1 -d "一" "二" "三" "四" "五" "六" "七" "八" "九" "十"
 
 # Configure bspwm
-bspc config border_width		2
-bspc config window_gap			0
-bspc config split_ratio			0.52
-bspc config borderless_monocle		true
-bspc config gapless_monocle		 true
+bspc config border_width 2
+bspc config window_gap 0
+bspc config split_ratio 0.52
+bspc config borderless_monocle true
+bspc config gapless_monocle true
 
 # Add window rules
 bspc rule --add Screenkey manage=off
