@@ -1,21 +1,26 @@
 #! /bin/sh
 
+# Start sxkhd
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+# Configure workspaces
 bspc monitor HDMI-0 -d "一" "二" "三" "四" "五" "六" "七" "八" "九" "十"
 bspc monitor DVI-D-0 -d "一" "二" "三" "四" "五" "六" "七" "八" "九" "十"
 bspc monitor HDMI-1 -d "一" "二" "三" "四" "五" "六" "七" "八" "九" "十"
 
-bspc config border_width         2
-bspc config window_gap          0
+# Configure bspwm
+bspc config border_width		2
+bspc config window_gap			0
+bspc config split_ratio			0.52
+bspc config borderless_monocle		true
+bspc config gapless_monocle		 true
 
-bspc config split_ratio          0.52
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+# Add window rules
+bspc rule --add Screenkey manage=off
+bspc rule --add Surf state=tiled
+bspc rule --add Zathura:org.pwmt.zathura state=tiled
+bspc rule --add AusweisApp state=floating
 
-bspc rule -a Screenkey manage=off
-bspc rule -a Surf state=tiled
-bspc rule -a Zathura:org.pwmt.zathura state=tiled
-
+# Autostarts
 dash "$HOME/.config/bspwm/autostart.sh" > /dev/null 2> /dev/null &
 dash "$HOME/.config/polybar/launch.sh" > /dev/null 2> /dev/null & 
