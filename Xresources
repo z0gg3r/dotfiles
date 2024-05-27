@@ -45,7 +45,7 @@ XTerm*maxGraphicSize: 1920x1080
 Xterm*maxStringParse: 1073741824
 XTerm*disallowedWindowOps: 1,2,3,4,5,6,7,8,9,11,13,19,20,21,GetSelection,SetSelection,SetWinLines,SetXprop
 
-XTerm*faceName: Iosveka Term:pixelsize=12,Unifont
+XTerm*faceName: Iosveka Term:pixelsize=12,Noto Sans Mono,Noto Color Emoji,Unifont
 XTerm*faceSize: 12
 XTerm*limitFontsets: 255
 
