@@ -65,4 +65,4 @@ ibus-daemon -drx
 
 export XDG_SESSION_TYPE=xorg
 
-exec bspwm
+exec dbus-launch --exit-with-session bspwm
