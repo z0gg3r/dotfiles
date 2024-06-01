@@ -1,3 +1,4 @@
+set use_threads=yes sort=reverse-date sort_aux=date
 set abort_noattach = "ask-yes"
 set abort_noattach_regex = "\\<(anhängen|angehängt|anhang|anhänge|hängt an|anbei)\\>"
 set header_cache_backend = "bdb"
