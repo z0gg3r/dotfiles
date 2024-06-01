@@ -1,10 +1,11 @@
-# Unbind reused keys
-
 bind index,pager i noop
 bind index,pager g noop
 bind index \Cf noop
 bind index,pager V noop
 bind index,pager F noop
+
+bind index % noop
+bind index % save-message
 
 bind index j next-entry
 
@@ -90,16 +91,11 @@ set mail_check_stats
 
 set sidebar_format = '%D%?F? [%F]?%* %?N?%N/? %?S?%S?'
 
-bind index,pager \Ck sidebar-prev
-
-bind index,pager \Cj sidebar-next
-
-bind index,pager \Co sidebar-open
-
-bind index,pager \Cp sidebar-prev-new
-
-bind index,pager \Cn sidebar-next-new
-
-bind index,pager B sidebar-toggle-visible
+bind index <up> noop
+bind index <down> noop
+bind index <right> noop
+bind index <up> sidebar-prev
+bind index <down> sidebar-next
+bind index <right> sidebar-open
 
 macro index L '| git am -s'\n
