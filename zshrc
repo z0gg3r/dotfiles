@@ -53,6 +53,7 @@ bindkey -v
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 bindkey '^[[Z' reverse-menu-complete
+bindkey "\e[3~" delete-char
 
 _source $HOME/.config/env/aliases
 _source $HOME/.aliases
