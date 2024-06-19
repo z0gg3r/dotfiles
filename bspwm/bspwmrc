@@ -24,3 +24,7 @@ bspc rule --add AusweisApp state=floating
 # Autostarts
 dash "$HOME/.config/bspwm/autostart.sh" > /dev/null 2> /dev/null &
 dash "$HOME/.config/polybar/launch.sh" > /dev/null 2> /dev/null & 
+
+# ibus workaround
+ibus exit
+ibus-daemon -drx
