@@ -3,14 +3,14 @@
 	"position": "top",
 	"height": 25,
 	"spacing": 4,
-	"modules-left": [ "hyprland/workspaces", "hyprland/window" ],
+	"modules-left": [ "sway/workspaces", "sway/window" ],
 	"modules-center": [ "clock" ],
 	"modules-right": [ "wireplumber", "cpu", "memory", "tray" ],
-	"hyprland/window": {
+	"sway/window": {
 		"max-length": 200,
 		"separate-outputs": true
 	},
-	"hyprland/workspaces": {
+	"sway/workspaces": {
 		"active-only": false,
 		"persistent-workspaces": {
 			"HDMI-0": [ 1 ],
