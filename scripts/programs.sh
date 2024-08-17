@@ -13,6 +13,11 @@ die()
 	exit 1
 }
 
+script_cleanup()
+{
+	rm -f /tmp/update
+}
+
 git_pull()
 {
 	if [ -e .git ]
@@ -28,7 +33,8 @@ git_pull()
 	fi
 }
 
-rm -f /tmp/update
+script_cleanup
+trap script_cleanup QUIT INT TERM EXIT
 cwd=$(pwd)
 cd "$PROG_DIR" || die
 
@@ -43,5 +49,4 @@ do
 done
 
 [ -e /tmp/update ] && printf 'The following programs have been updated:\n' && cat /tmp/update
-rm -f /tmp/update
 cd "$cwd" || die
