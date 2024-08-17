@@ -2,6 +2,7 @@
 syntax enable
 filetype indent on
 filetype plugin on
+set viminfofile=NONE
 set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
@@ -19,7 +20,6 @@ set tabstop=8
 set shiftwidth=8
 set list
 set lcs=tab:>-<,lead:…
-set viminfofile=NONE
 set background=dark
 
 " Force usage of hjkl
