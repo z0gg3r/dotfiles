@@ -48,7 +48,7 @@ super + r
 	dash /home/zocki/.local/scripts/run.sh
 
 super + shift + r
-	dash /home/zocki/.config/polybar/launch.sh > /dev/null 2> /dev/null &
+	dash /home/zocki/.config/polybar/launch.sh > /dev/null 2> /dev/null &; ibus restart
 
 XF86AudioRaiseVolume
 	pamixer -i 1
