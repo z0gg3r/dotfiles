@@ -10,8 +10,7 @@ riverctl map normal Super D spawn "rofi -show run"
 riverctl map normal Super E spawn "dash /home/zocki/.local/scripts/emoji.sh"
 riverctl map normal Super+Shift W spawn "dash /home/zocki/.local/scripts/wallpaper_setter.sh"
 riverctl map normal Super L spawn "swaylock -F -e -i /home/zocki/.config/wallpapers/wallpaper.png"
-
-# 0000000000
+riverctl map normal Super+Shift R spawn "dash /home/zocki/.local/scripts/restart-waybar.sh"
 
 # Tag controls
 riverctl map normal Super 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 1"
