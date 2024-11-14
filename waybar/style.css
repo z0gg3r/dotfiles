@@ -39,7 +39,13 @@ button:hover {
 	padding-right: 10px;
 }
 
-#workspaces button.active {
+#tags button.occupied {
+	background-color: #F0C674;
+	color: #282A2E;
+}
+
+
+#workspaces button.active, #tags button.focused {
 	background-color: #f48fb1;
 	color: #282A2E;
 }
