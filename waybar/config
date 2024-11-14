@@ -4,8 +4,8 @@
 	"height": 25,
 	"spacing": 4,
 	"modules-left": [ "river/tags", "river/window" ],
-	"modules-center": [ "clock" ],
-	"modules-right": [ "wireplumber", "cpu", "memory", "tray" ],
+	"modules-center": [ ],
+	"modules-right": [ "clock", "wireplumber", "cpu", "memory", "tray" ],
 	"sway/window": {
 		"max-length": 200,
 		"separate-outputs": true
