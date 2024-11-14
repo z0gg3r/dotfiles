@@ -35,6 +35,11 @@ inoremap <Right> <nop>
 " Move window to far left
 nmap <leader>fl <C-W>H 
 
+" for any html file, a :make<cr> action will populate the quickfix menu
+autocmd filetype html setlocal makeprg=superhtml\ check\ %
+" if you want to use gq{motion} to format sections or the whole buffer (with gggqG)
+autocmd filetype html setlocal formatprg=superhtml\ fmt\ --stdin
+
 " Plugin section (below this only plugin stuff)
 call plug#begin('/home/zocki/.vim/plugged')
 	Plug 'reedes/vim-pencil'
