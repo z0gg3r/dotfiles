@@ -11,46 +11,48 @@ riverctl map normal Super E spawn "dash /home/zocki/.local/scripts/emoji.sh"
 riverctl map normal Super+Shift W spawn "dash /home/zocki/.local/scripts/wallpaper_setter.sh"
 riverctl map normal Super L spawn "swaylock -F -e -i /home/zocki/.config/wallpapers/wallpaper.png"
 
+# 0000000000
+
 # Tag controls
 riverctl map normal Super 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 1"
-riverctl map normal Super+Shift 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 1"
-riverctl map normal Super+Control 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 1"
+riverctl map normal Super+Shift 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 1"
+riverctl map normal Super+Control 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 1"
 
 riverctl map normal Super 2 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 2"
-riverctl map normal Super+Shift 2 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 2"
-riverctl map normal Super+Control 2 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 2"
+riverctl map normal Super+Shift 2 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 2"
+riverctl map normal Super+Control 2 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 2"
 
 riverctl map normal Super 3 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 3"
-riverctl map normal Super+Shift 3 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 3"
-riverctl map normal Super+Control 3 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 3"
+riverctl map normal Super+Shift 3 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 3"
+riverctl map normal Super+Control 3 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 3"
 
 riverctl map normal Super 4 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 4"
-riverctl map normal Super+Shift 4 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 4"
-riverctl map normal Super+Control 4 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 4"
+riverctl map normal Super+Shift 4 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 4"
+riverctl map normal Super+Control 4 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 4"
 
 riverctl map normal Super 5 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 5"
-riverctl map normal Super+Shift 5 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 5"
-riverctl map normal Super+Control 5 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 5"
+riverctl map normal Super+Shift 5 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 5"
+riverctl map normal Super+Control 5 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 5"
 
 riverctl map normal Super 6 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 6"
-riverctl map normal Super+Shift 6 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 6"
-riverctl map normal Super+Control 6 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 6"
+riverctl map normal Super+Shift 6 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 6"
+riverctl map normal Super+Control 6 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 6"
 
 riverctl map normal Super 7 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 7"
-riverctl map normal Super+Shift 7 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 7"
-riverctl map normal Super+Control 7 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 7"
+riverctl map normal Super+Shift 7 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 7"
+riverctl map normal Super+Control 7 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 7"
 
 riverctl map normal Super 8 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 8"
-riverctl map normal Super+Shift 8 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 8"
-riverctl map normal Super+Control 8 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 8"
+riverctl map normal Super+Shift 8 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 8"
+riverctl map normal Super+Control 8 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 8"
 
 riverctl map normal Super 9 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 9"
-riverctl map normal Super+Shift 9 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 9"
-riverctl map normal Super+Control 9 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 9"
+riverctl map normal Super+Shift 9 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 9"
+riverctl map normal Super+Control 9 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 9"
 
 riverctl map normal Super 0 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 10"
-riverctl map normal Super+Shift 0 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 10"
-riverctl map normal Super+Control 0 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 10"
+riverctl map normal Super+Shift 0 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 10"
+riverctl map normal Super+Control 0 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 10"
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
@@ -167,7 +169,9 @@ daemonize /usr/local/bin/wlsunset -g 0.85 -T 4001 -t 4000
 dash "$HOME/.config/autostart/00-Autostart.sh" &
 dash "$HOME/.config/autostart/00-Wayland.sh" &
 
+daemonize /usr/bin/swaybg -m fill -i /home/zocki/.config/wallpapers/wallpaper.png
+
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
+pgrep rivertile > /dev/null || riverctl spawn "rivertile -view-padding 0 -outer-padding 0"
 riverctl default-layout rivertile
-rivertile -view-padding 1 -outer-padding 1 &
