@@ -1,0 +1,173 @@
+#!/bin/sh
+
+# Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
+riverctl map normal Super Return spawn foot
+riverctl map normal Super W spawn firefox-bin
+riverctl map normal Super A spawn "dash /home/zocki/.local/abook.sh"
+riverctl map normal Super B spawn "dash /home/zocki/.local/scripts/bookmarks.sh"
+riverctl map normal Super C spawn "dash /home/zocki/.local/scripts/unicode.sh"
+riverctl map normal Super D spawn "rofi -show run"
+riverctl map normal Super E spawn "dash /home/zocki/.local/scripts/emoji.sh"
+riverctl map normal Super+Shift W spawn "dash /home/zocki/.local/scripts/wallpaper_setter.sh"
+riverctl map normal Super L spawn "swaylock -F -e -i /home/zocki/.config/wallpapers/wallpaper.png"
+
+# Tag controls
+riverctl map normal Super 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 1"
+riverctl map normal Super+Shift 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 1"
+riverctl map normal Super+Control 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 1"
+
+riverctl map normal Super 2 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 2"
+riverctl map normal Super+Shift 2 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 2"
+riverctl map normal Super+Control 2 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 2"
+
+riverctl map normal Super 3 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 3"
+riverctl map normal Super+Shift 3 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 3"
+riverctl map normal Super+Control 3 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 3"
+
+riverctl map normal Super 4 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 4"
+riverctl map normal Super+Shift 4 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 4"
+riverctl map normal Super+Control 4 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 4"
+
+riverctl map normal Super 5 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 5"
+riverctl map normal Super+Shift 5 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 5"
+riverctl map normal Super+Control 5 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 5"
+
+riverctl map normal Super 6 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 6"
+riverctl map normal Super+Shift 6 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 6"
+riverctl map normal Super+Control 6 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 6"
+
+riverctl map normal Super 7 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 7"
+riverctl map normal Super+Shift 7 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 7"
+riverctl map normal Super+Control 7 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 7"
+
+riverctl map normal Super 8 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 8"
+riverctl map normal Super+Shift 8 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 8"
+riverctl map normal Super+Control 8 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 8"
+
+riverctl map normal Super 9 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 9"
+riverctl map normal Super+Shift 9 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 9"
+riverctl map normal Super+Control 9 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 9"
+
+riverctl map normal Super 0 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 10"
+riverctl map normal Super+Shift 0 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow-to 10"
+riverctl map normal Super+Control 0 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send-to 10"
+
+# Super+Q to close the focused view
+riverctl map normal Super Q close
+
+# Super+Shift+E to exit river
+riverctl map normal Super+Shift E exit
+
+# Super+J and Super+K to focus the next/previous view in the layout stack
+riverctl map normal Super J focus-view next
+riverctl map normal Super K focus-view previous
+
+# Super+Shift+J and Super+Shift+K to swap the focused view with the next/previous
+# view in the layout stack
+riverctl map normal Super+Shift J swap next
+riverctl map normal Super+Shift K swap previous
+
+riverctl map normal Super O spawn "dash /home/zocki/.local/scripts/river_mover.sh"
+
+# Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
+# riverctl map normal Super+Shift H send-layout-cmd rivertile "main-ratio -0.05"
+# riverctl map normal Super+Shift L send-layout-cmd rivertile "main-ratio +0.05"
+
+# Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivertile(1)
+# riverctl map normal Super+Shift+Alt H send-layout-cmd rivertile "main-count +1"
+# riverctl map normal Super+Shift+Alt L send-layout-cmd rivertile "main-count -1"
+
+# Super+Alt+{H,J,K,L} to move views
+riverctl map normal Super+Alt H move left 100
+riverctl map normal Super+Alt J move down 100
+riverctl map normal Super+Alt K move up 100
+riverctl map normal Super+Alt L move right 100
+
+# Super+Alt+Control+{H,J,K,L} to snap views to screen edges
+riverctl map normal Super+Alt+Control H snap left
+riverctl map normal Super+Alt+Control J snap down
+riverctl map normal Super+Alt+Control K snap up
+riverctl map normal Super+Alt+Control L snap right
+
+# Super+Alt+Shift+{H,J,K,L} to resize views
+riverctl map normal Super+Alt+Shift H resize horizontal -100
+riverctl map normal Super+Alt+Shift J resize vertical 100
+riverctl map normal Super+Alt+Shift K resize vertical -100
+riverctl map normal Super+Alt+Shift L resize horizontal 100
+
+# Super + Left Mouse Button to move views
+riverctl map-pointer normal Super BTN_LEFT move-view
+
+# Super + Right Mouse Button to resize views
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+
+# Super + Middle Mouse Button to toggle float
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+
+# Super+Space to toggle float
+riverctl map normal Super Space toggle-float
+
+# Super+F to toggle fullscreen
+riverctl map normal Super F toggle-fullscreen
+
+# Super+{Up,Right,Down,Left} to change layout orientation
+riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
+riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
+riverctl map normal Super Down  send-layout-cmd rivertile "main-location bottom"
+riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
+
+# Set background and border color
+riverctl background-color 0x002b36
+riverctl border-color-focused 0x93a1a1
+riverctl border-color-unfocused 0x586e75
+
+# Set keyboard repeat rate
+riverctl set-repeat 50 300
+
+# Make all views with app-id "bar" and any title use client-side decorations
+riverctl rule-add -app-id "bar" csd
+
+# Fix Java Apss
+export _JAVA_AWT_WM_NONREPARENTING="1"
+
+# Disable .NET Telmetry
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# Fix webkitgtk...
+export WEBKIT_DISABLE_COMPOSITING_MODE=1
+
+# nvidia-vaapi
+export MOZ_DISABLE_RDD_SANDBOX=1
+export LIBVA_DRIVER_NAME=nvidia
+export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json
+export NVD_BACKEND=direct
+
+# Use NSS-DB
+export NSS_DEFAULT_DB_TYPE=sql
+
+# Always use LC_COLLATE=C
+export LC_COLLATE=C
+
+export XDG_SESSION_TYPE=wayland
+
+# Set ibus as IME
+export XMODIFIERS=@im=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus 
+
+# Autostart
+
+# ibus-daemon -drx
+pgrep waybar > /dev/null && pkill waybar
+daemonize /usr/bin/waybar -c "$HOME/.config/waybar/config"
+
+pgrep wlsunset > /dev/null && pkill wlsunset
+daemonize /usr/local/bin/wlsunset -g 0.85 -T 4001 -t 4000
+
+dash "$HOME/.config/autostart/00-Autostart.sh" &
+dash "$HOME/.config/autostart/00-Wayland.sh" &
+
+# Set the default layout generator to be rivertile and start it.
+# River will send the process group of the init executable SIGTERM on exit.
+riverctl default-layout rivertile
+rivertile -view-padding 1 -outer-padding 1 &
