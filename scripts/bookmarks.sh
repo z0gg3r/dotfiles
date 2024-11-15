@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. "$HOME/.local/scripts/remapper.sh"
+
 DB_PATH="$HOME/.config/pmb"
 
 die()
@@ -33,5 +35,5 @@ then
 	die "No url could be queried"
 fi
 
-xdotool type --delay 15 "$url"
-xdotool key KP_Enter
+$DOTOOL "$url"
+$DOTOOL_KEY KP_ENTER
