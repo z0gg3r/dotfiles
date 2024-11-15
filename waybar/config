@@ -1,7 +1,7 @@
 {
 	"layer": "top",
 	"position": "top",
-	"height": 25,
+	"height": 32,
 	"spacing": 4,
 	"modules-left": [ "river/tags", "river/window" ],
 	"modules-center": [ ],
@@ -25,8 +25,8 @@
 		}
 	},
 	"tray": {
-		// "icon-size": 21,
-		"spacing": 10
+		"spacing": 10,
+		"show-passive-items": true
 	},
 	"clock": {
 		"format": "{:%Y-%m-%d %H:%M}",
