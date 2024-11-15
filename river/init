@@ -3,55 +3,25 @@
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super Return spawn foot
 riverctl map normal Super W spawn firefox-bin
-riverctl map normal Super A spawn "dash /home/zocki/.local/abook.sh"
-riverctl map normal Super B spawn "dash /home/zocki/.local/scripts/bookmarks.sh"
-riverctl map normal Super C spawn "dash /home/zocki/.local/scripts/unicode.sh"
+riverctl map normal Super A spawn "dash $HOME/.local/abook.sh"
+riverctl map normal Super B spawn "dash $HOME/.local/scripts/bookmarks.sh"
+riverctl map normal Super C spawn "dash $HOME/.local/scripts/unicode.sh"
 riverctl map normal Super D spawn "rofi -show run"
-riverctl map normal Super E spawn "dash /home/zocki/.local/scripts/emoji.sh"
-riverctl map normal Super+Shift W spawn "dash /home/zocki/.local/scripts/wallpaper_setter.sh"
-riverctl map normal Super L spawn "swaylock -F -e -i /home/zocki/.config/wallpapers/wallpaper.png"
-riverctl map normal Super+Shift R spawn "dash /home/zocki/.local/scripts/restart-waybar.sh"
+riverctl map normal Super E spawn "dash $HOME/.local/scripts/emoji.sh"
+riverctl map normal Super+Shift W spawn "dash $HOME/.local/scripts/wallpaper_setter.sh"
+riverctl map normal Super L spawn "swaylock -F -e -i $HOME/.config/wallpapers/wallpaper.png"
+riverctl map normal Super+Shift R spawn "dash $HOME/.local/scripts/restart-waybar.sh"
 
 # Tag controls
-riverctl map normal Super 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 1"
-riverctl map normal Super+Shift 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 1"
-riverctl map normal Super+Control 1 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 1"
 
-riverctl map normal Super 2 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 2"
-riverctl map normal Super+Shift 2 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 2"
-riverctl map normal Super+Control 2 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 2"
-
-riverctl map normal Super 3 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 3"
-riverctl map normal Super+Shift 3 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 3"
-riverctl map normal Super+Control 3 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 3"
-
-riverctl map normal Super 4 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 4"
-riverctl map normal Super+Shift 4 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 4"
-riverctl map normal Super+Control 4 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 4"
-
-riverctl map normal Super 5 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 5"
-riverctl map normal Super+Shift 5 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 5"
-riverctl map normal Super+Control 5 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 5"
-
-riverctl map normal Super 6 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 6"
-riverctl map normal Super+Shift 6 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 6"
-riverctl map normal Super+Control 6 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 6"
-
-riverctl map normal Super 7 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 7"
-riverctl map normal Super+Shift 7 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 7"
-riverctl map normal Super+Control 7 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 7"
-
-riverctl map normal Super 8 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 8"
-riverctl map normal Super+Shift 8 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 8"
-riverctl map normal Super+Control 8 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 8"
-
-riverctl map normal Super 9 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 9"
-riverctl map normal Super+Shift 9 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 9"
-riverctl map normal Super+Control 9 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 9"
-
-riverctl map normal Super 0 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh show 10"
-riverctl map normal Super+Shift 0 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh follow2 10"
-riverctl map normal Super+Control 0 spawn "dash /home/zocki/.local/scripts/river_workspacectl.sh send2 10"
+for i in $(seq 10)
+do
+	key="$i"
+	[ "$key" = "10" ] && key="0"
+	riverctl map normal Super "$key" spawn "dash $HOME/.local/scripts/river_workspacectl.sh show $i"
+	riverctl map normal Super+Shift "$key" spawn "dash $HOME/.local/scripts/river_workspacectl.sh follow2 $i"
+	riverctl map normal Super+Control "$key" spawn "dash $HOME/.local/scripts/river_workspacectl.sh send2 $i"
+done
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
@@ -68,7 +38,7 @@ riverctl map normal Super K focus-view previous
 riverctl map normal Super+Shift J swap next
 riverctl map normal Super+Shift K swap previous
 
-riverctl map normal Super O spawn "dash /home/zocki/.local/scripts/river_mover.sh"
+riverctl map normal Super O spawn "dash $HOME/.local/scripts/river_mover.sh"
 
 # Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
 # riverctl map normal Super+Shift H send-layout-cmd rivertile "main-ratio -0.05"
@@ -165,10 +135,10 @@ daemonize /usr/bin/waybar -c "$HOME/.config/waybar/config"
 pgrep wlsunset > /dev/null && pkill wlsunset
 daemonize /usr/local/bin/wlsunset -g 0.85 -T 4001 -t 4000
 
-dash "$HOME/.config/autostart/00-Autostart.sh" &
-dash "$HOME/.config/autostart/00-Wayland.sh" &
+dash "$HOME/.config/autostart/00-Autostart.sh"
+dash "$HOME/.config/autostart/00-Wayland.sh"
 
-daemonize /usr/bin/swaybg -m fill -i /home/zocki/.config/wallpapers/wallpaper.png
+daemonize /usr/bin/swaybg -m fill -i "$HOME/.config/wallpapers/wallpaper.png"
 
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
