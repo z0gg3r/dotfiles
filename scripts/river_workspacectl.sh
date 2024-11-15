@@ -1,13 +1,8 @@
 #!/bin/sh
 
-reset_view_tag()
-{
-	riverctl set-focused-tags 0
-}
 
 show_tag()
 {
-	reset_view_tag
 	tag_mask="$(left-shift "$1")"
 	riverctl set-focused-tags "$tag_mask"
 }
