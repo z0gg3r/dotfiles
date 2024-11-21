@@ -4,8 +4,8 @@
 	"height": 32,
 	"spacing": 4,
 	"modules-left": [ "river/tags", "river/window" ],
-	"modules-center": [ ],
-	"modules-right": [ "clock", "wireplumber", "cpu", "memory", "tray" ],
+	"modules-center": [ "custom/genlop-cn" ],
+	"modules-right": [ "custom/mpv-radio", "wireplumber", "cpu", "memory", "clock", "tray" ],
 	"sway/window": {
 		"max-length": 200,
 		"separate-outputs": true
@@ -14,6 +14,7 @@
 		"num-tags": 10
 	},
 	"river/window": {
+		"max-length": 32,
 		"format": "{}"
 	},
 	"sway/workspaces": {
@@ -23,6 +24,17 @@
 			"HDMI-1": [ 1 ],
 			"DVI-D-0": [ 1 ],
 		}
+	},
+	"custom/genlop-cn": {
+		"exec": "genlop -cn | grep ETA | trim",
+		"exec-if": "pgrep -x emerge",
+		"hide-empty-text": true,
+		"interval": 15
+	},
+	"custom/mpv-radio": {
+		"exec": "polybar-mpv-script | zscroll -b '🎵 ' -l 32",
+		"exec-if": "pgrep -x mpv-radio",
+		"restart-interval": 2
 	},
 	"tray": {
 		"spacing": 10,
