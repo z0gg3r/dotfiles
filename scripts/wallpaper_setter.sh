@@ -21,4 +21,6 @@ else
 	change_wallpaper.sh "$choice"
 fi
 
+$KILL_WALLPAPER
+
 $BGTOOL "$WALLPAPERS_DST"
