@@ -4,7 +4,7 @@ kver="$1"
 if [ -z "$kver" ]
 then
 	cd /usr/src/linux || exit 1
-	kver=$(make -s kernelversion)
+	kver=$(make -s kernelrelease)
 fi
 
 echo "Kernel Version is: $kver"
