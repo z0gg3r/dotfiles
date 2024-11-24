@@ -32,8 +32,9 @@
 		"interval": 15
 	},
 	"custom/mpv-radio": {
-		"exec": "polybar-mpv-script | zscroll -b '🎵 ' -l 32",
+		"exec": "polybar-mpv-script | zscroll -l 32",
 		"exec-if": "pgrep -x mpv-radio",
+		"hide-empty-text": true,
 		"restart-interval": 2
 	},
 	"tray": {
