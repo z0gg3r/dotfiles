@@ -17,6 +17,7 @@ https://github.com/atx/wtype wtype
 https://git.suckless.org/surf surf-viewer
 https://github.com/curl/trurl trurl
 https://github.com/XAMPPRocky/tokei tokei
+https://github.com/kristoff-it/superhtml superhtml
 https://git.sr.ht/~sircmpwn/hare hare
 https://github.com/universal-ctags/ctags ctags
 https://github.com/bartobri/no-more-secrets nms
@@ -48,6 +49,7 @@ git://c9x.me/qbe.git qbe
 https://github.com/Duncaen/OpenDoas doas
 https://github.com/z0gg3r/wcwidth wcwidth
 https://repo.or.cz/tinycc.git tcc
+https://codeberg.org/redict/hiredict hiredict
 git://git.codemadness.org/lel lel
 https://github.com/eradman/entr entr
 https://github.com/xorg62/tty-clock tty-clock
