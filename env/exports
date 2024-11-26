@@ -43,4 +43,4 @@ export WINE_LARGE_ADDRESS_AWARE=1
 ZSH_COMMAND_TIME_MIN_SECONDS=3
 ZSH_COMMAND_TIME_MSG="took %s"
 ZSH_COMMAND_TIME_COLOR="yellow"
-ZSH_COMMAND_TIME_EXCLUDE=(vim mutt neomutt mail zathura okular ls clear echo printf file stat sxiv man less curl wget wget2 nmap git osc trurl)
+ZSH_COMMAND_TIME_EXCLUDE=(vim mutt neomutt mail zathura okular ls clear echo printf file stat sxiv man less curl wget wget2 nmap git osc trurl htop)
