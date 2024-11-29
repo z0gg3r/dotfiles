@@ -14,8 +14,8 @@ get_title()
 
 get_output()
 {
-	pgrep -x mpv-radio > /dev/null || printf '\n' && exit
 	printf '🎵 %b by %b' "$(get_title)" "$(get_artist)"
 }
 
+[ -z "$FILE" ] && printf '\n' && exit
 get_output
