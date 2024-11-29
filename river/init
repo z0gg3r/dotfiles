@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super Return spawn foot
@@ -11,7 +11,7 @@ riverctl map normal Super E spawn "dash $HOME/.local/scripts/emoji.sh"
 riverctl map normal Super+Shift W spawn "dash $HOME/.local/scripts/wallpaper_setter.sh"
 riverctl map normal Super L spawn "swaylock -F -e -i $HOME/.config/wallpapers/wallpaper.png"
 riverctl map normal Super+Shift R spawn "dash $HOME/.local/scripts/restart-waybar.sh"
-[ -e "$HOME/.river-binds" ] && . "$HOME/.river-binds" && local-river-binds
+[ -e "$HOME/.river-binds" ] && source "$HOME/.river-binds" && local-river-binds
 
 # Tag controls
 
