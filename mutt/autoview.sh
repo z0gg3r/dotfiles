@@ -4,16 +4,16 @@ view_html()
 {
 	target="/tmp/$(uuidgen).html"
 	cp "$1" "$target"
-	chosen="$(printf "surf\nw3m\npdf\nglinks\n" | fzy)"
+	chosen="$(printf "firefox\nw3m\npdf\nglinks\n" | fzy)"
 	if [ -z "$chosen" ]
 	then
-		chosen="surf"
+		chosen="firefox"
 	fi
 	case $chosen in
 		"pdf") tmp_pdf "$target" ;;
 		"glinks") "$HOME"/.local/scripts/glinks.sh "$target" ;;
 		"w3m") view_w3m "$target" ;;
-		*) view_surf "$target" ;;
+		*) view_firefox "$target" ;;
 	esac
 	rm "$target"
 }
@@ -39,11 +39,11 @@ view_w3m()
 		"$1"
 }
 
-view_surf()
+view_firefox()
 {
 	firejail --noprofile \
 		--hosts-file="$HOME/.config/adblocklist" \
-		--private \
+		--private=/opt/firejail/mail_viewer \
 		--nodvd \
 		--nosound \
 		--notv \
@@ -54,8 +54,8 @@ view_surf()
 		--net=none \
 		--machine-id \
 		--caps.drop=all \
-		--name="mutt-surf-viewer" \
-		/usr/local/bin/surf-viewer -u "$SURF_USERAGENT" -s -g -n -m -t "$1"
+		--name="mutt-ff-viewer" \
+		firefox-bin -new-instance "$1"
 }
 
 tmp_pdf()
