@@ -41,14 +41,6 @@ riverctl map normal Super+Shift K swap previous
 
 riverctl map normal Super O spawn "dash $HOME/.local/scripts/river_mover.sh"
 
-# Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
-# riverctl map normal Super+Shift H send-layout-cmd rivertile "main-ratio -0.05"
-# riverctl map normal Super+Shift L send-layout-cmd rivertile "main-ratio +0.05"
-
-# Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivertile(1)
-# riverctl map normal Super+Shift+Alt H send-layout-cmd rivertile "main-count +1"
-# riverctl map normal Super+Shift+Alt L send-layout-cmd rivertile "main-count -1"
-
 # Super+Alt+{H,J,K,L} to move views
 riverctl map normal Super+Alt H move left 100
 riverctl map normal Super+Alt J move down 100
