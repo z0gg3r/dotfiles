@@ -10,6 +10,7 @@ alias date='date +%F'
 alias df='df -h'
 alias dff="df -h | head -n 1 && df | grep --color=never '% /$'"
 alias diff='git diff --no-index'
+alias dig='drill'
 alias dir='LC_COLLATE=C ls -AvhlFi --color=auto'
 alias du='du -sh'
 alias fix-gpg-check='gpg2 --keyserver-options auto-key-retrieve --verify'
