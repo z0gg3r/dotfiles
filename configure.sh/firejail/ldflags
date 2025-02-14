@@ -1,1 +1,1 @@
--Wl,-z,defs -Wl,-z,now -Wl,-z,relro -Wl,-z,nodlopen -Wl,-z,noexecstack -fuse-ld=mold
+-Wl,-z,defs -Wl,-z,now -Wl,-z,relro -Wl,-z,nodlopen -Wl,-z,noexecstack  -Wl,--as-needed -Wl,--no-copy-dt-needed-entries -fuse-ld=mold
