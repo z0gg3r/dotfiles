@@ -17,5 +17,6 @@ get_output()
 	printf '🎵 %b by %b' "$(get_title)" "$(get_artist)"
 }
 
+if ! pgrep -x mpv > /dev/null 2> /dev/null; then exit; fi # printf '\n' ; fi
 [ -z "$FILE" ] && printf '\n' && exit
 get_output
