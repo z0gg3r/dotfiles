@@ -19,7 +19,7 @@ set nomodeline
 set tabstop=8
 set shiftwidth=8
 set list
-set lcs=tab:>-<,lead:…
+set lcs=tab:>-<,lead:.
 set background=dark
 
 " Force usage of hjkl
@@ -41,7 +41,7 @@ autocmd filetype html setlocal makeprg=superhtml\ check\ %
 autocmd filetype html setlocal formatprg=superhtml\ fmt\ --stdin
 
 " Plugin section (below this only plugin stuff)
-call plug#begin('/home/zocki/.vim/plugged')
+call plug#begin('$HOME/.vim/plugged')
 	Plug 'reedes/vim-pencil'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
