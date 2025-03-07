@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super Return spawn foot
 riverctl map normal Super W spawn firefox-bin
 riverctl map normal Super A spawn "dash $HOME/.local/abook.sh"
@@ -69,7 +68,7 @@ riverctl map-pointer normal Super BTN_RIGHT resize-view
 riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
 # Super+Space to toggle float
-riverctl map normal Super Space toggle-float
+riverctl map normal Super+Shift F toggle-float
 
 # Super+F to toggle fullscreen
 riverctl map normal Super F toggle-fullscreen
@@ -115,15 +114,18 @@ export LC_COLLATE=C
 
 export XDG_SESSION_TYPE=wayland
 export MOZ_ENABLE_WAYLAND=1
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 # Set ibus as IME
 export XMODIFIERS=@im=ibus
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus 
 
 # Autostart
 
-# ibus-daemon -drx
+# dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+# pgrep ibus > /dev/null && ibus exit
+# daemonize /usr/bin/ibus start --verbose --type wayland >> "$HOME/.cache/ibus-wayland-log" 2>&1
+
 pgrep waybar > /dev/null && pkill waybar
 daemonize /usr/bin/waybar -c "$HOME/.config/waybar/config"
 
