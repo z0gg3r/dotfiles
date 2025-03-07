@@ -6,6 +6,7 @@ set viminfofile=NONE
 set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
+set ambiwidth=single
 set showcmd
 set autoindent
 set path+=**
