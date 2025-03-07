@@ -94,10 +94,13 @@ export bookmark_extract
 
 tcc_bootstrap()
 {
+	old_ld="${LDFLAGS}"
+	export LDFLAGS="-Wl,-z,defs -Wl,-z,now -Wl,-z,relro -Wl,-z,nodlopen -Wl,-z,noexecstack  -Wl,--as-needed "
 	./configure --cc=tcc --extra-cflags="$CFLAGS"
 	make -j24
 	doas make install
 	make clean
+	export LDFLAGS="${old_ld}"
 }
 
 export tcc_bootstrap
