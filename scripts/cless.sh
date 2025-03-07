@@ -11,7 +11,7 @@ then
 	exit 1
 fi
 
-cat "$1" | fold -s | while read -r line
+fold -s < "$1" | while read -r line
 do
 	pad -m center -s "$line"
-done | less
+done | less -R --use-color --mouse
