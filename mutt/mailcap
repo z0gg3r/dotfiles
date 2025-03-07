@@ -1,4 +1,4 @@
-text/plain; /home/zocki/.local/scripts/cless.sh %s ;
+text/plain; "${EDITOR}" %s ;
 text/html; /home/zocki/.config/mutt/autoview.sh %s html; test=test -n "$DISPLAY"
 text/html; openfile %s ; nametemplate=%s.html
 text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput;
