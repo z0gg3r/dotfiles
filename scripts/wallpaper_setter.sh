@@ -23,4 +23,4 @@ fi
 
 $KILL_WALLPAPER
 
-$BGTOOL "$WALLPAPERS_DST"
+"${HOME}/.local/bin/bgctl" "$WALLPAPERS_DST"
