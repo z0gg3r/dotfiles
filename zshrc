@@ -13,8 +13,7 @@ _source ()
 
 git_prompt_info()
 {
-	git status --porcelain > /dev/null 2> /dev/null
-	if [ $? -eq 0 ]
+	if git status --porcelain > /dev/null 2> /dev/null
 	then
 		branch="$(git --no-pager branch | grep '^*' | cut -d' ' -f2)"
 		dirty="$(git status --porcelain)"
