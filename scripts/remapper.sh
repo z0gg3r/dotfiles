@@ -6,11 +6,11 @@ then
 	export DOTOOL_KEY="wtype -k"
 	export CLIPTOOL="wl-clopy"
 	export BGTOOL="daemonize /usr/bin/swaybg -m fill -i"
-	export KILL_WALLPAPER="killall swaybg"
+	export KILL_WALLPAPER="killall swaybg; killall mpvpaper"
 else
 	export DOTOOL="xdotool type --delay 15"
 	export DOTOOL_KEY="xdotool key"
 	export CLIPTOOL="xclip -selection clipboard"
 	export BGTOOL="feh --no-fehbg --bg-fill"
-	exort KILL_WALLPAPER=""
+	export KILL_WALLPAPER=""
 fi
