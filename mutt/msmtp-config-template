@@ -3,7 +3,7 @@ host server
 port port
 from mail
 user smtp-user
-passwordeval "pass entyy"
+passwordeval "pass entry"
 auth on
 tls on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
