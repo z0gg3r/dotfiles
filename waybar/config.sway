@@ -1,0 +1,103 @@
+{
+	"layer": "top",
+	"position": "top",
+	"height": 32,
+	"spacing": 4,
+	"modules-left": [ "sway/workspaces", "sway/window" ],
+	"modules-center": [ "custom/genlop-cn" ],
+	"modules-right": [ "wireplumber", "cpu", "memory", "clock", "tray" ],
+	"sway/window": {
+		"max-length": 32,
+		"all-outputs": true,
+		"offscreen-css": true,
+		"offscreen-css-text": "{title} - inactive"
+	},
+	"sway/workspaces": {
+		"format": "{name}",
+		"persistent-workspaces": {
+			"1:一": [ "HDMI-A-2" ],
+			"2:二": [ "HDMI-A-2" ],
+			"3:三": [ "HDMI-A-2" ],
+			"4:四": [ "HDMI-A-2" ],
+			"5:五": [ "HDMI-A-2" ],
+			"6:六": [ "HDMI-A-2" ],
+			"7:七": [ "HDMI-A-2" ],
+			"8:八": [ "HDMI-A-2" ],
+			"9:九": [ "HDMI-A-2" ],
+			"10:十": [ "HDMI-A-2" ],
+			"11:一": [ "HDMI-A-1" ],
+			"12:二": [ "HDMI-A-1" ],
+			"13:三": [ "HDMI-A-1" ],
+			"14:四": [ "HDMI-A-1" ],
+			"15:五": [ "HDMI-A-1" ],
+			"16:六": [ "HDMI-A-1" ],
+			"17:七": [ "HDMI-A-1" ],
+			"18:八": [ "HDMI-A-1" ],
+			"19:九": [ "HDMI-A-1" ],
+			"20:十": [ "HDMI-A-1" ],
+			"21:一": [ "DVI-D-1" ],
+			"22:二": [ "DVI-D-1" ],
+			"23:三": [ "DVI-D-1" ],
+			"24:四": [ "DVI-D-1" ],
+			"25:五": [ "DVI-D-1" ],
+			"26:六": [ "DVI-D-1" ],
+			"27:七": [ "DVI-D-1" ],
+			"28:八": [ "DVI-D-1" ],
+			"29:九": [ "DVI-D-1" ],
+			"30:十": [ "DVI-D-1" ]
+		}
+	},
+	"custom/genlop-cn": {
+		"exec": "genlop -cn | grep ETA | trim",
+		"exec-if": "pgrep -x emerge",
+		"hide-empty-text": true,
+		"interval": 15
+	},
+	"custom/mpv-radio": {
+		"exec": "polybar-mpv-script | zscroll -l 32",
+		"exec-if": "pgrep -f mpv-radio",
+		"hide-empty-text": true,
+		"restart-interval": 2
+	},
+	"tray": {
+		"spacing": 10,
+		"show-passive-items": true
+	},
+	"clock": {
+		"format": "{:%Y-%m-%d %H:%M}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+					"mode": "year",
+					"mode-mon-col": 3,
+					"weeks-pos": "right",
+					"on-scroll": 1,
+					"on-click-right": "mode",
+					"format": {
+							"months": "<span color='#ffead3'><b>{}</b></span>",
+							"days": "<span color='#ecc6d9'><b>{}</b></span>",
+							"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+							"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+							"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+							}
+		},
+		"actions":  {
+					"on-click-right": "mode",
+					"on-click-forward": "tz_up",
+					"on-click-backward": "tz_down",
+					"on-scroll-up": "shift_up",
+					"on-scroll-down": "shift_down"
+		}
+	},
+	"cpu": {
+		"format": "CPU {usage}%",
+		"tooltip": false
+	},
+	"memory": {
+		"format": "RAM {}%"
+	},
+	"wireplumber": {
+		"scroll-step": 5,
+		"format": "VOL {volume}%",
+		"on-click": "pavucontrol"
+	}
+}
