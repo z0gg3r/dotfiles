@@ -10,10 +10,10 @@
 		"max-length": 32,
 		"all-outputs": true,
 		"offscreen-css": true,
-		"offscreen-css-text": "{title} - inactive"
+		"offscreen-css-text": "inactive"
 	},
 	"sway/workspaces": {
-		"format": "{name}",
+		"format": "<span font='IPAGothic'>{name}</span>",
 		"persistent-workspaces": {
 			"1:一": [ "HDMI-A-2" ],
 			"2:二": [ "HDMI-A-2" ],
