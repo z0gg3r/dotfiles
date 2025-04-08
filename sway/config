@@ -6,90 +6,132 @@ set $up k
 set $right l
 
 set $term foot
-set $menu wofi --show drun -fi
+set $menu rofictl
 set $browser firefox-bin
 
-output * bg /home/zocki/.wallpaper.png fill
-output HDMI-A-2 position 1920,0 workspace 1
-output HDMI-A-1 position 0,0 workspace 2
-output DVI-D-1 position 3840,0 workspace 3
+output DVI-D-1 position 0,0
+output HDMI-A-1 position 1920,0
+output HDMI-A-2 position 3840,0
 
-    bindsym $mod+Return exec $term
+default_border pixel
 
-    bindsym $mod+q kill
+workspace "1:一" output HDMI-A-2
+workspace "2:二" output HDMI-A-2
+workspace "3:三" output HDMI-A-2
+workspace "4:四" output HDMI-A-2
+workspace "5:五" output HDMI-A-2
+workspace "6:六" output HDMI-A-2
+workspace "7:七" output HDMI-A-2
+workspace "8:八" output HDMI-A-2
+workspace "9:九" output HDMI-A-2
+workspace "10:十" output HDMI-A-2
+workspace "11:一" output HDMI-A-1
+workspace "12:二" output HDMI-A-1
+workspace "13:三" output HDMI-A-1
+workspace "14:四" output HDMI-A-1
+workspace "15:五" output HDMI-A-1
+workspace "16:六" output HDMI-A-1
+workspace "17:七" output HDMI-A-1
+workspace "18:八" output HDMI-A-1
+workspace "19:九" output HDMI-A-1
+workspace "20:十" output HDMI-A-1
+workspace "21:一" output DVI-D-1
+workspace "22:二" output DVI-D-1
+workspace "23:三" output DVI-D-1
+workspace "24:四" output DVI-D-1
+workspace "25:五" output DVI-D-1
+workspace "26:六" output DVI-D-1
+workspace "27:七" output DVI-D-1
+workspace "28:八" output DVI-D-1
+workspace "29:九" output DVI-D-1
+workspace "30:十" output DVI-D-1
 
-    bindsym $mod+d exec $menu
+input "type:keyboard" {
+	xkb_layout us
+}
 
-    floating_modifier $mod normal
 
-    bindsym $mod+Shift+c reload
+bindsym $mod+w exec $browser
+bindsym $mod+p exec shopfox
+bindsym $mod+u exec /opt/google/chrome/chrome
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+w exec wallpaper_setter.sh
+bindsym $mod+c exec unicode.sh
+bindsym $mod+e exec emoji.sh
+bindsym $mod+b exec bookmarks.sh
+bindsym $mod+a exec abook.sh
+bindsym $mod+l exec swaylock -F -e -i $HOME/.config/wallpapers/wallpaper.png
+bindsym $mod+q kill
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+e exec swaymsg exit
+bindsym $mod+Shift+c reload
 
-    bindsym $mod+Shift+e exec swaymsg exit
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+floating_modifier $mod normal
 
-    bindsym $mod+Alt+s layout stacking
-    bindsym $mod+Alt+w layout tabbed
-    bindsym $mod+Alt+e layout toggle split
+bindsym $mod+1 exec sway-workspaces.sh switch 1
+bindsym $mod+2 exec sway-workspaces.sh switch 2
+bindsym $mod+3 exec sway-workspaces.sh switch 3
+bindsym $mod+4 exec sway-workspaces.sh switch 4
+bindsym $mod+5 exec sway-workspaces.sh switch 5
+bindsym $mod+6 exec sway-workspaces.sh switch 6
+bindsym $mod+7 exec sway-workspaces.sh switch 7
+bindsym $mod+8 exec sway-workspaces.sh switch 8
+bindsym $mod+9 exec sway-workspaces.sh switch 9
+bindsym $mod+0 exec sway-workspaces.sh switch 10
+bindsym $mod+Shift+1 exec sway-workspaces.sh move 1
+bindsym $mod+Shift+2 exec sway-workspaces.sh move 2
+bindsym $mod+Shift+3 exec sway-workspaces.sh move 3
+bindsym $mod+Shift+4 exec sway-workspaces.sh move 4
+bindsym $mod+Shift+5 exec sway-workspaces.sh move 5
+bindsym $mod+Shift+6 exec sway-workspaces.sh move 6
+bindsym $mod+Shift+7 exec sway-workspaces.sh move 7
+bindsym $mod+Shift+8 exec sway-workspaces.sh move 8
+bindsym $mod+Shift+9 exec sway-workspaces.sh move 9
+bindsym $mod+Shift+0 exec sway-workspaces.sh move 10
+bindsym $mod+o move window to output right; focus output right
 
-    bindsym $mod+f fullscreen
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+v splitv
 
-    bindsym $mod+Shift+space floating toggle
+bindsym $mod+Alt+s layout stacking
+bindsym $mod+Alt+w layout tabbed
+bindsym $mod+Alt+e layout toggle split
 
-    bindsym $mod+space focus mode_toggle
+bindsym $mod+f fullscreen
 
-    bindsym $mod+a focus parent
+bindsym $mod+Shift+space floating toggle
 
-    bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Alt+space focus mode_toggle
 
-    bindsym $mod+minus scratchpad show
 mode "resize" {
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+	bindsym $left resize shrink width 10px
+	bindsym $down resize grow height 10px
+	bindsym $up resize shrink height 10px
+	bindsym $right resize grow width 10px
 
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+	bindsym Left resize shrink width 10px
+	bindsym Down resize grow height 10px
+	bindsym Up resize shrink height 10px
+	bindsym Right resize grow width 10px
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-bindsym $mod+c exec unicode.sh
-bindsym $mod+Shift+e exec emoji.sh
 
 bar {
-    position top
-    swaybar_command waybar
+	position top
+	swaybar_command waybar-launcher
 }
 
 exec "$HOME/.config/autostart/00-Autostart.sh"
+
+exec daemonize /usr/bin/ibus start --verbose --type wayland >> "${HOME}/.cache/ibus-wayland-sway.log" 2>&1
+exec wlsunset -g 0.85 -T 4001 -t 4000
+exec bgctl "${HOME}/.config/wallpapers/wallpaper.png"
+exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
 
 include /etc/sway/config.d/*
