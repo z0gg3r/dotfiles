@@ -31,7 +31,8 @@ button:hover {
 
 #workspaces button {
 	padding: 0 5px;
-	color: #fff;
+	color: #282A2E;
+	background-color: #F0C674;
 }
 
 #window {
@@ -44,8 +45,12 @@ button:hover {
 	color: #282A2E;
 }
 
+#workspaces button.empty {
+	color: #fff;
+	background-color: #282A2E;
+}
 
-#workspaces button.active, #tags button.focused {
+#workspaces button.active, #workspaces button.focused, #tags button.focused {
 	background-color: #f48fb1;
 	color: #282A2E;
 }
