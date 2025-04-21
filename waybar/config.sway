@@ -9,8 +9,7 @@
 	"sway/window": {
 		"max-length": 32,
 		"all-outputs": true,
-		"offscreen-css": true,
-		"offscreen-css-text": "inactive"
+		"offscreen-css": true
 	},
 	"sway/workspaces": {
 		"format": "<span font='IPAGothic'>{name}</span>",
