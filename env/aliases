@@ -1,7 +1,6 @@
 alias aliases="cat $HOME/.config/env/aliases | cut -c 6- | less"
 alias cal='cal -ymw'
 alias calc='calc -p'
-alias clang-check='clang-check *.c --'
 alias clang-format="clang-format --style='file:$HOME/.clang-format'"
 alias clea='clear'
 alias cls='clear; ls'
