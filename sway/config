@@ -129,7 +129,7 @@ bar {
 
 exec "$HOME/.config/autostart/00-Autostart.sh"
 
-exec daemonize /usr/bin/ibus start --verbose --type wayland >> "${HOME}/.cache/ibus-wayland-sway.log" 2>&1
+exec ibus start --type wayland
 exec wlsunset -g 0.85 -T 4001 -t 4000
 exec bgctl "${HOME}/.config/wallpapers/wallpaper.png"
 exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
