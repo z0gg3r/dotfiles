@@ -12,9 +12,17 @@ get_title()
 	vorbiscomment -l "$FILE" | grep -i TITLE | cut -d= -f2
 }
 
+get_duration()
+{
+	time_spent="$(polybar-mpv-time-pos)"
+	time_left="$(polybar-mpv-duration)"
+	full_time="$((time_spent + time_left))"
+	printf '%02d:%02d/%02d:%02d' $((time_spent%3600/60)) $((time_spent%60)) $((full_time%3600/60)) $((full_time%60))
+}
+
 get_output()
 {
-	printf '🎵 %b by %b' "$(get_title)" "$(get_artist)"
+	printf '🎵 %b by %b [%b]' "$(get_title)" "$(get_artist)" "$(get_duration)"
 }
 
 if ! pgrep -x mpv > /dev/null 2> /dev/null; then exit; fi # printf '\n' ; fi
