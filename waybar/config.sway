@@ -4,7 +4,7 @@
 	"height": 32,
 	"spacing": 4,
 	"modules-left": [ "sway/workspaces", "sway/window" ],
-	"modules-center": [ "custom/genlop-cn" ],
+	"modules-center": [ "custom/genlop-cn", "custom/mpv-radio" ],
 	"modules-right": [ "wireplumber", "cpu", "memory", "clock", "tray" ],
 	"sway/window": {
 		"max-length": 32,
@@ -53,7 +53,7 @@
 		"interval": 15
 	},
 	"custom/mpv-radio": {
-		"exec": "polybar-mpv-script | zscroll -l 32",
+		"exec": "polybar-mpv-script",
 		"exec-if": "pgrep -f mpv-radio",
 		"hide-empty-text": true,
 		"restart-interval": 2
