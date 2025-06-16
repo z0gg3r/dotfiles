@@ -1,9 +1,9 @@
 #! /bin/sh
-#   SPDX-FileCopyrightText: 2021 zocker <zocker@10zen.eu>
+#   SPDX-FileCopyrightText: 2025 zocker <zocker@10zen.eu>
 #   SPDX-License-Identifier: GPL-3.0-or-later
 #
 #   update.sh - A simple shell script to update a dotfiles repo
-#   Copyright (C) 2021  zockerfreunde03/z0gg3r
+#   Copyright (C) 2025  zockerfreunde03/z0gg3r
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License Version 3 or
 #   later as published by the Free Software Foundation.
@@ -24,12 +24,17 @@ INFO="\033[35;48m"
 IGNORE="\033[34;48m"
 END="\033[0m"
 
-echo "$INFO Assuming echo does not need -e for colour output! $END"
-
 die()
 {
-	echo "$ERROR $1 $END"
+	log "${ERROR}" "${@}"
 	exit 1
+}
+
+log()
+{
+	level="${1}"
+	msg="${2}"
+	printf '%b%b%b\n' "${level}" "${msg}" "${END}"
 }
 
 _diff()
@@ -64,7 +69,7 @@ update_dir()
 	then
 		die "$dir_path does not exist!"
 	fi
-	echo "$INFO Updating $dir_path... $END"
+	log "${INFO}" "Updating ${dir_path}..."
 	if ! [ -e "$dir" ]
 	then
 		mkdir "$dir"
@@ -76,17 +81,17 @@ update_dir()
 		file="$(_basename "$prefixed_file")"
 		case $ignore_list in
 			*$file*) ignore="yes" ;;
+			*) ignore="" ;;
 		esac
 		if [ -z "$ignore" ] && [ -d "$dir_path/$file" ]
 		then
-			echo "$IGNORE $dir/$file is a directory and will be ignored!$END"
+			log "$IGNORE" "$dir/$file is a directory and will be ignored!"
 		elif [ -z "$ignore" ]
 		then
 			update_file "$dir_path/$file" "$dir/$file"
 		else
-			echo "$IGNORE $dir/$file will be ignored!$END"
+			log "${IGNORE}" "${dir}/${file} will be ignored!"
 		fi
-		ignore=""
 	done
 }
 
@@ -113,14 +118,14 @@ update_file()
 	then
 		if ! _diff "$file_path" "$file_name"
 		then
-			echo "$CHANGE Updating $file_name! $END"
+			log "${CHANGE}" "Updating ${file_name}!"
 			cp "$file_path" "$file_name"
 		else
-			echo "$UPTODATE $file_name is up-to-date! $END"
+			log "${UPTODATE}" "${file_name} is up-to-date!"
 		fi
 	elif ! [ -e "$file_name" ] && [ -e "$file_path" ]
 	then
-		echo "$CHANGE Creating $file_name! $END"
+		log "${CHANGE}" "Creating ${file_name}!"
 		cp "$file_path" "$file_name"
 	elif [ ! -e "$file_path" ]
 	then
