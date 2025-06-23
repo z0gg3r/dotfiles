@@ -38,8 +38,12 @@ trap script_cleanup QUIT INT TERM EXIT
 cwd=$(pwd)
 cd "$PROG_DIR" || die
 
+chars="$(printf '%b' "${@}" | wc -c)"
+
 for dir in *
 do
+	ignore="$(printf '%b' "${@}" | sed -e "s|${dir}||g" | wc -c)"
+	[ "${ignore}" -lt "${chars}" ] && continue
 	(
 		cd "$dir" || die
 		git_pull
