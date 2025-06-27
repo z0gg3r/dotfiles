@@ -96,6 +96,7 @@ bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 bindkey '^[[Z' reverse-menu-complete
 bindkey "\e[3~" delete-char
+bindkey '^R' history-incremental-pattern-search-backward
 
 _source $HOME/.config/env/aliases
 _source $HOME/.aliases
