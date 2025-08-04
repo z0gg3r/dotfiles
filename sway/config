@@ -48,6 +48,7 @@ workspace "30:十" output DVI-D-1
 
 input "type:keyboard" {
 	xkb_layout us
+	xkb_options srvrkeys:none
 }
 
 
