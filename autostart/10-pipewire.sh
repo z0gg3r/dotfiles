@@ -2,4 +2,6 @@
 
 . "$HOME/.config/autostart/00-exports.sh"
 
-pgrep "pipewire" > /dev/null || start "gentoo-pipewire-launcher"
+force_start_openrc pipewire
+force_start_openrc wireplumber
+force_start_openrc pipewire-pulse
