@@ -1,3 +1,0 @@
-alias update="doas xbps-install -Su"
-alias search="xbps-query -Rs"
-alias cleanup="doas xbps-remove -Oov"
