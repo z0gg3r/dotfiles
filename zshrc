@@ -120,5 +120,6 @@ compinit
 
 clear && ufetch
 
-unset MANPATH # Don't force it
+# MANPATH is not needed
+unset MANPATH
 _source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
