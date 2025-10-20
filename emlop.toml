@@ -1,0 +1,18 @@
+# This is an example `emlop` config file.
+#
+# It is loaded from `$HOME/.config/emlop.toml` by default.
+# Use `$EMLOP_CONFIG` to set a different location, empty string to disable config loading.
+# Entries have the same name and format as command-line args, see `emlop <command> --help`.
+# Some args are only avaible via the command line.
+
+date = "rfc2822"
+duration = "human"
+utc = false
+header = true
+color = "yes"
+output = "columns"
+[predict]
+# show = "emt"
+avg = "arith"
+limit = 20
+unknown = 300
