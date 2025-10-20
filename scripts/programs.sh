@@ -42,6 +42,7 @@ chars="$(printf '%b' "${@}" | wc -c)"
 
 for dir in *
 do
+	! [ -d "${dir}" ] && continue
 	ignore="$(printf '%b' "${@}" | sed -e "s|${dir}||g" | wc -c)"
 	[ "${ignore}" -lt "${chars}" ] && continue
 	(
