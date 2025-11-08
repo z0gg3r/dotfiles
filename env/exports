@@ -30,7 +30,7 @@ export LESSCLOSE="${HOME}/.local/scripts/lessclose.sh %s %s"
 
 # CC
 export LDFLAGS="-Wl,-z,defs -Wl,-z,now -Wl,-z,relro -Wl,-z,nodlopen -Wl,-z,noexecstack  -Wl,--as-needed -Wl,--no-copy-dt-needed-entries -pie"
-export COMMONFLAGS="-pipe -march=native -O2 -fstack-protector-strong -fcf-protection -fpie -fPIC"
+export COMMONFLAGS="-pipe -march=native -O2 -fstack-protector-strong -fcf-protection -fpie -fPIC -fdiagnostics-color=always"
 export CXXFLAGS="$COMMONFLAGS"
 export CPPFLAGS="-D_LARGEFILE64_SOURCE"
 export CFLAGS="$COMMONFLAGS -std=c99 -D_DEFAULT_SOURCE -fno-delete-null-pointer-checks -fno-strict-overflow -fno-strict-aliasing -ftrivial-auto-var-init=zero -fstrict-flex-arrays=3 -fstack-clash-protection -Wformat=2 -Wtrampolines -Wimplicit-fallthrough -fhardened -Wno-hardened -Werror=format-security"
