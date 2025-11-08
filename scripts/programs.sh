@@ -4,8 +4,13 @@ BLUE="\033[34;48m"
 YELLOW="\033[33;48m"
 ERROR="\033[31;48m"
 END="\033[0m"
+BANNER_LENGTH="80"
+BANNER_CHAR="="
 
-BANNER="$(pad -s "" -c "=" -l 80)"
+BANNER()
+{
+	pad -c "${BANNER_CHAR}" -l "${BANNER_LENGTH}" -s "${@}"
+}
 
 die()
 {
@@ -47,9 +52,9 @@ do
 	[ "${ignore}" -lt "${chars}" ] && continue
 	(
 		cd "$dir" || die
+		printf "%b%b%b\n" "${YELLOW}" "$(BANNER "ENTERING ${dir}")" "${END}"
 		git_pull
-		printf "%b%b%b\n" "$BLUE" "$BANNER" "$END"
-		printf "%b%b%b\n" "$YELLOW" "$BANNER" "$END"
+		printf "%b%b%b\n" "${BLUE}" "$(BANNER "LEAVING ${dir}")" "${END}"
 	)
 done
 
