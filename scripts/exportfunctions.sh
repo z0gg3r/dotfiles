@@ -70,13 +70,10 @@ ffv()
 	if [ -f "$1" ]
 	then
 		case "$1" in
-			*.png) png2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
-			*.PNG) png2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
-			*.jpg) jpg2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
-			*.JPG) jpg2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
-			*.jpeg) jpg2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
-			*.JPEG) jpg2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
-			*.ff) lel "$1" ;;
+			*.[Pp][Nn][Gg]) png2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
+			*.[Jj][Pp][Gg]) jpg2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
+			*.[Jj][Pp][Ee][Gg]) jpg2ff < "$1" > /tmp/image.ff && lel /tmp/image.ff ;;
+			*.[Ff][Ff]) lel "$1" ;;
 			*) echo "Can't convert that format." ''
 		esac
 	fi
@@ -92,7 +89,7 @@ bookmark_extract()
 
 export bookmark_extract
 
-tcc_bootstrap()
+__tcc_bootstrap()
 {
 	old_ld="${LDFLAGS}"
 	export LDFLAGS="-Wl,-z,defs -Wl,-z,now -Wl,-z,relro -Wl,-z,nodlopen -Wl,-z,noexecstack  -Wl,--as-needed "
@@ -101,6 +98,20 @@ tcc_bootstrap()
 	doas make install
 	make clean
 	export LDFLAGS="${old_ld}"
+}
+
+tcc_bootstrap()
+{
+	steps="${1}"
+	[ -z "${steps}" ] && steps="1312"
+	[ "${steps}" -lt 0 ] && steps=$(( steps * -1 ))
+	for i in $(seq 0 "${steps}")
+	do
+		__tcc_bootstrap
+		percent=$((i * 100 / steps ))
+		print -Pn "\e]0;${percent} percent\a"
+	done
+	print -Pn "\e]0;foot\a"
 }
 
 export tcc_bootstrap
