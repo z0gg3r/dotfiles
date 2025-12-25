@@ -98,5 +98,9 @@
 		"scroll-step": 5,
 		"format": "VOL {volume}%",
 		"on-click": "pavucontrol"
+	},
+	"network": {
+		"interface": "eth0",
+		"format": "⬆1{bandwidthUpBytes} ⬇1{bandwidthDownBytes}"
 	}
 }
