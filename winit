@@ -1,0 +1,60 @@
+#!/bin/sh
+
+WM="${1}"
+
+[ -z "${WM}" ] && WM="sway"
+
+LOG_TARGET="$HOME/.local/share/${WM}.log"
+MAX_SIZE="4096"
+TAB="$(printf '\t')"
+
+size="$(/bin/du "$LOG_TARGET" | cut -d"$TAB" -f1)"
+
+[ "$size" -gt "$MAX_SIZE" ] && rm "$LOG_TARGET"
+
+args=""
+
+case ${WM} in
+	kde) WM="startplasma-wayland" ;;
+	plasma) WM="startplasma-wayland" ;;
+	sway) args="--unsupported-gpu" ;;
+	*) true ;;
+esac
+
+if [ "${WM}" = "sway" ]
+then
+	export XDG_CURRENT_DESKTOP=sway
+fi
+
+# Fix Java Apps
+export _JAVA_AWT_WM_NONREPARENTING="1"
+
+# Disable .NET Telmetry
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# Fix webkitgtk...
+export WEBKIT_DISABLE_COMPOSITING_MODE=1
+
+# nvidia-vaapi
+export MOZ_DISABLE_RDD_SANDBOX=1
+export LIBVA_DRIVER_NAME=nvidia
+export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export NVD_BACKEND=direct
+export GBM_BACKEND=nvidia-drm
+
+# Use NSS-DB
+export NSS_DEFAULT_DB_TYPE=sql
+
+# Always use LC_COLLATE=C
+export LC_COLLATE=C
+
+export XDG_SESSION_TYPE=wayland
+export MOZ_ENABLE_WAYLAND=1
+export WLR_NO_HARDWARE_CURSORS=1
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
+
+# Set ibus as IME
+export XMODIFIERS=@im=ibus
+
+dbus-run-session "${WM}" ${args}

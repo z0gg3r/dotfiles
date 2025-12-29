@@ -12,6 +12,7 @@
 # /path/to/file -> $NAME = file
 # /path/to/deeply/nested/dir/in/some/obscure/part/of/the/fs -> $NAME = fs
 
+update "${HOME}/.local/bin/winit" "winit"
 update "${HOME}/.vimrc" "vimrc"
 update "${HOME}/.zshrc" "zshrc"
 update "${HOME}/.config/git/config" "gitconfig"
