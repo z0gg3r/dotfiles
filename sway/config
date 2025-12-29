@@ -51,7 +51,14 @@ input "type:keyboard" {
 	xkb_options srvrkeys:none
 }
 
-# seat seat0 xcursor_theme Bibata-Modern-Ice
+input "type:tablet_pad" {
+	map_to_output HDMI-A-1
+}
+
+input "type:tablet_tool" {
+	map_to_output HDMI-A-1
+}
+
 seat seat0 xcursor_theme capitaine-cursors
 
 
