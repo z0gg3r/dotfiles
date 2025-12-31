@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# ufetch-gentoo - tiny system info for gentoo
+# modified version of https://gitlab.com/jschx/ufetch/-/raw/main/ufetch-gentoo?ref_type=heads
+# SPDX-FileCopyrightText: Copyright (c) 2015 J Schillinger
+# SPDX-FileCopyrightText: Copyright (c) 2025 zocker
+# SPDX-License-Identifier: MIT
+
+## INFO
+
+# user is already defined
+host="suijin"
+kernel="$(uname -sr)"
+uptime="$(uptime -p | sed 's/up //')"
+packages="$(find /var/db/pkg -mindepth 2 -type d | wc -l)"
+shell="$(zsh --version | cut -d '(' -f1)"
+wm="${XDG_CURRENT_DESKTOP:-tty}"
+
+## DEFINE COLORS
+# probably don't change these
+bold="$(tput bold)"
+magenta="$(tput setaf 5)"
+reset="$(tput sgr0)"
+
+# you can change these
+lc="${reset}${bold}${magenta}"      # labels
+nc="${reset}${bold}${magenta}"      # user and hostname
+ic="${reset}"                       # info
+c0="${reset}${bold}${magenta}"      # first color
+c1="${reset}${magenta}"             # second color
+
+## OUTPUT
+
+cat <<EOF
+
+${c0}    .-----.      ${nc}${USER}${ic}@${nc}${host}${reset}
+${c0}  .\`    _  \`.    ${lc}OS:        ${ic}Gentoo GNU/Linux${reset}
+${c0}  \`.   (${c1}_)   ${c0}\`.  ${lc}KERNEL:    ${ic}${kernel}${reset}
+${c0}    \`${c1}.        /  ${lc}UPTIME:    ${ic}${uptime}${reset}
+${c1}   .\`       .\`   ${lc}PKGS:      ${ic}${packages}${reset}
+${c1}  /       .\`     ${lc}SHELL:     ${ic}${shell}${reset}
+${c1}  \____.-\`       ${lc}WM:        ${ic}${wm}${reset}
+
+EOF
