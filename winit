@@ -57,4 +57,4 @@ export ELECTRON_OZONE_PLATFORM_HINT=wayland
 # Set ibus as IME
 export XMODIFIERS=@im=ibus
 
-dbus-run-session "${WM}" ${args}
+dbus-run-session -- "${WM}" ${args}
