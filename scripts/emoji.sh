@@ -3,4 +3,4 @@
 
 chosen="$(cut -d ';' -f1 "$HOME/.config/emojimap" | rofi -dmenu | sed "s/ .*//")"
 [ -z "$chosen" ] && exit
-$DOTOOL "$chosen"
+do_tool "$chosen"

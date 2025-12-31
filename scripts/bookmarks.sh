@@ -6,19 +6,9 @@ DB_PATH="$HOME/.config/pmb"
 
 die()
 {
-#	if [ -z "$1" ]
-#	then
-#		notify-send "Could not get selection/url. Aborting!"
-#	else
-#		notify-send "$1"
-#	fi
 	exit 1
 }
-#db=$(/bin/ls "$DB_PATH"/*.db | replace "$DB_PATH/" ""  | rofi -dmenu)
-#if [ -z "$db" ]
-#then
-#	die "No db was chosen"
-#fi
+
 db="bookmarks.db"
 PMB="pmb -f $DB_PATH/$db"
 
@@ -35,5 +25,5 @@ then
 	die "No url could be queried"
 fi
 
-$DOTOOL "$url"
-$DOTOOL_KEY KP_ENTER
+do_tool "$url"
+do_tool_key KP_ENTER

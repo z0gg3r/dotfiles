@@ -27,4 +27,4 @@ fi
 
 rm "$TMP_FILE"
 
-$DOTOOL "$mail"
+do_tool "$mail"
