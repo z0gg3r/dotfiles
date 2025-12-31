@@ -3,26 +3,47 @@
 	"position": "top",
 	"height": 32,
 	"spacing": 4,
-	"modules-left": [ "river/tags", "river/window" ],
-	"modules-center": [ "custom/genlop-cn" ],
-	"modules-right": [ "custom/mpv-radio", "wireplumber", "cpu", "memory", "clock", "tray" ],
+	"modules-left": [ "sway/workspaces", "sway/window" ],
+	"modules-center": [ "custom/genlop-cn", "custom/mpv-radio" ],
+	"modules-right": [ "wireplumber", "cpu", "memory", "clock", "tray" ],
 	"sway/window": {
-		"max-length": 200,
-		"separate-outputs": true
-	},
-	"river/tags": {
-		"num-tags": 10
-	},
-	"river/window": {
 		"max-length": 32,
-		"format": "{}"
+		"all-outputs": true,
+		"offscreen-css": true
 	},
 	"sway/workspaces": {
-		"active-only": false,
+		"format": "<span font='IPAGothic'>{name}</span>",
 		"persistent-workspaces": {
-			"HDMI-0": [ 1 ],
-			"HDMI-1": [ 1 ],
-			"DVI-D-0": [ 1 ],
+			"1:一": [ "HDMI-A-2" ],
+			"2:二": [ "HDMI-A-2" ],
+			"3:三": [ "HDMI-A-2" ],
+			"4:四": [ "HDMI-A-2" ],
+			"5:五": [ "HDMI-A-2" ],
+			"6:六": [ "HDMI-A-2" ],
+			"7:七": [ "HDMI-A-2" ],
+			"8:八": [ "HDMI-A-2" ],
+			"9:九": [ "HDMI-A-2" ],
+			"10:十": [ "HDMI-A-2" ],
+			"11:一": [ "HDMI-A-1" ],
+			"12:二": [ "HDMI-A-1" ],
+			"13:三": [ "HDMI-A-1" ],
+			"14:四": [ "HDMI-A-1" ],
+			"15:五": [ "HDMI-A-1" ],
+			"16:六": [ "HDMI-A-1" ],
+			"17:七": [ "HDMI-A-1" ],
+			"18:八": [ "HDMI-A-1" ],
+			"19:九": [ "HDMI-A-1" ],
+			"20:十": [ "HDMI-A-1" ],
+			"21:一": [ "DVI-D-1" ],
+			"22:二": [ "DVI-D-1" ],
+			"23:三": [ "DVI-D-1" ],
+			"24:四": [ "DVI-D-1" ],
+			"25:五": [ "DVI-D-1" ],
+			"26:六": [ "DVI-D-1" ],
+			"27:七": [ "DVI-D-1" ],
+			"28:八": [ "DVI-D-1" ],
+			"29:九": [ "DVI-D-1" ],
+			"30:十": [ "DVI-D-1" ]
 		}
 	},
 	"custom/genlop-cn": {
@@ -32,8 +53,8 @@
 		"interval": 15
 	},
 	"custom/mpv-radio": {
-		"exec": "set -o pipefile; polybar-mpv-script | zscroll -l 32",
-		"exec-if": "pgrep -x mpv-radio",
+		"exec": "polybar-mpv-script",
+		"exec-if": "pgrep -f mpv-radio",
 		"hide-empty-text": true,
 		"restart-interval": 2
 	},
@@ -77,5 +98,9 @@
 		"scroll-step": 5,
 		"format": "VOL {volume}%",
 		"on-click": "pavucontrol"
+	},
+	"network": {
+		"interface": "eth0",
+		"format": "⬆1{bandwidthUpBytes} ⬇1{bandwidthDownBytes}"
 	}
 }
