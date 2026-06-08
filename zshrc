@@ -15,6 +15,8 @@ git_prompt_info()
 {
 	if git status --porcelain > /dev/null 2> /dev/null
 	then
+		local branch
+		local dirty
 		branch="$(git --no-pager branch | grep '^*' | cut -d' ' -f2)"
 		dirty="$(git status --porcelain)"
 		printf '%b' "%{$fg[yellow]%}"
