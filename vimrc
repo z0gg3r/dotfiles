@@ -80,7 +80,7 @@ nmap <leader>pt :PencilToggle<CR>	" Toggle Pencil
 
 " ditto
 let g:ditto_file = 'ignore'
-let g:ditto_dir = '/home/zocki/.cache/ditto'
+let g:ditto_dir = '$HOME/.cache/ditto'
 let g:ditto_hlgroups = ['dittohlgroup']
 highlight dittohlgroup term=reverse cterm=underline ctermfg=218 ctermbg=NONE
 nmap <leader>di :ToggleDitto<CR>	" Turn Ditto on and off
@@ -163,11 +163,11 @@ nmap <leader>pgo :Goyo<CR> " Toggle Goyo
 let g:ale_c_cc_executable = 'gcc'
 let g:ale_c_cc_options = '-std=c99 -fno-delete-null-pointer-checks -Wall -Wextra -pedantic -pedantic-errors -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_LARGEFILE64_SOURCE'
 let g:ale_virtualtext_cursor = 0
-let g:ale_c_clang_check_options = '--extra-arg="-D_LARGEFILE64_SOURCE" --extra-arg="-D_GNU_SOURCE"'
+let g:ale_c_clang_check_options = '--extra-arg="-D_LARGEFILE64_SOURCE" --extra-arg="-D_GNU_SOURCE" --extra-arg="-std=c99"'
 
 " EasyTags config
 let g:easytags_async = 1
-let g:easytags_file = '/home/zocki/.cache/vimtags'
+let g:easytags_file = '$HOME/.cache/vimtags'
 
 " vimtex
 
