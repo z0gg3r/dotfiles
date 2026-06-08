@@ -1,16 +1,11 @@
 #!/bin/sh
 
 WM="${1}"
+TIMESTAMP="$(date '+%Y%m%d')T$(TZ='Etc/UTC' date '+%H%M%S')Z"
 
 [ -z "${WM}" ] && WM="sway"
 
-LOG_TARGET="$HOME/.local/share/${WM}.log"
-MAX_SIZE="4096"
-TAB="$(printf '\t')"
-
-size="$(/bin/du "$LOG_TARGET" | cut -d"$TAB" -f1)"
-
-[ "$size" -gt "$MAX_SIZE" ] && rm "$LOG_TARGET"
+LOG_TARGET="$HOME/.local/share/winit-logs/${WM}-${TIMESTAMP}.log"
 
 args=""
 
@@ -53,8 +48,9 @@ export XDG_SESSION_TYPE=wayland
 export MOZ_ENABLE_WAYLAND=1
 export WLR_NO_HARDWARE_CURSORS=1
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
+export PROTON_ENABLE_WAYLAND=1
 
 # Set ibus as IME
 export XMODIFIERS=@im=ibus
 
-dbus-run-session -- "${WM}" ${args}
+dbus-run-session -- "${WM}" ${args} 2>&1 | tee "${LOG_TARGET}"
