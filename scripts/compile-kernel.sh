@@ -41,7 +41,8 @@ notify 'Kernel compilation finished'
 make -j24 -l30 headers V=12 || die 'kernel header preparation failed'
 notify 'Kernel header preperation finished'
 
-INSTALL_HDR_PATH=/usr doas make modules_install headers_install install -j24 -l30 || die 'kernel install failed'
+doas make modules_install headers_install install -j24 -l30 V=12 INSTALL_HDR_PATH=/usr \
+	|| die 'kernel install failed'
 notify 'Kernel installation finished'
 
 doas emerge -atv @module-rebuild || die 'module rebuild failed'
