@@ -1,8 +1,0 @@
-browser "firefox-bin"
-macro p set browser "mpv-pod %u" ; show-urls ; open-in-browser ; set browser "firefox-bin %u"
-player "mpv"
-reload-threads 24
-prepopulate-query-feeds "yes"
-confirm-mark-all-feeds-read "no"
-confirm-mark-feed-read "no"
-confirm-exit "no"
