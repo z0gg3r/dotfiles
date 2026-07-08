@@ -138,9 +138,9 @@ bar {
 	swaybar_command waybar-launcher
 }
 
-exec "$HOME/.config/autostart/00-Autostart.sh"
+exec "$HOME/.local/share/autostart/00-Autostart.sh"
 
-exec ibus start --type wayland
+exec_always ibus start --verbose --type wayland
 exec wlsunset -g 0.85 -T 4001 -t 4000
 exec bgctl "${HOME}/.config/wallpapers/wallpaper.png"
 exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
