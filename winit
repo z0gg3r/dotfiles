@@ -1,10 +1,10 @@
 #!/bin/sh
 
-WM="${1}"
+choice="$(printf 'plasma\nsway\n' | fzy)"
+
+WM="${choice:-sway}"
+
 TIMESTAMP="$(date '+%Y%m%d')T$(TZ='Etc/UTC' date '+%H%M%S')Z"
-
-[ -z "${WM}" ] && WM="sway"
-
 LOG_TARGET="$HOME/.local/share/winit-logs/${WM}-${TIMESTAMP}.log"
 
 args=""
@@ -50,7 +50,10 @@ export WLR_NO_HARDWARE_CURSORS=1
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export PROTON_ENABLE_WAYLAND=1
 
-# Set ibus as IME
-export XMODIFIERS=@im=ibus
+if [ "${WM}" != "startplasma-wayland" ]
+then
+	# Set ibus as IME
+	export XMODIFIERS=@im=ibus
+fi
 
 dbus-run-session -- "${WM}" ${args} 2>&1 | tee "${LOG_TARGET}"
