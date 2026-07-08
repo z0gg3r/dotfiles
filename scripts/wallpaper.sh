@@ -4,7 +4,7 @@
 
 date=$(date +%Y-%m-%d)
 time=$(date +%H:%M:%S)
-lim="$(/bin/ls "$WALLPAPERS_SRC" | grep -c png)"
+lim="$(/bin/ls "$WALLPAPERS_SRC" | wc -l)"
 num="$(rnum -r "$lim")"
 wallpaper="$num.png"
 name="$(lecho -f "$WALLPAPERS_MAP" -l $num | cut -d, -f2 | trim)"

@@ -68,12 +68,23 @@ kill_wallpaper()
 
 do_tool_wayland()
 {
-	wtype -d 15 "${@}"
+	if pgrep -f startplasma-wayland
+	then
+		# https://git.sr.ht/~geb/dotool
+		printf 'type %b' "${@}" | wdotool
+	else
+		wtype -d 15 "${@}"
+	fi
 }
 
 do_tool_key_wayland()
 {
-	wtype -k "${@}"
+	if pgrep -f startplasma-wayland > /dev/null
+	then
+		printf 'type %b' "${@}" | wdotool
+	else
+		wtype -k "${@}"
+	fi
 }
 
 cliptool_wayland()
@@ -84,15 +95,10 @@ cliptool_wayland()
 bgtool_wayland()
 {
 	# assuming ${1} is the file
-	real="$(readlink "${1}")"
-	real="$(readlink "${real}")"
-	is_image="$(file "${real}" | grep -vi video | grep -vi webm)"
-	if [ -n "${is_image}" ]
-	then
-		daemonize /usr/bin/swaybg -m fill -i "${@}"
-	else
-		mpvpaper -p -f -o 'no-audio loop' 'ALL' "${@}"
-	fi
+	case "${1}" in
+		*mp4) mpvpaper -p -f -o 'no-audio loop' 'ALL' "${@}" ;;
+		*)  daemonize /usr/bin/swaybg -m fill -i "${@}" ;;
+	esac
 }
 
 kill_wallpaper_wayland()

@@ -26,4 +26,4 @@ then
 fi
 
 do_tool "$url"
-do_tool_key KP_ENTER
+# do_tool_key KP_ENTER
